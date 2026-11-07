@@ -14,3 +14,5 @@
 .delivery-car{height:260px;aspect-ratio:auto;align-self:center;object-position:center 38%}@media(max-width:800px){.delivery-car{height:230px}}@media(max-width:480px){.delivery-car{height:200px;max-height:none}}
 .delivery-car{object-fit:contain;object-position:center;mix-blend-mode:normal;border-radius:0;height:270px}.delivery-banner{min-height:310px}@media(max-width:480px){.delivery-car{height:210px}.delivery-banner{min-height:0}}
 [hidden]{display:none!important}
+
+.sauce-options select{display:block;width:100%;margin-top:8px;padding:12px;border:1px solid #d8dfce;border-radius:6px;background:#f5f8ef;color:var(--ink);font:inherit;font-size:13px;min-height:44px}.sauce-options small{display:block;margin-top:8px;color:#7b856f;font-size:10px}.sauce-options label{font-size:11px}.sauce-options select:focus-visible{outline:3px solid var(--orange);outline-offset:2px}

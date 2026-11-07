@@ -32,3 +32,5 @@ export const products = rows.map((r,i)=>({id:i+1,category:r[0],name:r[1],descrip
 export const extras=[{id:'ei',name:'Extra eitje',p:50,s:50},{id:'beleg',name:'Extra beleg',p:100,s:150},{id:'luxe',name:'Extra luxe beleg',p:150,s:200},{id:'groenten',name:'Sla, tomaat en komkommer',p:75,s:50}];
 export const allergens=['Ei','Glutenbevattende granen','Lupine','Melk','Mosterd','Noten','Pinda’s','Schaaldieren','Selderij','Sesamzaad','Vis','Soja','Zwaveldioxide en sulfieten','Weekdieren'];
 export const money=n=>new Intl.NumberFormat('nl-NL',{style:'currency',currency:'EUR'}).format(n/100);
+
+export const sauces=[['geen','Zonder saus'],['andalus','Andalus'],['curry','Curry'],['dille','Dille'],['honing','Honing'],['honing-mosterd','Honing-mosterd'],['ketjap','Ketjap'],['ketchup','Ketchup'],['mayonaise','Mayonaise'],['mosterd','Mosterd'],['piri-piri','Piri piri'],['sate','Satésaus'],['sambal','Sambal'],['truffelmayonaise','Truffelmayonaise']].map(([id,name])=>({id,name}));
