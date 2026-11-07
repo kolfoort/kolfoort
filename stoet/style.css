@@ -18,3 +18,20 @@
 .sauce-options select{display:block;width:100%;margin-top:8px;padding:12px;border:1px solid #d8dfce;border-radius:6px;background:#f5f8ef;color:var(--ink);font:inherit;font-size:13px;min-height:44px}.sauce-options small{display:block;margin-top:8px;color:#7b856f;font-size:10px}.sauce-options label{font-size:11px}.sauce-options select:focus-visible{outline:3px solid var(--orange);outline-offset:2px}
 /* Match the full-height form controls in Safari, Chrome and on mobile. */
 .sauce-options select{-webkit-appearance:none;appearance:none;display:block;width:100%;min-width:0;min-height:48px;height:48px;box-sizing:border-box;border:1px solid #d8dfce;border-radius:6px;padding:11px 44px 11px 14px;line-height:1.35;font-family:'DM Sans',Arial,sans-serif;font-size:16px;font-weight:500;color:#20271b;background-color:#f5f8ef;background-image:url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='20' height='20' viewBox='0 0 20 20' fill='none'%3E%3Cpath d='m5 7 5 5 5-5' stroke='%23568500' stroke-width='2' stroke-linecap='round' stroke-linejoin='round'/%3E%3C/svg%3E");background-repeat:no-repeat;background-position:right 14px center;background-size:20px 20px;box-shadow:none;cursor:pointer}.sauce-options select:focus{border-color:var(--green)}.sauce-options select option{font-size:16px;color:#20271b;background:#fff}
+
+/* Compact four-across menu, complete square photographs, and a brighter brand finish. */
+.product-grid{grid-template-columns:repeat(4,minmax(0,1fr));gap:14px}
+.product-card .photo,.detail-photo{aspect-ratio:1}
+.product-photo{display:block;width:100%;padding:0;border:0;border-radius:0;background-color:#f7f7ef;text-align:left;cursor:pointer}
+.product-photo:focus-visible{outline:3px solid var(--orange);outline-offset:-3px}
+.product-photo:hover::before{filter:brightness(1.04)}
+.product-card{border-radius:14px;overflow:hidden;transition:transform .18s,box-shadow .18s;border:1px solid #e3e9d9}
+.product-card:hover{transform:translateY(-3px);box-shadow:0 12px 28px #36500012}
+.card-content h3{font-size:24px}.choose{width:100%;font-size:12px;padding:11px}
+.hero{background:radial-gradient(ellipse at 85% 30%,#edf6dd 0,transparent 58%);border-radius:0 0 32px 32px}
+.hero h1{letter-spacing:-2px}.hero h1 span{color:var(--orange)}
+.button.orange{box-shadow:0 4px 0 #d86c00;border-radius:9px}.button.orange:hover{background:#ed7900}
+.category-label{font-size:9px;background:#fffffff0;max-width:calc(100% - 16px);top:8px;left:8px}
+.delivery-banner{border:1px solid #d9e8c1;background:linear-gradient(120deg,#eef6df,#f8fbf1);border-radius:24px}
+@media(max-width:1150px) and (min-width:801px){.order-area{grid-template-columns:minmax(0,1fr) 260px;gap:18px}.card-content{padding:10px}.card-content h3{font-size:21px}}
+@media(max-width:800px){.product-grid{grid-template-columns:repeat(2,minmax(0,1fr))}}
