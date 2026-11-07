@@ -5,7 +5,7 @@ const esc=s=>String(s??'').replace(/[&<>"']/g,c=>({'&':'&amp;','<':'&lt;','>':'&
 let basket=[],category='all',query='',mode='delivery',connected=false,busy=false,pendingRequest=null;
 try{const saved=JSON.parse(localStorage.getItem('stoet-cart-v1')||'[]');if(Array.isArray(saved))basket=saved.filter(validLine).slice(0,30);}catch{}
 function validLine(x){const p=products.find(p=>p.id===x.product);return p&&p.variants.some(v=>v.id===x.variant)&&Number.isInteger(x.quantity)&&x.quantity>0&&x.quantity<=50&&Array.isArray(x.extras)&&x.extras.every(id=>extras.some(e=>e.id===id))&&new Set(x.extras).size===x.extras.length&&!(p.category==='erbij'&&x.extras.length)&&typeof x.note==='string'&&x.note.length<=300;}
-function photoStyle(i){return `background-position:${(i%4)*100/3}% ${Math.floor(i/4)*20}%`}
+function photoStyle(i){return `--col:${i%4};--row:${Math.floor(i/4)}`}
 function productFor(x){return products.find(p=>p.id===x.product)}
 function variantFor(x){return productFor(x).variants.find(v=>v.id===x.variant)}
 function unitFor(x){const v=variantFor(x);return v.price+x.extras.reduce((sum,id)=>{const e=extras.find(e=>e.id===id);return sum+(v.label==='½ stok'?e.s:e.p)},0)}
