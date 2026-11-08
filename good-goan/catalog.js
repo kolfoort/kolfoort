@@ -6,7 +6,7 @@ const rows=[
  ['bol','Bolletje Lever',395,'Witte bol met boter en dun gesneden lever. Een klassieke combinatie.',4],
  ['bol','Bolletje Pekelvlees',495,'Witte bol met boter en dun gesneden pekelvlees. Het sausje bepalen we nog.',4],
  ['bol','Bolletje Rosbief',495,'Witte bol met boter en dun gesneden rosbief. Naar wens straks met een passend sausje.',12],
- ['pistolet','Pistoletje Préparé',595,'Voorstel: filet americain, fijngesneden ui, kappertjes en augurk. Eventueel met ei; de receptuur werken we nog uit.',7],
+ ['pistolet','Pistoletje Préparé',595,'Belgische Filet Américain Préparé van zelfgedraaide runderachtermuis, met Dijonmosterd, kappertjes en sjalot. Op een krokant pistoletje; garnering en commerciële uitvoering nog te valideren.',7],
  ['pistolet','Pistoletje Oude Kaas',495,'Voorstel: oude kaas, rucola, komkommer en een zachte mosterdmayonaise.',1],
  ['pistolet','Pistoletje Brie',545,'Voorstel: brie, rucola, walnoot en een beetje honing. Nog af te stemmen.',2],
  ['koffie','Espresso',280,'Voorgestelde koffiekaart: klein en krachtig. Bonen en bereiding nog te bepalen.',-1],
