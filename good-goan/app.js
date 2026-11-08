@@ -1,16 +1,16 @@
-import {categories,products,extras,allergens,sauces,money} from './catalog.js?v=goodgoan20261108c';
+import {categories,products,extras,allergens,sauces,money} from './catalog.js?v=goodgoan20261108coffee';
 
 const $=s=>document.querySelector(s), $$=s=>[...document.querySelectorAll(s)];
 const esc=s=>String(s??'').replace(/[&<>"']/g,c=>({'&':'&amp;','<':'&lt;','>':'&gt;','"':'&quot;',"'":'&#39;'}[c]));
 let basket=[],category='all',query='',mode='delivery',connected=false,busy=false,pendingRequest=null;
-try{const saved=JSON.parse(localStorage.getItem('good-goan-cart-v3')||'[]');if(Array.isArray(saved))basket=saved.map(x=>({...x,sauce:x.sauce||'geen'})).filter(validLine).slice(0,30);}catch{}
+try{const saved=JSON.parse(localStorage.getItem('good-goan-cart-v4')||'[]');if(Array.isArray(saved))basket=saved.map(x=>({...x,sauce:x.sauce||'geen'})).filter(validLine).slice(0,30);}catch{}
 function validLine(x){const p=products.find(p=>p.id===x.product);return p&&p.variants.some(v=>v.id===x.variant)&&Number.isInteger(x.quantity)&&x.quantity>0&&x.quantity<=50&&Array.isArray(x.extras)&&x.extras.every(id=>extras.some(e=>e.id===id))&&new Set(x.extras).size===x.extras.length&&!(p.category==='erbij'&&x.extras.length)&&sauces.some(s=>s.id===x.sauce)&&!(p.category==='erbij'&&x.sauce!=='geen')&&typeof x.note==='string'&&x.note.length<=300;}
 function photoStyle(i){return i<0?'--coffee:1':`--col:${i%4};--row:${Math.floor(i/4)}`} 
 function productFor(x){return products.find(p=>p.id===x.product)}
 function variantFor(x){return productFor(x).variants.find(v=>v.id===x.variant)}
 function unitFor(x){const v=variantFor(x);return v.price+x.extras.reduce((sum,id)=>{const e=extras.find(e=>e.id===id);return sum+(v.label==='½ stok'?e.s:e.p)},0)}
 function total(){return basket.reduce((n,x)=>n+unitFor(x)*x.quantity,0)}
-function save(){try{localStorage.setItem('good-goan-cart-v3',JSON.stringify(basket))}catch{}renderBasket()}
+function save(){try{localStorage.setItem('good-goan-cart-v4',JSON.stringify(basket))}catch{}renderBasket()}
 function toast(t){$('#toast').textContent=t;$('#toast').classList.add('show');clearTimeout(toast.timer);toast.timer=setTimeout(()=>$('#toast').classList.remove('show'),2600)}
 function renderCategories(){$('#categories').innerHTML=[['all','Alle broodjes'],...categories].map(([id,name])=>`<button data-category="${id}" class="${id===category?'active':''}" aria-pressed="${id===category}">${name}</button>`).join('');$$('[data-category]').forEach(b=>b.onclick=()=>{category=b.dataset.category;renderCategories();renderProducts()})}
 function renderProducts(){const visible=products.filter(p=>(category==='all'||p.category===category)&&p.name.toLowerCase().includes(query));$('#products').innerHTML=visible.length?visible.map(p=>`<article class="product-card"><button type="button" class="photo product-photo" style="${photoStyle(p.photo)}" data-product="${p.id}" aria-label="Bestel ${esc(p.name)}"><span class="category-label">${categories.find(c=>c[0]===p.category)[1]}</span></button><div class="card-content"><h3>${esc(p.name)}</h3><p>${esc(p.description)}</p><div class="card-bottom"><div><small>${p.variants.length>1?'Vanaf':'Per stuk'}</small><strong>${money(p.variants[0].price)}</strong></div><button class="choose" data-product="${p.id}" aria-label="Kies ${esc(p.name)}">Kies je ${p.category==='koffie'?'koffie':p.category==='erbij'?'extra':'broodje'}</button></div></div></article>`).join(''):'<p class="no-results">Geen broodjes gevonden. Probeer een andere zoekterm.</p>';$$('[data-product]').forEach(b=>b.onclick=()=>openProduct(Number(b.dataset.product)))}
