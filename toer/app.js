@@ -1,4 +1,4 @@
-import{initPlanner}from'./planner.js?v=20261109-paydemo';
+import{initPlanner}from'./planner.js?v=20261109-submenus';
 import{items}from'./data.js?v=20261109-uitjes';
 const $=s=>document.querySelector(s),esc=s=>String(s??'').replace(/[&<>"']/g,c=>({'&':'&amp;','<':'&lt;','>':'&gt;','"':'&quot;',"'":'&#39;'}[c])),money=n=>new Intl.NumberFormat('nl-NL',{style:'currency',currency:'EUR'}).format(n),groupLabel={vehicles:'Voertuigen',activities:'Activiteiten',food:'Eten & drinken'};let chosen=[];try{chosen=JSON.parse(localStorage.getItem('toer-plan')||'[]').filter(id=>items.some(p=>p.id===id))}catch{}const page=document.body.dataset.page||'home';
 function photo(p){return p?.image||'assets/item-3.jpg'}
