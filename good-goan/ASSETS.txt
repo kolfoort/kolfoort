@@ -1,0 +1,3 @@
+Good Goan conceptsfeer: gegenereerde sfeerfoto, geen echte zaak of vastgestelde receptuur. Merkvoorstel: zwart #11120F, warm goud #C39A59, ivoor #F3EEE4. GG-monogram in SVG is een nieuw concept, niet het historische definitieve logo. Broodjesatlas overgenomen uit de TwenteToer-testomgeving als voorbeeldfoto’s. Checkout lokaal, zonder database of verzending.
+
+2026-11-09 Good Goan bezorgkaart: volledige Stoet-conceptkaart; fictieve allergenen blijven als voorbeelden gemarkeerd. Topolino: ingebouwde image_gen, edit van turquoise TwenteToer-bezorgauto naar matzwart met gouden details en Good Goan-deurmerk, volledig voertuig zichtbaar op ivoorkleurige studioachtergrond. Output: assets/good-goan-topolino.webp. AI-conceptvisual, geen foto van de daadwerkelijke vloot.
