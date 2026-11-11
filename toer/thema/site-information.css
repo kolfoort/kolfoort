@@ -654,3 +654,5 @@ main :is(.chips, .plan-category, #plan-subcategories) button[aria-pressed]:is(:h
 main :is(.plan-category, #plan-subcategories) button[aria-pressed]:is(:hover, :focus-visible, [aria-pressed="true"]) > :is(span, small) {
   color: #263821;
 }
+
+.buggy-feature .actions { align-items: center; }
