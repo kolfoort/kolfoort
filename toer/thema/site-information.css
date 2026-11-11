@@ -656,3 +656,12 @@ main :is(.plan-category, #plan-subcategories) button[aria-pressed]:is(:hover, :f
 }
 
 .buggy-feature .actions { align-items: center; }
+
+/* Keep the handwritten line above the callout heading. */
+.hero-small > .handwritten {
+  width: fit-content;
+  max-width: 100%;
+  margin: 0 0 14px;
+  transform-origin: left bottom;
+  transform: rotate(-2deg);
+}
