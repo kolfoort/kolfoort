@@ -328,8 +328,77 @@ function renderSelection(){refreshPlanner?.()}
 function info(){ $('#main').innerHTML=`<div class="wrap"><div class="page-head"><div class="eyebrow">Voor je op pad gaat</div><h1>HANDIG OM TE WETEN.</h1><p>Een helder vertrekpunt voor jullie uitje in Ootmarsum.</p></div><div class="contact-grid"><div class="panel"><h2>GOED VOORBEREID.</h2><ul class="benefits"><li>Bekijk voorwaarden per gekozen voertuig.</li><li>Stem leeftijd, rijbewijs en groepsgrootte af.</li><li>Laat datum en prijs bevestigen.</li><li>Geef dieetwensen vooraf door.</li><li>Controleer je vertrekpunt bij je boeking.</li></ul><a class="textlink" href="/toer/contact/">Vraag het aan TwenteToer</a></div><div>${faq()}</div></div><section class="section"><div class="hero-small"><div class="eyebrow">Ervaringen</div><h2>BENIEUWD NAAR ANDERE UITJES?</h2><p>Bekijk de bestaande ervaringen via het openbare Trustpilot-profiel. In deze testversie tonen we geen verzonnen beoordelingen of scores.</p><a class="cta light" href="https://nl.trustpilot.com/review/twentetoer.nl" target="_blank" rel="noopener">Bekijk ervaringen op Trustpilot</a></div></section></div>`}
 function contact(){ $('#main').innerHTML=`<div class="wrap"><div class="page-head"><div class="eyebrow">We denken graag met je mee</div><h1>BEGIN BIJ EEN GOED IDEE.</h1><p>Een vraag over een voertuig, een complete groepsdag of een specifieke wens? Hier vind je de contactgegevens van TwenteToer.</p></div><div class="contact-grid"><section class="panel"><div class="eyebrow">TwenteToer · Ootmarsum</div><h2>KOM IN CONTACT.</h2><p>Denekamperstraat 36<br>7631 AC Ootmarsum</p><p><a class="textlink" href="tel:+31541296459">0541 – 29 64 59</a><br><a class="textlink" href="mailto:info@twentetoer.nl">info@twentetoer.nl</a></p><div class="actions"><a class="cta green" href="tel:+31541296459">Bel TwenteToer</a><a class="cta light" href="mailto:info@twentetoer.nl">E-mail TwenteToer</a></div><p class="small">Deze links openen je telefoon- of e-mailprogramma. De testsite verstuurt zelf niets.</p></section><section class="panel"><h2>EERST EVEN SAMENSTELLEN?</h2><p>Kies je favoriete voertuigen, activiteiten en horeca. Zo heb je jouw wensen alvast overzichtelijk bij elkaar.</p><a class="cta" href="/toer/mijn-toer/">Stel mijn toer samen</a><div class="notice">Dit is de testversie op kolfoort.com. Voor echte reserveringen en actuele voorwaarden gebruik je de bestaande website.</div><a class="textlink" href="https://www.twentetoer.nl/mijn-toer/" target="_blank" rel="noopener">Naar de huidige boekingsomgeving</a></section></div></div>`}
 
-function buggyExperience(){const buggy=items.find(p=>p.id===5);$('#main').innerHTML=`<section class="buggy-hero"><div class="wrap buggy-hero-grid"><div><a class="textlink" href="/toer/voertuigen/?categorie=buggy">Alle voertuigen / Buggy Experience</a><span class="handwritten">Het avontuur begint hier.</span><h1>STOF HAPPEN.<br><em>GAS GEVEN.</em><br>SAMEN GENIETEN!</h1><p>Niet bang voor een beetje modder? Stap in een buggy en beleef een uur off-road avontuur in de omgeving van Ootmarsum. Jij rijdt zelf, de gids gaat voorop.</p><div class="actions"><button class="cta" data-add="5">Toevoegen aan Mijn toer</button><a class="cta light" href="#handig">Hoe werkt het?</a></div><p class="small">Testomgeving · toevoegen is geen reservering.</p></div><div class="buggy-feature-photo"><img src="/toer/thema/assets/buggy-experience.jpg" alt="De off-road buggy van TwenteToer"><span class="mud-stamp">Echt<br><b>off-road!</b></span></div></div></section><div class="wrap"><div class="experience-strip"><span><b>1 uur</b> echt rijden</span><span><b>Onder begeleiding</b> een gids voorop</span><span><b>Ootmarsum</b> hier start je avontuur</span></div><section class="section experience-story"><div><div class="eyebrow">Buggy Experience</div><h2>ZANDWEGEN OP.<br>HERINNERINGEN MEE.</h2><p>Na de uitleg start je zelf de motor. De route gaat waar mogelijk over zandwegen in de bosrijke omgeving. Onderweg is er een korte pauze om van bestuurder te wisselen.</p><p>We rijden een vaste route met begeleiding. Het tempo wordt afgestemd op de groep; de gids rijdt voorop en inhalen is niet toegestaan.</p><a class="textlink" href="${buggy.source}" target="_blank" rel="noopener">Bekijk de actuele voorwaarden bij TwenteToer</a></div><img loading="lazy" src="/toer/thema/assets/item-5.jpg" alt="Buggyrit in de omgeving van Ootmarsum"></section><section class="section" id="handig"><div class="section-head"><div><div class="eyebrow">Voor je instapt</div><h2>EVEN HANDIG OM TE WETEN.</h2></div><p>De onderstaande deelnamevoorwaarden komen van de huidige TwenteToer-pagina. Laat ze bij je aanvraag bevestigen.</p></div><div class="experience-info"><article><span>01</span><h3>Wie gaat er mee?</h3><p>Bestuurders zijn minimaal 20 jaar en hebben een autorijbewijs. Kinderen kunnen mee vanaf 5 jaar. Normaal minimaal 6 en maximaal 10 deelnemers per groep.</p></article><article><span>02</span><h3>Wat trek je aan?</h3><p>Kleding die vies mag worden! Er zijn geen overalls. Stofbrillen krijg je in bruikleen. Een stofkapje wordt aangeraden; lenzendragers kunnen extra last hebben van stof.</p></article><article><span>03</span><h3>Wat kost het?</h3><p>€ 60 per persoon voor één uur rijden. De prijs is voor jong en oud gelijk. Laat de minimumafname en groepsindeling bij je aanvraag bevestigen.</p></article></div></section><section class="split"><img loading="lazy" src="/toer/thema/assets/item-2.jpg" alt="E-chopper van TwenteToer"><div class="split-copy"><div class="eyebrow">Meer dan 10 personen?</div><h2>WISSELEN MAAR!</h2><p>Voor grotere groepen is een combinatie met e-choppers mogelijk: de ene groep rijdt buggy, de andere e-chopper. Na een uur wisselen jullie. Vraag naar de passende groepsindeling en voorwaarden.</p><a class="cta" href="/toer/contact/">Stem jullie groepsuitje af</a></div></section><section class="section"><div class="hero-small"><span class="handwritten">Nog niet naar huis!</span><h2>MODDER ERBIJ. BARBECUE ERNA.</h2><p>Maak de dag compleet met iets lekkers. Kies zelf een eetmoment of bekijk de arrangementen.</p><div class="actions"><a class="cta green" href="/toer/eten-drinken/">Kies iets lekkers</a><a class="cta light" href="/toer/arrangementen/">Bekijk combinaties</a></div></div></section></div>`;bind()}
-
+function buggyExperience() {
+  $('#main').innerHTML = `<section class="buggy-hero">
+    <div class="wrap buggy-hero-grid">
+      <div>
+        <a class="textlink" href="/toer/voertuigen/?categorie=buggy">Alle voertuigen / Buggy Experience</a>
+        <span class="handwritten">Een beetje modder hoort erbij.</span>
+        <h1>BUGGY RIJDEN IN OOTMARSUM</h1>
+        <p>Na ontvangst in Ootmarsum legt de gids uit hoe je de buggy bestuurt en welke afspraken onderweg gelden. Daarna starten jullie zelf de motor en rijden jullie achter de gids aan.</p>
+        <p>Het tempo past bij de groep. Halverwege is er een korte stop om van bestuurder te wisselen. Na ongeveer een uur rijden komen jullie terug bij het vertrekpunt.</p>
+        <div class="actions"><button class="cta" data-add="5">Toevoegen aan Mijn toer</button><a class="cta light" href="#handig">Bekijk kosten en voorwaarden</a></div>
+        <p class="small">Testomgeving. Toevoegen maakt nog geen reservering.</p>
+      </div>
+      <div class="buggy-feature-photo"><img src="/toer/thema/assets/buggy-rit-1.jpg" alt="Buggy Experience in Ootmarsum, foto 1"></div>
+    </div>
+  </section>
+  <div class="wrap">
+    <div class="experience-strip"><span><b>1 uur rijden</b></span><span><b>Met begeleiding</b></span><span><b>Kinderen vanaf 5 jaar</b></span><span><b>€ 60 per persoon</b></span></div>
+    <section class="section">
+      <div class="grid">
+      <a class="card" href="/toer/thema/assets/buggy-rit-2.jpg"><img class="card-photo" src="/toer/thema/assets/buggy-rit-2.jpg" alt="Buggy Experience in Ootmarsum, foto 2" loading="lazy"></a>
+      <a class="card" href="/toer/thema/assets/buggy-rit-3.jpg"><img class="card-photo" src="/toer/thema/assets/buggy-rit-3.jpg" alt="Buggy Experience in Ootmarsum, foto 3" loading="lazy"></a>
+      <a class="card" href="/toer/thema/assets/buggy-rit-4.jpg"><img class="card-photo" src="/toer/thema/assets/buggy-rit-4.jpg" alt="Buggy Experience in Ootmarsum, foto 4" loading="lazy"></a>
+    </div>
+    </section>
+    <section class="section experience-story">
+      <div><h2>Off-road rond Ootmarsum</h2><p>De gids volgt een vaste route van een uur. Waar het mag, rijden jullie over zandwegen door het bosrijke landschap rond Ootmarsum. Op de openbare weg gelden de gewone verkeersregels.</p></div>
+      <img src="/toer/thema/assets/buggy-rit-5.jpg" alt="Buggy Experience in Ootmarsum, foto 5" loading="lazy">
+    </section>
+    <section class="section experience-story">
+      <img src="/toer/thema/assets/buggy-rit-6.jpg" alt="Buggy Experience in Ootmarsum, foto 6" loading="lazy">
+      <div><h2>Hoe rijden jullie?</h2><p>De gids rijdt in een eigen buggy voorop. Jullie besturen zelf jullie buggy en volgen de gids. Inhalen is verboden. Houd rekening met elkaar en met de natuur langs de route.</p></div>
+    </section>
+    <section class="section experience-story">
+      <div><h2>Kledingadvies</h2><p>Trek kleding aan die vies mag worden. Op droge dagen kan het stoffig zijn, bij regen modderig. Overalls zijn niet beschikbaar. TwenteToer raadt een stofmasker aan en leent stofbrillen uit. Draag je contactlenzen, dan kun je meer last hebben van het stof.</p></div>
+      <img src="/toer/thema/assets/buggy-rit-7.jpg" alt="Buggy Experience in Ootmarsum, foto 7" loading="lazy">
+    </section>
+    <section class="section" id="handig">
+      <div class="hero-small">
+        <h2>Kosten en informatie</h2><p><strong>€ 60 per persoon voor een uur rijden. Voor kinderen geldt hetzelfde tarief.</strong></p>
+        <ul class="benefits"><li>Minimaal 6 deelnemers of een minimumbedrag van € 360.</li><li>Maximaal 10 deelnemers per groep.</li><li>Bestuurders zijn minimaal 20 jaar en hebben een autorijbewijs. Kinderen kunnen mee vanaf 5 jaar.</li><li>De rit vertrekt vanuit Ootmarsum. TwenteToer bezorgt de buggy’s niet.</li></ul>
+      </div>
+    </section>
+    <section class="section experience-story">
+      <div><h2>Met meer dan 10 personen?</h2><p>TwenteToer biedt voor grotere groepen een combinatie van twee uur aan. Met 18 personen rijdt bijvoorbeeld de ene helft eerst buggy en de andere helft E-Chopper. Na een uur wisselen jullie van voertuig. Volgens de bron geldt hiervoor dezelfde prijs per persoon.</p><a class="cta" href="/toer/contact/">Stem jullie groepsuitje af</a></div>
+      <img src="/toer/thema/assets/buggy-rit-8.jpg" alt="Buggy Experience in Ootmarsum, foto 8" loading="lazy">
+    </section>
+    <section class="section">
+      <div class="section-head"><h2>Foto-impressie</h2></div>
+      <div class="grid">
+      <a class="card" href="/toer/thema/assets/buggy-rit-3.jpg"><img class="card-photo" src="/toer/thema/assets/buggy-rit-3.jpg" alt="Buggy Experience in Ootmarsum, foto 3" loading="lazy"></a>
+      <a class="card" href="/toer/thema/assets/buggy-rit-1.jpg"><img class="card-photo" src="/toer/thema/assets/buggy-rit-1.jpg" alt="Buggy Experience in Ootmarsum, foto 1" loading="lazy"></a>
+      <a class="card" href="/toer/thema/assets/buggy-rit-9.jpg"><img class="card-photo" src="/toer/thema/assets/buggy-rit-9.jpg" alt="Buggy Experience in Ootmarsum, foto 9" loading="lazy"></a>
+      <a class="card" href="/toer/thema/assets/buggy-rit-2.jpg"><img class="card-photo" src="/toer/thema/assets/buggy-rit-2.jpg" alt="Buggy Experience in Ootmarsum, foto 2" loading="lazy"></a>
+      <a class="card" href="/toer/thema/assets/buggy-rit-10.jpg"><img class="card-photo" src="/toer/thema/assets/buggy-rit-10.jpg" alt="Buggy Experience in Ootmarsum, foto 10" loading="lazy"></a>
+      <a class="card" href="/toer/thema/assets/buggy-rit-6.jpg"><img class="card-photo" src="/toer/thema/assets/buggy-rit-6.jpg" alt="Buggy Experience in Ootmarsum, foto 6" loading="lazy"></a>
+      <a class="card" href="/toer/thema/assets/buggy-rit-7.jpg"><img class="card-photo" src="/toer/thema/assets/buggy-rit-7.jpg" alt="Buggy Experience in Ootmarsum, foto 7" loading="lazy"></a>
+      <a class="card" href="/toer/thema/assets/buggy-rit-5.jpg"><img class="card-photo" src="/toer/thema/assets/buggy-rit-5.jpg" alt="Buggy Experience in Ootmarsum, foto 5" loading="lazy"></a>
+      <a class="card" href="/toer/thema/assets/buggy-rit-11.jpg"><img class="card-photo" src="/toer/thema/assets/buggy-rit-11.jpg" alt="Buggy Experience in Ootmarsum, foto 11" loading="lazy"></a>
+    </div>
+    </section>
+    <section class="section">
+      <div class="section-head"><h2>Combineer je buggyrit</h2></div>
+      <div class="grid">
+      <article class="card"><div class="card-body"><h3>Buggy en BBQ All-in</h3><p>Na de rit barbecue, softijs en 2,5 uur drankjes. Vanaf € 110.</p><a class="textlink" href="https://www.twentetoer.nl/voertuigen/buggy_barbecue_ootmarsum/">Bekijk op TwenteToer</a></div></article>
+      <article class="card"><div class="card-body"><h3>Buggy en Boogschieten</h3><p>Een buggyrit gevolgd door boogschieten, met twee consumpties. Vanaf € 80.</p><a class="textlink" href="https://www.twentetoer.nl/voertuigen/buggy-en-boogschieten/">Bekijk op TwenteToer</a></div></article>
+      <article class="card"><div class="card-body"><h3>Vakantie Buggy Toer</h3><p>Een rit voor het gezin op geselecteerde dagen in de schoolvakantie. Vanaf € 35.</p><a class="textlink" href="https://www.twentetoer.nl/voertuigen/vakantie-buggy-toer/">Bekijk op TwenteToer</a></div></article>
+      </div>
+    </section>
+  </div>`;
+  bind();
+}
 
 function playfulPages(){
  const themes={
@@ -376,7 +445,7 @@ function season2027(){const bar=document.createElement('a');bar.className='seaso
 if(page==='vehicles'){const requested=Number(new URLSearchParams(location.search).get('voertuig'));if(requested&&items.some(p=>p.id===requested&&p.group==='vehicles'))detail(requested)}
 
 // Keep the WordPress introduction inside the copy column, not in the grid itself.
-if (window.TWENTE_PAGE?.content) {
+if (page !== 'buggy' && window.TWENTE_PAGE?.content) {
   const intro = page === 'home'
     ? document.querySelector('.home-hero .hero-copy')
     : document.querySelector('.outing-copy')

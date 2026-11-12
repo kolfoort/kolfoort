@@ -328,8 +328,77 @@ function renderSelection(){refreshPlanner?.()}
 function info(){ $('#main').innerHTML=`<div class="wrap"><div class="page-head"><div class="eyebrow">Bevor Sie auf die Straße gehen</div><h1>NÜTZLICH ZU WISSEN.</h1><p>Ein klarer Ausgangspunkt für Ihren Ausflug in Ootmarsum.</p></div><div class="contact-grid"><div class="panel"><h2>GUT VORBEREITET.</h2><ul class="benefits"><li>Bedingungen für jedes ausgewählte Fahrzeug anzeigen.</li><li>Vereinbaren Sie Alter, Führerschein und Gruppengröße.</li><li>Bitte bestätigen Sie Datum und Preis.</li><li>Bitte teilen Sie uns Ihre Ernährungsbedürfnisse im Voraus mit.</li><li>Bitte überprüfen Sie bei der Buchung Ihren Abfahrtsort.</li></ul><a class="textlink" href="/toer/de/contact/">Fragen Sie TwenteToer</a></div><div>${faq()}</div></div><section class="section"><div class="hero-small"><div class="eyebrow">Erfahrungen</div><h2>Neugierig auf andere Ausflüge?</h2><p>Sehen Sie sich vorhandene Erlebnisse über das öffentliche Trustpilot-Profil an. In dieser Testversion zeigen wir keine erfundenen Bewertungen oder Bewertungen an.</p><a class="cta light" href="https://nl.trustpilot.com/review/twentetoer.nl" target="_blank" rel="noopener">Sehen Sie sich Erfahrungen auf Trustpilot an</a></div></section></div>`}
 function contact(){ $('#main').innerHTML=`<div class="wrap"><div class="page-head"><div class="eyebrow">Wir denken gerne mit Ihnen mit</div><h1>Beginnen Sie mit einer guten Idee.</h1><p>Eine Frage zu einem Fahrzeug, einem kompletten Gruppentag oder einem konkreten Wunsch? Hier finden Sie die Kontaktdaten von TwenteToer.</p></div><div class="contact-grid"><section class="panel"><div class="eyebrow">TwenteToer · Ootmarsum</div><h2>Nehmen Sie Kontakt auf.</h2><p>Denekamperstraat 36<br>7631 AC Ootmarsum</p><p><a class="textlink" href="tel:+31541296459">0541 – 29 64 59</a><br><a class="textlink" href="mailto:info@twentetoer.nl">info@twentetoer.nl</a></p><div class="actions"><a class="cta green" href="tel:+31541296459">Rufen Sie TwenteToer an</a><a class="cta light" href="mailto:info@twentetoer.nl">E-Mail an TwenteToer</a></div><p class="small">Diese Links öffnen Ihr Telefon- oder E-Mail-Programm. Die Testseite selbst sendet nichts.</p></section><section class="panel"><h2>MÖCHTEN SIE ES ZUERST ZUSAMMENSETZEN?</h2><p>Wählen Sie Ihre Lieblingsfahrzeuge, Aktivitäten und Verpflegung. So haben Sie einen klaren Überblick über Ihre Wünsche.</p><a class="cta" href="/toer/de/mijn-toer/">Erstelle meine Tour</a><div class="notice">Dies ist die Testversion auf kolfoort.com. Für echte Reservierungen und aktuelle Konditionen nutzen Sie die bestehende Website.</div><a class="textlink" href="https://www.twentetoer.nl/mijn-toer/" target="_blank" rel="noopener">Zur aktuellen Buchungsumgebung</a></section></div></div>`}
 
-function buggyExperience(){const buggy=items.find(p=>p.id===5);$('#main').innerHTML=`<section class="buggy-hero"><div class="wrap buggy-hero-grid"><div><a class="textlink" href="/toer/de/voertuigen/?categorie=buggy">Alle Fahrzeuge / Buggy-Erlebnis</a><span class="handwritten">Das Abenteuer beginnt hier.</span><h1>STAUB BEKOMMEN.<br><em>GEBEN SIE GAS.</em><br>GEMEINSAM GENIESSEN!</h1><p>Keine Angst vor etwas Schlamm? Steigen Sie in einen Buggy und erleben Sie eine Stunde Offroad-Abenteuer in der Gegend von Ootmarsum. Sie fahren selbst, der Reiseleiter weist Ihnen den Weg.</p><div class="actions"><button class="cta" data-add="5">Zu „Meine Tour“ hinzufügen</button><a class="cta light" href="#handig">Wie funktioniert es?</a></div><p class="small">Testumgebung · Das Hinzufügen ist keine Reservierung.</p></div><div class="buggy-feature-photo"><img src="/toer/thema/assets/buggy-experience.jpg" alt="Der Offroad-Buggy von TwenteToer"><span class="mud-stamp">Wirklich<br><b>abseits der Straße!</b></span></div></div></section><div class="wrap"><div class="experience-strip"><span><b>1 Stunde</b> wirklich fahrend</span><span><b>Unter Aufsicht</b> ein Führer vor</span><span><b>Ootmarsum</b> Ihr Abenteuer beginnt hier</span></div><section class="section experience-story"><div><div class="eyebrow">Buggy Experience</div><h2>AUF SANDSTRASSE.<br>ERINNERUNGEN MIT DIR.</h2><p>Nach der Erklärung starten Sie den Motor selbst. Wenn möglich verläuft die Route über unbefestigte Straßen im Waldgebiet. Unterwegs gibt es eine kurze Pause zum Fahrerwechsel.</p><p>Wir fahren eine festgelegte Route mit Führung. Das Tempo wird auf die Gruppe abgestimmt; Der Führer fährt voraus und Überholen ist nicht gestattet.</p><a class="textlink" href="${buggy.source}" target="_blank" rel="noopener">Sehen Sie sich die aktuellen Bedingungen bei TwenteToer an</a></div><img loading="lazy" src="/toer/thema/assets/item-5.jpg" alt="Buggyfahrt in der Gegend von Ootmarsum"></section><section class="section" id="handig"><div class="section-head"><div><div class="eyebrow">Bevor Sie einsteigen</div><h2>NUR NÜTZLICH ZU WISSEN.</h2></div><p>Die nachstehenden Teilnahmebedingungen stammen von der aktuellen TwenteToer-Seite. Lassen Sie sich Ihre Anfrage bestätigen.</p></div><div class="experience-info"><article><span>01</span><h3>Wer kommt?</h3><p>Fahrer sind mindestens 20 Jahre alt und besitzen einen Führerschein. Mitmachen können Kinder ab 5 Jahren. Normalerweise mindestens 6 und maximal 10 Teilnehmer pro Gruppe.</p></article><article><span>02</span><h3>Was trägst du?</h3><p>Kleidung, die schmutzig werden kann! Es gibt keine Overalls. Sie können eine Schutzbrille ausleihen. Eine Staubmaske wird empfohlen; Brillenträger können durch Staub besonders gestört werden.</p></article><article><span>03</span><h3>Was kostet es?</h3><p>60 € pro Person für eine Stunde Fahrt. Der Preis ist für Jung und Alt gleich. Lassen Sie sich bei Ihrer Anfrage die Mindestabnahmemenge und die Gruppeneinteilung bestätigen.</p></article></div></section><section class="split"><img loading="lazy" src="/toer/thema/assets/item-2.jpg" alt="E-Chopper von TwenteToer"><div class="split-copy"><div class="eyebrow">Mehr als 10 Personen?</div><h2>EINFACH VERÄNDERN!</h2><p>Für größere Gruppen ist eine Kombination mit E-Choppern möglich: Eine Gruppe fährt einen Buggy, die andere einen E-Chopper. Nach einer Stunde wechseln Sie. Erkundigen Sie sich nach der entsprechenden Gruppeneinteilung und den entsprechenden Bedingungen.</p><a class="cta" href="/toer/de/contact/">Koordinieren Sie Ihren Gruppenausflug</a></div></section><section class="section"><div class="hero-small"><span class="handwritten">Noch nicht nach Hause!</span><h2>ERST SCHLAMM. DANN GRILLEN.</h2><p>Runden Sie den Tag mit etwas Leckerem ab. Wählen Sie selbst eine Essenszeit oder sehen Sie sich die Pakete an.</p><div class="actions"><a class="cta green" href="/toer/de/eten-drinken/">Sucht euch etwas Leckeres aus</a><a class="cta light" href="/toer/de/arrangementen/">Kombinationen anzeigen</a></div></div></section></div>`;bind()}
-
+function buggyExperience() {
+  $('#main').innerHTML = `<section class="buggy-hero">
+    <div class="wrap buggy-hero-grid">
+      <div>
+        <a class="textlink" href="/toer/de/voertuigen/?categorie=buggy">Alle Fahrzeuge / Buggy Experience</a>
+        <span class="handwritten">Ein bisschen Schlamm gehört dazu.</span>
+        <h1>BUGGY FAHREN IN OOTMARSUM</h1>
+        <p>Nach dem Empfang in Ootmarsum erklärt euch der Guide, wie ihr den Buggy bedient und welche Regeln unterwegs gelten. Dann startet ihr selbst den Motor und folgt dem Guide.</p>
+        <p>Das Tempo richtet sich nach der Gruppe. Auf halber Strecke gibt es eine kurze Pause für den Fahrerwechsel. Nach rund einer Stunde Fahrt kommt ihr wieder am Ausgangspunkt an.</p>
+        <div class="actions"><button class="cta" data-add="5">Zu „Meine Tour“ hinzufügen</button><a class="cta light" href="#handig">Preise und Bedingungen ansehen</a></div>
+        <p class="small">Testversion. Beim Hinzufügen entsteht noch keine Buchung.</p>
+      </div>
+      <div class="buggy-feature-photo"><img src="/toer/thema/assets/buggy-rit-1.jpg" alt="Buggy Experience in Ootmarsum, Foto 1"></div>
+    </div>
+  </section>
+  <div class="wrap">
+    <div class="experience-strip"><span><b>1 Stunde Fahrt</b></span><span><b>Mit Guide</b></span><span><b>Kinder ab 5 Jahren</b></span><span><b>60 € pro Person</b></span></div>
+    <section class="section">
+      <div class="grid">
+      <a class="card" href="/toer/thema/assets/buggy-rit-2.jpg"><img class="card-photo" src="/toer/thema/assets/buggy-rit-2.jpg" alt="Buggy Experience in Ootmarsum, Foto 2" loading="lazy"></a>
+      <a class="card" href="/toer/thema/assets/buggy-rit-3.jpg"><img class="card-photo" src="/toer/thema/assets/buggy-rit-3.jpg" alt="Buggy Experience in Ootmarsum, Foto 3" loading="lazy"></a>
+      <a class="card" href="/toer/thema/assets/buggy-rit-4.jpg"><img class="card-photo" src="/toer/thema/assets/buggy-rit-4.jpg" alt="Buggy Experience in Ootmarsum, Foto 4" loading="lazy"></a>
+    </div>
+    </section>
+    <section class="section experience-story">
+      <div><h2>Offroad rund um Ootmarsum</h2><p>Der Guide fährt eine feste Route von einer Stunde. Wo es erlaubt ist, fahrt ihr auf Sandwegen durch die waldreiche Umgebung von Ootmarsum. Auf öffentlichen Straßen gelten die üblichen Verkehrsregeln.</p></div>
+      <img src="/toer/thema/assets/buggy-rit-5.jpg" alt="Buggy Experience in Ootmarsum, Foto 5" loading="lazy">
+    </section>
+    <section class="section experience-story">
+      <img src="/toer/thema/assets/buggy-rit-6.jpg" alt="Buggy Experience in Ootmarsum, Foto 6" loading="lazy">
+      <div><h2>Wie läuft die Fahrt ab?</h2><p>Der Guide fährt in einem eigenen Buggy voraus. Ihr steuert euren Buggy selbst und folgt dem Guide. Überholen ist verboten. Nehmt Rücksicht aufeinander und auf die Natur entlang der Route.</p></div>
+    </section>
+    <section class="section experience-story">
+      <div><h2>Kleidungstipps</h2><p>Tragt Kleidung, die schmutzig werden darf. Bei Trockenheit kann es staubig werden, bei Regen schlammig. Overalls werden nicht gestellt. TwenteToer empfiehlt eine Staubmaske und verleiht Schutzbrillen. Wer Kontaktlinsen trägt, kann stärker auf Staub reagieren.</p></div>
+      <img src="/toer/thema/assets/buggy-rit-7.jpg" alt="Buggy Experience in Ootmarsum, Foto 7" loading="lazy">
+    </section>
+    <section class="section" id="handig">
+      <div class="hero-small">
+        <h2>Preise und Hinweise</h2><p><strong>60 € pro Person für eine Stunde Fahrt. Für Kinder gilt derselbe Preis.</strong></p>
+        <ul class="benefits"><li>Mindestens 6 Teilnehmende oder ein Mindestbetrag von 360 €.</li><li>Höchstens 10 Teilnehmende pro Gruppe.</li><li>Fahrer müssen mindestens 20 Jahre alt sein und einen Pkw-Führerschein haben. Kinder dürfen ab 5 Jahren mitfahren.</li><li>Start in Ootmarsum. TwenteToer liefert die Buggys nicht aus.</li></ul>
+      </div>
+    </section>
+    <section class="section experience-story">
+      <div><h2>Mehr als 10 Personen?</h2><p>Für größere Gruppen bietet TwenteToer eine zweistündige Kombination an. Bei 18 Personen fährt zum Beispiel eine Hälfte zuerst Buggy, die andere E-Chopper. Nach einer Stunde tauscht ihr die Fahrzeuge. Laut Anbieter gilt derselbe Preis pro Person.</p><a class="cta" href="/toer/de/contact/">Gruppenausflug abstimmen</a></div>
+      <img src="/toer/thema/assets/buggy-rit-8.jpg" alt="Buggy Experience in Ootmarsum, Foto 8" loading="lazy">
+    </section>
+    <section class="section">
+      <div class="section-head"><h2>Fotoimpressionen</h2></div>
+      <div class="grid">
+      <a class="card" href="/toer/thema/assets/buggy-rit-3.jpg"><img class="card-photo" src="/toer/thema/assets/buggy-rit-3.jpg" alt="Buggy Experience in Ootmarsum, Foto 3" loading="lazy"></a>
+      <a class="card" href="/toer/thema/assets/buggy-rit-1.jpg"><img class="card-photo" src="/toer/thema/assets/buggy-rit-1.jpg" alt="Buggy Experience in Ootmarsum, Foto 1" loading="lazy"></a>
+      <a class="card" href="/toer/thema/assets/buggy-rit-9.jpg"><img class="card-photo" src="/toer/thema/assets/buggy-rit-9.jpg" alt="Buggy Experience in Ootmarsum, Foto 9" loading="lazy"></a>
+      <a class="card" href="/toer/thema/assets/buggy-rit-2.jpg"><img class="card-photo" src="/toer/thema/assets/buggy-rit-2.jpg" alt="Buggy Experience in Ootmarsum, Foto 2" loading="lazy"></a>
+      <a class="card" href="/toer/thema/assets/buggy-rit-10.jpg"><img class="card-photo" src="/toer/thema/assets/buggy-rit-10.jpg" alt="Buggy Experience in Ootmarsum, Foto 10" loading="lazy"></a>
+      <a class="card" href="/toer/thema/assets/buggy-rit-6.jpg"><img class="card-photo" src="/toer/thema/assets/buggy-rit-6.jpg" alt="Buggy Experience in Ootmarsum, Foto 6" loading="lazy"></a>
+      <a class="card" href="/toer/thema/assets/buggy-rit-7.jpg"><img class="card-photo" src="/toer/thema/assets/buggy-rit-7.jpg" alt="Buggy Experience in Ootmarsum, Foto 7" loading="lazy"></a>
+      <a class="card" href="/toer/thema/assets/buggy-rit-5.jpg"><img class="card-photo" src="/toer/thema/assets/buggy-rit-5.jpg" alt="Buggy Experience in Ootmarsum, Foto 5" loading="lazy"></a>
+      <a class="card" href="/toer/thema/assets/buggy-rit-11.jpg"><img class="card-photo" src="/toer/thema/assets/buggy-rit-11.jpg" alt="Buggy Experience in Ootmarsum, Foto 11" loading="lazy"></a>
+    </div>
+    </section>
+    <section class="section">
+      <div class="section-head"><h2>Die Buggyfahrt kombinieren</h2></div>
+      <div class="grid">
+      <article class="card"><div class="card-body"><h3>Buggy und BBQ All-in</h3><p>Nach der Fahrt gibt es Grillessen, Softeis und 2,5 Stunden Getränke. Ab 110 €.</p><a class="textlink" href="https://www.twentetoer.nl/voertuigen/buggy_barbecue_ootmarsum/">Bei TwenteToer ansehen</a></div></article>
+      <article class="card"><div class="card-body"><h3>Buggy und Bogenschießen</h3><p>Buggyfahrt mit anschließendem Bogenschießen und zwei Getränken. Ab 80 €.</p><a class="textlink" href="https://www.twentetoer.nl/voertuigen/buggy-en-boogschieten/">Bei TwenteToer ansehen</a></div></article>
+      <article class="card"><div class="card-body"><h3>Ferien-Buggytour</h3><p>Eine Fahrt für Familien an ausgewählten Tagen in den Schulferien. Ab 35 €.</p><a class="textlink" href="https://www.twentetoer.nl/voertuigen/vakantie-buggy-toer/">Bei TwenteToer ansehen</a></div></article>
+      </div>
+    </section>
+  </div>`;
+  bind();
+}
 
 function playfulPages(){
  const themes={
@@ -376,7 +445,7 @@ function season2027(){const bar=document.createElement('a');bar.className='seaso
 if(page==='vehicles'){const requested=Number(new URLSearchParams(location.search).get('voertuig'));if(requested&&items.some(p=>p.id===requested&&p.group==='vehicles'))detail(requested)}
 
 // Keep the WordPress introduction inside the copy column, not in the grid itself.
-if (window.TWENTE_PAGE?.content) {
+if (page !== 'buggy' && window.TWENTE_PAGE?.content) {
   const intro = page === 'home'
     ? document.querySelector('.home-hero .hero-copy')
     : document.querySelector('.outing-copy')
