@@ -858,3 +858,20 @@ footer .footer-inner .tt-footer-social a:is(:hover, :focus-visible) {
   border-radius: 50%;
   background: currentColor;
 }
+
+main .tt-rental-terms {
+  border-top: 5px solid #e9943b;
+}
+main .tt-rental-terms h1 {
+  margin-bottom: 24px;
+}
+main .tt-rental-terms p {
+  margin-block: 0 17px;
+  line-height: 1.65;
+}
+main .tt-rental-terms p:last-child {
+  margin-top: 24px;
+  padding: 16px 20px;
+  background: #f5e7ce;
+  border-radius: 10px 20px 6px 18px;
+}
