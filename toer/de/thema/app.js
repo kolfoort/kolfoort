@@ -522,6 +522,97 @@ const activityDetails = {
     ],
     images: ["item-33.jpg", "sleutel-centrum.jpg", "sleutel-cafe.jpeg", "sleutel-speurtocht.jpg"],
   },
+  34: {
+    sections: [
+      ["Vom Braukessel ins Glas", "Bei Othmar Bier in Ootmarsum erlebt ihr, wie Bier nach traditioneller Art gebraut wird. Die Führung erklärt den gesamten Brauvorgang. Danach könnt ihr bei TwenteToer zum Grillen oder Buffet einkehren."],
+      ["Preise und Infos", "19 € pro Person. Die Führung dauert eine Stunde und ist ab zehn Teilnehmenden buchbar. Bis einschließlich 30 Personen gibt es zwei Probierbiere pro Person, bei größeren Gruppen einen Krug Spezialbier pro Person. Montags ist die Brauerei geschlossen."],
+    ],
+    images: ["item-34.jpg", "brouwerij-impressie-1.jpg", "brouwerij-impressie-2.jpg", "brouwerij-impressie-3.jpg"],
+  },
+  35: {
+    sections: [
+      ["Auf dem Hof bei Bauer Dennis", "Auf dem Hof Erfgoed Bossem in Lattrop erzählt Bauer Dennis vom Alltag auf dem Bauernhof. Ihr seht Brandrode Rinder und einen Traktor. Danach könnt ihr im Restaurant oder auf der Terrasse etwas trinken."],
+      ["Preise und Infos", "7,50 € pro Person. Die Führung dauert 45 Minuten und ist ab zehn Teilnehmenden buchbar. Lattrop liegt rund zehn Autominuten von Ootmarsum entfernt. Als Zwischenstopp auf eurer Tour gilt eine Fahrzeugmiete von mindestens drei Stunden."],
+    ],
+    images: ["item-35.jpg", "boerderij-impressie.jpeg"],
+  },
+  36: {
+    sections: [
+      ["Twente vor hundert Jahren", "Ein Audioguide führt euch durch das Freilichtmuseum Ootmarsum. Seht euch eingerichtete sächsische Bauernhäuser, eine Schmiede und weitere Werkstätten an und erfahrt, wer früher das Sagen hatte. Im Museumspark gibt es Tiere und eine Terrasse am Wasser."],
+      ["Preise und Infos", "8 € pro Person. Plant rund anderthalb Stunden ein. Eine persönliche Führung kostet zusätzlich 30 € pro Gruppe und kann bei der Buchung angefragt werden. Es gibt keine Mindestteilnehmerzahl."],
+    ],
+    images: ["item-36.jpg", "heeren-los-hoes.jpg", "heeren-smidse.jpg", "heeren-museumpark.jpg"],
+  },
+  37: {
+    sections: [
+      ["Unter dem Sternenhimmel", "Im Planetarium der Sternwarte COSMOS erfahrt ihr mehr über Sternbilder, den Mond und die Planeten. Danach seht ihr euch das Teleskop in der Kuppel an. Was damit sichtbar ist, hängt vom Wetter ab."],
+      ["Preise und Infos", "10 € pro Person für eine einstündige Führung. Die Sternwarte liegt rund fünf Autominuten von TwenteToer entfernt. Für einen Zwischenstopp während eurer Tour kommt eine Stunde Fahrzeugmiete hinzu."],
+    ],
+    images: ["item-37.jpg", "sterrenwacht-telescoop.jpg", "sterrenwacht-cosmos.jpg", "sterrenwacht-impressie.jpg"],
+  },
+  38: {
+    sections: [
+      ["Von Twenter Eiche bis zum Whisky", "In der Brennerei Sculte im alten Kloster von Ootmarsum erfahrt ihr, wie Whisky und Obstbrände entstehen. Die Führung erzählt von regionalen Zutaten, Quellwasser und eigenen Eichenfässern. Ein Probierglas nach Wahl ist dabei."],
+      ["Preise und Infos", "17,50 € pro Person für rund 45 Minuten, ab sechs Teilnehmenden. Beim anschließenden Kauf einer Flasche in der Brennerei bekommt ihr 10 € Rabatt."],
+    ],
+    images: ["item-38.jpg", "stokerij-impressie-1.jpg", "stokerij-impressie-2.jpg", "stokerij-impressie-3.jpg", "stokerij-impressie-4.jpg", "stokerij-impressie-5.jpg"],
+  },
+  39: {
+    sections: [
+      ["Probieren bei Bauer Dennis", "Fahrt auf einer schönen Route zum Hof Erfgoed Bossem in Lattrop. Dort probiert ihr Trockenwurst, Beefburger und Pastrami vom Brandrode Rind. Für die Rückfahrt zu TwenteToer braucht ihr etwa eine halbe Stunde."],
+      ["Preise und Infos", "15 € pro Person für die etwa einstündige Verkostung. Getränke bezahlt ihr vor Ort. Verbindet den Besuch mit einer Fahrzeugtour."],
+    ],
+    images: ["item-39.jpg", "boerderij-erf.jpg", "boerderij-impressie.jpeg"],
+  },
+  40: {
+    sections: [
+      ["Sieben Weine bei Heisterkamp", "Bei Heisterkamp Wijnkopers bekommt ihr eine Führung und eine Einführung in die Weinverkostung. Dazu gibt es drei Weißweine, drei Rotweine und einen Dessertwein mit Bauernbrot, Olivenöl, Käse und Wurst. Eure Favoriten könnt ihr kaufen."],
+      ["Preise und Infos", "30 € pro Person für rund zwei Stunden. Maximal 25 Teilnehmende. Kleinere Gruppen sind willkommen, der Mindestpreis entspricht zwölf Personen."],
+    ],
+    images: ["item-40.jpg", "wijnproeverij-heisterkamp.jpg", "wijnproeverij-impressie.jpg"],
+  },
+  41: {
+    sections: [
+      ["Mit dem DAF in den Wald", "Nach rund zwanzig Minuten Fahrt erreicht ihr eine originale militärische Feldküche mitten im Wald. Gemeinsam heizt ihr den Herd an und kocht ein Drei-Gänge-Menü mit Zutaten der Saison."],
+      ["Preise und Infos", "75 € pro Person für rund vier Stunden inklusive Essen und Getränken. Ab 25 Teilnehmenden oder 1.875 € für die Gruppe. Es gibt Bier, Wein und Softdrinks, im Winter auch Glühwein oder heiße Schokolade."],
+    ],
+    images: ["item-41.jpg", "veldkeuken-impressie-1.jpg", "veldkeuken-impressie-2.jpg", "veldkeuken-impressie-3.jpg", "veldkeuken-impressie-4.jpg"],
+  },
+  42: {
+    sections: [
+      ["Mit einem Guide zu den Quellteichen", "Ihr startet in Ootmarsum und stellt die Fahrzeuge auf halber Strecke im Springendal ab. Zu Fuß geht es mit dem Guide zu Quellen, Teichen und zum Ursprung des Springendalsebeek. Vielleicht entdeckt ihr unterwegs ein Bachneunauge."],
+      ["Preise und Infos", "12,50 € pro Person, zuzüglich zwei Stunden Fahrzeugmiete. Insgesamt zwei Stunden mit einer Stunde Fahrt und einer geführten Wanderung von einer Stunde. Bringt Wanderschuhe mit."],
+    ],
+    images: ["item-42.jpg", "bronnen-Springendal_Vasse.jpg", "bronnen-bronvijver_springendal.jpg", "bronnen-gids_springendal.jpg", "bronnen-mariabeeld_springendal.jpg", "bronnen-springendal_beekje.jpg", "bronnen-springendal_nutter.jpg", "bronnen-springendal_vakwerk_huis.jpg"],
+  },
+  43: {
+    sections: [
+      ["Durch die Heide bei Hezingen", "Von Ootmarsum fahrt ihr ins Springendal. Dort wandert ihr mit dem Guide durch die Paardenslenkte, eine Heidelandschaft an der deutsch-niederländischen Grenze. Ihr erfahrt mehr über den alten Grenzstein und seht vielleicht die Schafherde."],
+      ["Preise und Infos", "35 € pro Person ab fünf Teilnehmenden, inklusive E-Chopper, Fatmax oder Fatbike. Zwei Stunden mit Guide, davon eine Stunde Fahrt und eine Stunde zu Fuß. Bringt Wanderschuhe mit."],
+    ],
+    images: ["item-43.jpg", "bronnen-Springendal_Vasse.jpg", "chopper-gids-schapen.jpg", "bronnen-springendal_nutter.jpg"],
+  },
+  44: {
+    sections: [
+      ["Ootmarsum im Zweiten Weltkrieg", "Ein örtlicher Guide erzählt von der Besatzung und der Befreiung Ootmarsums am 4. April 1945. Stationen sind das Denkmal am Bergplein, das jüdische Denkmal, das Hotel Tubantia und die Schmuggelrouten an der Grenze."],
+      ["Preise und Infos", "12,50 € pro Person inklusive Mehrwertsteuer. Die Tour findet mit einem Guide statt."],
+    ],
+    images: ["item-44.jpg", "woii-ootmarsum.jpg", "woii-tubantia.jpg"],
+  },
+  45: {
+    sections: [
+      ["Durch die Gassen von Ootmarsum", "Ein einheimischer Guide führt euch durch die mittelalterlichen Gassen. Am alten Rathaus, an den Kirchen und am Kloster erzählt er aus der Stadtgeschichte. Unterwegs entdeckt ihr alte Brunnen und die Stellen, an denen einst die Stadtwälle lagen."],
+      ["Preise und Infos", "12,50 € pro Person, mindestens 125 € pro Gruppe. Plant eine bis anderthalb Stunden ein. Ganzjährig buchbar."],
+    ],
+    images: ["item-45.jpg", "stadswandeling-straten.jpg", "stadswandeling-kerk.jpg", "stadswandeling-ton-schulten.jpg", "stadswandeling-museum.jpg", "stadswandeling-pasen.jpg"],
+  },
+  46: {
+    sections: [
+      ["Mit dem Guide auf dem E-Chopper", "Nach der Einführung in Ootmarsum fährt ein einheimischer Guide voraus. Auf halber Strecke stellt ihr die Fahrzeuge ab und wandert im Springendal an Bach, Quellen und Teichen entlang. Meldet euch vorher, wenn ihr auf gut begehbare Wege angewiesen seid."],
+      ["Preise und Infos", "37,50 € pro Person inklusive E-Chopper und Guide, rund zwei Stunden. Eine Person pro E-Chopper und ein gültiger Führerschein sind Voraussetzung. Bringt feste Wanderschuhe mit."],
+    ],
+    images: ["item-46.jpg", "chopper-gids-toer.jpg", "chopper-gids-nutter.jpg", "bronnen-gids_springendal.jpg", "chopper-gids-schapen.jpg"],
+  },
 };
 
 function renderActivityDetails(activity, name) {

@@ -522,6 +522,97 @@ const activityDetails = {
     ],
     images: ["item-33.jpg", "sleutel-centrum.jpg", "sleutel-cafe.jpeg", "sleutel-speurtocht.jpg"],
   },
+  34: {
+    sections: [
+      ["Van brouwketel tot proefglas", "Bij Othmar Bier in Ootmarsum zie je hoe ze op traditionele wijze bier brouwen. De gids neemt jullie mee door het hele proces. Na afloop kunnen jullie bij TwenteToer aanschuiven voor een BBQ of buffet."],
+      ["Kosten en informatie", "€ 19 per persoon. De rondleiding duurt één uur en is voor groepen vanaf tien personen. Tot en met dertig deelnemers krijg je twee proefbieren per persoon. Grotere groepen krijgen één pul speciaalbier per persoon. Op maandag is de brouwerij gesloten."],
+    ],
+    images: ["item-34.jpg", "brouwerij-impressie-1.jpg", "brouwerij-impressie-2.jpg", "brouwerij-impressie-3.jpg"],
+  },
+  35: {
+    sections: [
+      ["Op het erf bij boer Dennis", "Bij Erfgoed Bossem in Lattrop vertelt boer Dennis over het dagelijks leven op de boerderij. Bekijk de Brandrode runderen en de trekker. Na de rondleiding kun je iets drinken in het restaurant of op het terras."],
+      ["Kosten en informatie", "€ 7,50 per persoon. De rondleiding duurt 45 minuten en is voor groepen vanaf tien personen. Lattrop ligt op ongeveer tien minuten rijden van Ootmarsum. Plan je dit bezoek als tussenstop tijdens jullie toer, dan geldt minimaal drie uur voertuigverhuur."],
+    ],
+    images: ["item-35.jpg", "boerderij-impressie.jpeg"],
+  },
+  36: {
+    sections: [
+      ["Twente van honderd jaar geleden", "Wandel met een audiotour door het Openluchtmuseum Ootmarsum. Bekijk ingerichte Saksische boerderijen, een smidse en andere werkplaatsen. Je komt ook te weten wie het vroeger voor het zeggen hadden. In het museumpark zijn dieren en een terras aan het water."],
+      ["Kosten en informatie", "€ 8 per persoon. Reken op ongeveer anderhalf uur. Een rondleider kost € 30 extra per groep. Geef die wens door bij het reserveren. Er is geen minimumaantal deelnemers."],
+    ],
+    images: ["item-36.jpg", "heeren-los-hoes.jpg", "heeren-smidse.jpg", "heeren-museumpark.jpg"],
+  },
+  37: {
+    sections: [
+      ["Onder de sterrenhemel", "In het planetarium van de COSMOS Sterrenwacht vertelt de gids over sterrenbeelden, de maan en planeten. Daarna bekijken jullie de telescoop in de koepel. Wat je ermee kunt zien, hangt af van het weer."],
+      ["Kosten en informatie", "€ 10 per persoon voor een rondleiding van één uur. De sterrenwacht ligt op ongeveer vijf autominuten van TwenteToer. Stoppen jullie er tijdens een rit, dan komt er één uur voertuigverhuur bij."],
+    ],
+    images: ["item-37.jpg", "sterrenwacht-telescoop.jpg", "sterrenwacht-cosmos.jpg", "sterrenwacht-impressie.jpg"],
+  },
+  38: {
+    sections: [
+      ["Van Twents eikenhout tot whisky", "Bij Stokerij Sculte in het oude klooster van Ootmarsum ontdek je hoe ze whisky en fruitdistillaten maken. Je hoort over de regionale ingrediënten, het bronwater en de eigen eiken vaten. Tijdens de rondleiding kies je één proefglaasje."],
+      ["Kosten en informatie", "€ 17,50 per persoon voor ongeveer 45 minuten, vanaf zes personen. Koop je na afloop een fles in de stokerij, dan krijg je € 10 korting."],
+    ],
+    images: ["item-38.jpg", "stokerij-impressie-1.jpg", "stokerij-impressie-2.jpg", "stokerij-impressie-3.jpg", "stokerij-impressie-4.jpg", "stokerij-impressie-5.jpg"],
+  },
+  39: {
+    sections: [
+      ["Proeven bij boer Dennis", "Rijd via een mooie route naar Erfgoed Bossem in Lattrop. Daar proef je droge worst, een beefburger en pastrami van Brandrode runderen. Na afloop rijd je in ongeveer een halfuur terug naar TwenteToer."],
+      ["Kosten en informatie", "€ 15 per persoon voor de proeverij van ongeveer één uur. Drankjes reken je op de boerderij af. Combineer het bezoek met een voertuigrit."],
+    ],
+    images: ["item-39.jpg", "boerderij-erf.jpg", "boerderij-impressie.jpeg"],
+  },
+  40: {
+    sections: [
+      ["Zeven wijnen bij Heisterkamp", "Bij Heisterkamp Wijnkopers krijgen jullie een rondleiding en uitleg over wijnproeven. Proef drie witte wijnen, drie rode wijnen en één dessertwijn, met boerenbrood, olijfolie, kaas en worst. Een favoriete wijn kun je meenemen naar huis."],
+      ["Kosten en informatie", "€ 30 per persoon voor ongeveer twee uur. Maximaal 25 deelnemers. Met minder dan twaalf deelnemers kan ook, tegen betaling voor twaalf personen."],
+    ],
+    images: ["item-40.jpg", "wijnproeverij-heisterkamp.jpg", "wijnproeverij-impressie.jpg"],
+  },
+  41: {
+    sections: [
+      ["Met de Dikke Daf naar het bos", "Een rit van ongeveer twintig minuten brengt jullie naar een originele militaire veldkeuken midden in het bos. Samen steken jullie het fornuis aan en bereiden jullie een voor-, hoofd- en nagerecht met ingrediënten die bij het seizoen passen."],
+      ["Kosten en informatie", "€ 75 per persoon voor ongeveer vier uur, inclusief eten en drankjes. Vanaf 25 deelnemers of € 1.875 voor de groep. Er is bier, wijn en fris. In de winter is er ook glühwein of warme chocolademelk."],
+    ],
+    images: ["item-41.jpg", "veldkeuken-impressie-1.jpg", "veldkeuken-impressie-2.jpg", "veldkeuken-impressie-3.jpg", "veldkeuken-impressie-4.jpg"],
+  },
+  42: {
+    sections: [
+      ["Met een gids naar de bronvijvers", "Jullie vertrekken vanuit Ootmarsum en parkeren halverwege in het Springendal. De gids neemt jullie te voet mee langs de bronnen, de vijvers en het begin van de Springendalsebeek. Misschien spot je onderweg een beekprik."],
+      ["Kosten en informatie", "€ 12,50 per persoon, plus twee uur voertuigverhuur. Het uitje duurt twee uur, met één uur rijden en één uur wandelen met de gids. Neem wandelschoenen mee."],
+    ],
+    images: ["item-42.jpg", "bronnen-Springendal_Vasse.jpg", "bronnen-bronvijver_springendal.jpg", "bronnen-gids_springendal.jpg", "bronnen-mariabeeld_springendal.jpg", "bronnen-springendal_beekje.jpg", "bronnen-springendal_nutter.jpg", "bronnen-springendal_vakwerk_huis.jpg"],
+  },
+  43: {
+    sections: [
+      ["Over de heide bij Hezingen", "Vanuit Ootmarsum rijden jullie naar het Springendal. Daar wandel je met de gids door de Paardenslenkte, een heidelandschap op de Nederlands-Duitse grens. Onderweg hoor je over de oude grenssteen en zie je misschien de schaapskudde."],
+      ["Kosten en informatie", "€ 35 per persoon vanaf vijf deelnemers, inclusief E-Chopper, Fatmax of Fatbike. Reken op twee uur onder begeleiding, met één uur rijden en één uur wandelen. Neem wandelschoenen mee."],
+    ],
+    images: ["item-43.jpg", "bronnen-Springendal_Vasse.jpg", "chopper-gids-schapen.jpg", "bronnen-springendal_nutter.jpg"],
+  },
+  44: {
+    sections: [
+      ["Ootmarsum tijdens de Tweede Wereldoorlog", "Een plaatselijke gids vertelt over de bezetting en de bevrijding van Ootmarsum op 4 april 1945. Onderweg staan jullie stil bij het monument op het Bergplein, het Joods monument, Hotel Tubantia en de smokkelroutes bij de grens."],
+      ["Kosten en informatie", "€ 12,50 per persoon inclusief btw. De tocht vindt plaats onder begeleiding van een gids."],
+    ],
+    images: ["item-44.jpg", "woii-ootmarsum.jpg", "woii-tubantia.jpg"],
+  },
+  45: {
+    sections: [
+      ["Door de steegjes van Ootmarsum", "Een gids uit Ootmarsum neemt jullie mee door het middeleeuwse stratenpatroon. Langs het oude stadhuis, de kerken en het klooster vertelt hij over de stad. Onderweg ontdek je oude waterputten en plekken waar vroeger de stadswallen lagen."],
+      ["Kosten en informatie", "€ 12,50 per persoon, met een minimum van € 125 per groep. Reken op één tot anderhalf uur. Het hele jaar door te boeken."],
+    ],
+    images: ["item-45.jpg", "stadswandeling-straten.jpg", "stadswandeling-kerk.jpg", "stadswandeling-ton-schulten.jpg", "stadswandeling-museum.jpg", "stadswandeling-pasen.jpg"],
+  },
+  46: {
+    sections: [
+      ["Achter de gids aan op de E-Chopper", "Na de uitleg in Ootmarsum rijdt een plaatselijke gids voorop. Halverwege parkeren jullie in het Springendal voor een wandeling langs de beek, bronnen en vijvers. Geef het vooraf door als jullie rekening willen houden met minder goed begaanbare paden."],
+      ["Kosten en informatie", "€ 37,50 per persoon inclusief E-Chopper en gids, ongeveer twee uur. Eén persoon per E-Chopper en een geldig rijbewijs is vereist. Neem stevige wandelschoenen mee."],
+    ],
+    images: ["item-46.jpg", "chopper-gids-toer.jpg", "chopper-gids-nutter.jpg", "bronnen-gids_springendal.jpg", "chopper-gids-schapen.jpg"],
+  },
 };
 
 function renderActivityDetails(activity, name) {
