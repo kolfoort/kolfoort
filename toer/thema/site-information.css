@@ -614,9 +614,9 @@ header #nav .tt-food-dropdown-panel a:is(:hover, :focus-visible) {
 
 /* Style the season announcement like the photo tickets. */
 .season-ribbon {
-  background: #254e34;
-  color: #fff7e6;
-  border-bottom: 1px dashed #e0b761;
+  background: #ff8500;
+  color: #173e24;
+  border-bottom: 1px solid #d66d00;
 }
 .season-ribbon .season-ticket {
   flex-shrink: 0;
@@ -630,18 +630,18 @@ header #nav .tt-food-dropdown-panel a:is(:hover, :focus-visible) {
 }
 .season-ribbon > span:nth-child(2) > b {
   display: block;
-  color: #fff7e6;
+  color: #173e24;
   font: 700 clamp(23px, 2.7vw, 34px)/1.05 Caveat, cursive;
 }
 .season-ribbon small { margin-top: 3px; }
 .season-ribbon > strong {
   font: 700 clamp(22px, 2.2vw, 30px)/1.1 Caveat, cursive;
-  color: #ffd578;
+  color: #173e24;
   border-bottom: 2px solid currentColor;
   white-space: nowrap;
   transform: rotate(-2deg);
 }
-.season-ribbon:is(:hover, :focus-visible) > strong { color: #fff7e6; }
+.season-ribbon:is(:hover, :focus-visible) > strong { color: #142b1a; }
 @media (max-width: 530px) {
   .season-ribbon .season-ticket { font-size: 25px; padding-inline: 12px; }
   .season-ribbon > span:nth-child(2) > b { font-size: 22px; }
