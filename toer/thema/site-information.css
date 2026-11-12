@@ -973,3 +973,13 @@ body .food-nav { background: #ecf8c0; }
 .detail-page .detail-img { height: clamp(220px, 42vw, 470px); object-fit: contain; background: #eff9ee; }
 .detail-page h1 { color: var(--tt-deep-green); overflow-wrap: anywhere; }
 .detail-page .detail-pad > section { margin-top: 24px; }
+
+footer .tt-outdoor-logo {
+  display: block;
+  width: 110px;
+  height: auto;
+  margin: 14px 0;
+  padding: 5px;
+  border-radius: 10px;
+  background: white;
+}
