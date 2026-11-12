@@ -976,14 +976,14 @@ body .food-nav { background: #ecf8c0; }
 
 header .tt-outdoor-logo {
   display: block;
-  width: 62px;
+  width: 76px;
   height: auto;
   flex: 0 0 auto;
 }
 @media (max-width: 530px) {
   body > header { column-gap: 6px; }
   header > a:first-child .logo { width: min(28vw, 122px); height: auto; }
-  header .tt-outdoor-logo { width: 42px; }
+  header .tt-outdoor-logo { width: clamp(42px, 13vw, 52px); }
   header .header-plan { padding-inline: 8px; }
   header .nav-toggle { padding-inline: 7px; }
 }
