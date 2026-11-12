@@ -346,7 +346,7 @@ function buggyExperience() {
   <div class="wrap">
     <div class="experience-strip"><span><b>1 uur rijden</b></span><span><b>Met begeleiding</b></span><span><b>Kinderen vanaf 5 jaar</b></span><span><b>€ 60 per persoon</b></span></div>
     <section class="section">
-      <div class="grid">
+      <div class="grid" data-buggy-gallery>
       <a class="card" href="/toer/thema/assets/buggy-rit-2.jpg"><img class="card-photo" src="/toer/thema/assets/buggy-rit-2.jpg" alt="Buggy Experience in Ootmarsum, foto 2" loading="lazy"></a>
       <a class="card" href="/toer/thema/assets/buggy-rit-3.jpg"><img class="card-photo" src="/toer/thema/assets/buggy-rit-3.jpg" alt="Buggy Experience in Ootmarsum, foto 3" loading="lazy"></a>
       <a class="card" href="/toer/thema/assets/buggy-rit-4.jpg"><img class="card-photo" src="/toer/thema/assets/buggy-rit-4.jpg" alt="Buggy Experience in Ootmarsum, foto 4" loading="lazy"></a>
@@ -377,7 +377,7 @@ function buggyExperience() {
     </section>
     <section class="section">
       <div class="section-head"><h2 id="buggy-gallery-title">Foto-impressie</h2></div>
-      <div class="grid" id="buggy-gallery">
+      <div class="grid" id="buggy-gallery" data-buggy-gallery>
       <a class="card" href="/toer/thema/assets/buggy-rit-3.jpg"><img class="card-photo" src="/toer/thema/assets/buggy-rit-3.jpg" alt="Buggy Experience in Ootmarsum, foto 3" loading="lazy"></a>
       <a class="card" href="/toer/thema/assets/buggy-rit-1.jpg"><img class="card-photo" src="/toer/thema/assets/buggy-rit-1.jpg" alt="Buggy Experience in Ootmarsum, foto 1" loading="lazy"></a>
       <a class="card" href="/toer/thema/assets/buggy-rit-9.jpg"><img class="card-photo" src="/toer/thema/assets/buggy-rit-9.jpg" alt="Buggy Experience in Ootmarsum, foto 9" loading="lazy"></a>
@@ -409,7 +409,7 @@ function buggyExperience() {
   </div>`;
   bind();
 
-  const galleryLinks = [...document.querySelectorAll('#buggy-gallery a')];
+  let galleryLinks = [];
   const lightbox = $('.buggy-lightbox');
   const fullPhoto = lightbox.querySelector('img');
   const counter = lightbox.querySelector('[aria-live]');
@@ -423,12 +423,16 @@ function buggyExperience() {
     counter.textContent = (currentPhoto + 1) + ' / ' + galleryLinks.length;
   }
 
-  galleryLinks.forEach((link, index) => {
-    link.addEventListener('click', event => {
-      if (event.metaKey || event.ctrlKey || event.shiftKey || event.altKey) return;
-      event.preventDefault();
-      showPhoto(index);
-      lightbox.showModal();
+  document.querySelectorAll('[data-buggy-gallery]').forEach(gallery => {
+    const links = [...gallery.querySelectorAll('a')];
+    links.forEach((link, index) => {
+      link.addEventListener('click', event => {
+        if (event.metaKey || event.ctrlKey || event.shiftKey || event.altKey) return;
+        event.preventDefault();
+        galleryLinks = links;
+        showPhoto(index);
+        lightbox.showModal();
+      });
     });
   });
   lightbox.querySelectorAll('[data-gallery-step]').forEach(button => {
