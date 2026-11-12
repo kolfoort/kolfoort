@@ -6,7 +6,7 @@ const byPrice = (a, b) => (a.price ?? Infinity) - (b.price ?? Infinity) || byNam
 
 const $=s=>document.querySelector(s),esc=s=>String(s??'').replace(/[&<>"']/g,c=>({'&':'&amp;','<':'&lt;','>':'&gt;','"':'&quot;',"'":'&#39;'}[c])),money=n=>new Intl.NumberFormat('nl-NL',{style:'currency',currency:'EUR'}).format(n),groupLabel={vehicles:'Voertuigen',activities:'Activiteiten',food:'Eten & Drinken'};let chosen=[];try{chosen=JSON.parse(localStorage.getItem('toer-plan')||'[]').filter(id=>items.some(p=>p.id===id))}catch{}const page=document.body.dataset.page||'home';
 function photo(p){return p?.image||'/toer/thema/assets/item-3.jpg'}
-function card(p){if(p.id===5)return `<article class="card buggy-card"><a class="card-photo" href="/toer/voertuigen/?voertuig=5" aria-label="Bekijk Buggy Experience"><img loading="lazy" src="${photo(p)}" alt="Off-road buggy rijden bij TwenteToer"></a><div class="card-body"><span class="tag">Echt off-road · onder begeleiding</span><h3>Buggy Experience</h3><p>Een uur zelf rijden over de zandwegen rond Ootmarsum. Stof, modder en een flinke grijns.</p><div class="card-bottom"><div class="price"><small>Per persoon · 1 uur</small><b>€ 60,00</b></div><button class="cta green" data-add="5">Toevoegen aan Mijn toer</button></div><a class="textlink" href="/toer/voertuigen/?voertuig=5">Ontdek de buggyrit</a></div></article>`;return `<article class="card"><button class="card-photo" data-detail="${p.id}" aria-label="Bekijk ${esc(p.name)}"><img loading="lazy" src="${photo(p)}" alt="${esc(p.name)} bij TwenteToer"></button><div class="card-body"><span class="tag">${groupLabel[p.group]} · Ootmarsum</span><h3>${esc(p.name)}</h3><p>${esc(p.description)}</p><div class="card-bottom"><div class="price"><small>${p.price!==null?'Vanaf':'Prijs'}</small><b>${p.price!==null?money(p.price):'Op aanvraag'}</b></div><button class="cta green" data-add="${p.id}">Toevoegen aan Mijn toer</button></div><button class="textlink card-details" data-detail="${p.id}">Bekijk mogelijkheden</button></div></article>`}
+function card(p){if(p.id===5)return `<article class="card buggy-card"><a class="card-photo" href="/toer/voertuigen/?voertuig=5" aria-label="Bekijk Buggy Experience"><img loading="lazy" src="${photo(p)}" alt="Off-road buggy rijden bij TwenteToer"></a><div class="card-body"><span class="tag">Echt off-road · onder begeleiding</span><h3>Buggy Experience</h3><p>Een uur zelf rijden over de zandwegen rond Ootmarsum. Stof, modder en een flinke grijns.</p><div class="card-bottom"><div class="price"><small>Per persoon · 1 uur</small><b>€ 60,00</b></div><button class="cta green" data-add="5">Toevoegen aan Mijn toer</button></div><a class="textlink" href="/toer/voertuigen/?voertuig=5">Ontdek de buggyrit</a></div></article>`;return `<article class="card"><button class="card-photo" data-detail="${p.id}" aria-label="Bekijk ${esc(p.name)}"><img loading="lazy" src="${photo(p)}" alt="${esc(p.name)} bij TwenteToer"></button><div class="card-body"><span class="tag">${groupLabel[p.group]} · Ootmarsum</span><h3>${esc(p.name)}</h3><p>${esc(p.description)}</p><div class="card-bottom"><div class="price"><small>${p.id===27?'Per kar':p.price!==null?'Vanaf':'Prijs'}</small><b>${p.id===27?money(140):p.price!==null?money(p.price):'Op aanvraag'}</b></div><button class="cta green" data-add="${p.id}">Toevoegen aan Mijn toer</button></div><button class="textlink card-details" data-detail="${p.id}">Bekijk mogelijkheden</button></div></article>`}
 function bind(){document.querySelectorAll('[data-detail]').forEach(b=>b.onclick=()=>detail(Number(b.dataset.detail)));document.querySelectorAll('[data-add]').forEach(b=>b.onclick=()=>add(Number(b.dataset.add)))}
 function add(id){if(!chosen.includes(id))chosen.push(id);localStorage.setItem('toer-plan',JSON.stringify(chosen));updateCount();if(page==='plan')renderSelection();$('#detail').close();toast('Toegevoegd aan Mijn toer')}
 function updateCount(){document.querySelectorAll('.plan-count').forEach(e=>{e.textContent=chosen.length?String(chosen.length):'';e.hidden=chosen.length===0})}
@@ -449,7 +449,90 @@ function dikkeDafDetails(id) {
   ${vehiclePhotoGallery('Dikke Daf Toer', ['dikke-daf-impressie-1.jpg', 'dikke-daf-impressie-2.jpg', 'item-22.jpg'])}`;
 }
 
-function detail(id){const p=items.find(x=>x.id===id);$('#detail').classList.toggle('drinks-detail',[52,76].includes(id));$('#detail-content').innerHTML=`<img class="detail-img" src="${photo(p)}" alt="${esc(p.name)}"><div class="detail-pad"><div class="eyebrow">${groupLabel[p.group]} · TwenteToer</div><h2>${esc(p.name)}</h2><p>${esc(p.description)}</p>${eChopperDetails(id)}${topolinoDetails(id)}${rentalVehicleDetails(id)}${dafDetails(id)}${buggyDetails(id)}${piaggioDetails(id)}${dikkeDafDetails(id)}${drinksMenu(id)}${[3, 5, 10, 19, 20, 21, 22].includes(id) ? '' : `<div class="price"><small>${[52,76].includes(id)?'Toeslag op het drankarrangement':'Indicatieve vanafprijs volgens de bestaande site'}</small><b>${p.price===null?'Op aanvraag':money(p.price)}</b></div>`}<div class="notice">De exacte prijs, duur, minimumdeelname, leeftijds- en rijbewijsvoorwaarden worden per activiteit bevestigd. Deze testsite controleert geen beschikbaarheid en maakt geen reservering.</div><div class="actions"><button class="cta green" data-add="${p.id}">${chosen.includes(p.id)?'Staat in Mijn toer':'Toevoegen aan Mijn toer'}</button><a class="cta light" href="/toer/mijn-toer/#aanbod">Mijn toer bekijken & Betalen</a></div></div>`;bind();bindPhotoGallery($('#detail-content'));$('#detail').showModal()}
+
+const activityDetails = {
+  24: {
+    sections: [
+      ["Op de roos", "Na de uitleg schieten jullie met professionele bogen op doel. Speel individueel of in twee teams en tel de punten. Er zijn bogen voor links- en rechtshandigen."],
+      ["Kosten en informatie", "€ 20 per persoon, inclusief twee consumpties, chips en nootjes. Reken op ongeveer één uur. Van maart tot en met oktober, op twee overdekte banen. Vanaf 12 jaar. Bij minder dan vijf deelnemers geldt € 100 voor de groep."],
+    ],
+    images: ["item-24.jpg", "boogschieten-impressie.jpg"],
+  },
+  25: {
+    sections: [
+      ["Het raadsel van het gestolen goud", "In ons café-restaurant onderzoeken jullie de kist van smokkelaar Wim Pietersen. Los samen de puzzels op of laat meerdere teams tegen elkaar spelen."],
+      ["Kosten en informatie", "€ 39,95 per persoon. Reken op anderhalf uur, met drankjes, chips en nootjes inbegrepen. Vijf tot acht deelnemers per box. Het hele jaar door te boeken. Eten of een rit kan erbij."],
+    ],
+    images: ["item-25.jpg", "escapebox-impressie-1.jpg", "escapebox-impressie-2.jpeg"],
+  },
+  26: {
+    sections: [
+      ["Van Ootmarsum naar de golfbaan", "Rijd in ongeveer drie kwartier naar Tubbergen. Daar krijgen jullie uitleg en spelen jullie op een baan met negen holes en achttien afslagpunten. Er zijn kinderclubs en een binnen- en buitenspeeltuin. Na het golfen is er tijd voor het terras en de terugrit."],
+      ["Kosten en informatie", "€ 17,50 per persoon inclusief koffie, thee of een drankje aan de bar. Huur voor drie uur een voertuig, apart te betalen. De Trike is uitgesloten. Reken voor het hele uitje op ongeveer vier uur."],
+    ],
+    images: ["item-26.jpg", "golfen-impressie-2.jpg", "golfen-impressie-3.jpg"],
+  },
+  27: {
+    sections: [
+      ["Kloatscheet’n op z’n Twents", "Na een korte uitleg wandelen jullie met de bolderkar naar de baan. Twee teams gooien om beurten onderhands met een verzwaarde bal. Het team dat met de minste worpen de route aflegt, wint."],
+      ["De bolderkar", "Onderweg hebben jullie bier, fris, wijn, kaas en worst bij de hand. Verbind je telefoon met de muziekbox in de kar. Geef bijzondere wensen vooraf door."],
+      ["Kosten en informatie", "€ 140 per kar, met hapjes en drankjes voor tien personen en twee klootballen. Voor een kleinere groep geldt dezelfde karprijs. Bij grotere groepen kun je een kar bijboeken. Reken op 2,5 uur, waarvan ongeveer 1,5 uur spelen."],
+    ],
+    images: ["item-27.jpg", "bolderkar-impressie.jpg"],
+  },
+  28: {
+    sections: [
+      ["Met de Dikke Daf naar de grens", "Na de uitleg in het café-restaurant brengt de DAF YA 328 jullie naar een plek in Duitsland. Met een kompas en smokkelkaart vinden jullie via oude smokkelroutes rond het Springendal de weg terug naar Ootmarsum. Onderweg kraken jullie de code van de munitiekist en wacht een snack met een Twents kruidenbittertje."],
+      ["Kosten en informatie", "€ 25 per persoon, met een minimum van € 250 per groep, inclusief rit en tussendoortje. Ongeveer 3,5 uur en minstens 7 km wandelen. Ook ’s avonds mogelijk. Draag wandelschoenen. Geschikt voor volwassenen en oudere kinderen. De route is ongeschikt voor huisdieren, rollators, rolstoelen en kinderwagens."],
+    ],
+    images: ["item-28.jpg", "dropping-truck.jpg", "dropping-loopgroep.jpg", "dropping-smokkelkaart.jpg", "dropping-springendal.jpg"],
+  },
+  29: {
+    sections: [
+      ["Mikken op de kermisdoelen", "Schiet op sterretjes, roosjes en andere doelen. Voor een familie- of bedrijfsuitje kun je er een puntenwedstrijd van maken. Tussendoor is er tijd voor een drankje in de lounge."],
+      ["Kosten en informatie", "€ 20 per persoon inclusief twee consumpties, chips en nootjes. Bij minder dan vijf deelnemers geldt € 100 per groep. Ongeveer één uur, van maart tot en met oktober, op twee overdekte banen. Vanaf 16 jaar. Minderjarigen doen mee onder begeleiding van een volwassene."],
+    ],
+    images: ["item-29.jpg", "kermisbuks-impressie.jpg"],
+  },
+  30: {
+    sections: [
+      ["Verover de vlag", "Rijd vanuit Ootmarsum met een voertuig van TwenteToer naar onze partner. Na de uitleg spelen jullie twee rondes van ongeveer 15 tot 20 minuten per deelnemer. Tussen de rondes bekijk je de score en is er tijd voor pauze."],
+      ["Kosten en informatie", "E-Chopper met lasergame kost € 55 per persoon. Het arrangement duurt ongeveer drie uur inclusief heen- en terugrit. Vanaf acht deelnemers. Neem zelf wat te drinken mee voor de pauze."],
+    ],
+    images: ["item-30.jpg", "lasergame-impressie-1.jpg", "lasergame-impressie-2.jpeg", "lasergame-impressie-3.jpg"],
+  },
+  31: {
+    sections: [
+      ["Scan, speur en scoor", "Ieder team krijgt een eigen route door Ootmarsum en omgeving. Zoek onderweg de QR-codes, beantwoord de vragen en verdien punten. Per team heb je één telefoon nodig die QR-codes kan scannen."],
+      ["Kosten en informatie", "€ 5 per persoon voor het spel, plus twee uur voertuigverhuur. Het uitje duurt ongeveer twee uur. Consumpties onderweg zijn voor eigen rekening. Op zondag is het centrum autovrij en valt de TukTuk af."],
+    ],
+    images: ["item-31.jpg", "qr-kuiperberg.jpg"],
+  },
+  32: {
+    sections: [
+      ["Spelletjes voor elk team", "Ga in teams langs de spellen en verdien punten met onder meer darten, cornhole, ringwerpen, sjoelen, kubb en boogschieten. Jullie spelen binnen en buiten. Bij slecht weer kan het parcours volledig overdekt."],
+      ["Kosten en informatie", "€ 25 per persoon voor ongeveer twee uur. Op aanvraag uit te breiden met een voertuig, BBQ of buffet, borrelhapjes of een all-in drankarrangement."],
+    ],
+    images: ["item-32.jpg", "spelletjesmarkt-darten.jpeg", "spelletjesmarkt-boogschieten.jpg"],
+  },
+  33: {
+    sections: [
+      ["Op zoek naar de verborgen sleutel", "Vanuit het café-restaurant wandelen jullie door het historische centrum. Gevels en straatjes geven aanwijzingen. Bij iedere opgeloste opdracht verdienen jullie een letter. Samen vormen die de sleutel van Ootmarsum."],
+      ["Kosten en informatie", "€ 10 per persoon en ongeveer twee uur onderweg. De wandelroute is toegankelijk met een rolstoel of kinderwagen. Na afloop kun je de uitkomst bespreken in het café. Consumpties zijn voor eigen rekening."],
+    ],
+    images: ["item-33.jpg", "sleutel-centrum.jpg", "sleutel-cafe.jpeg", "sleutel-speurtocht.jpg"],
+  },
+};
+
+function renderActivityDetails(activity, name) {
+  const sections = activity.sections.map(([title, description]) => `<section>
+    <h3>${esc(title)}</h3>
+    <p>${esc(description)}</p>
+  </section>`).join('');
+  return sections + vehiclePhotoGallery(esc(name), activity.images);
+}
+
+function detail(id){const activity=activityDetails[id];const p=items.find(x=>x.id===id);$('#detail').classList.toggle('drinks-detail',[52,76].includes(id));$('#detail-content').innerHTML=`<img class="detail-img" src="${photo(p)}" alt="${esc(p.name)}"><div class="detail-pad"><div class="eyebrow">${groupLabel[p.group]} · TwenteToer</div><h2>${esc(p.name)}</h2><p>${esc(p.description)}</p>${eChopperDetails(id)}${topolinoDetails(id)}${rentalVehicleDetails(id)}${dafDetails(id)}${buggyDetails(id)}${piaggioDetails(id)}${dikkeDafDetails(id)}${drinksMenu(id)}${activity ? renderActivityDetails(activity, p.name) : ''}${activity || [3, 5, 10, 19, 20, 21, 22].includes(id) ? '' : `<div class="price"><small>${[52,76].includes(id)?'Toeslag op het drankarrangement':'Indicatieve vanafprijs volgens de bestaande site'}</small><b>${p.price===null?'Op aanvraag':money(p.price)}</b></div>`}<div class="notice">De exacte prijs, duur, minimumdeelname, leeftijds- en rijbewijsvoorwaarden worden per activiteit bevestigd. Deze testsite controleert geen beschikbaarheid en maakt geen reservering.</div><div class="actions"><button class="cta green" data-add="${p.id}">${chosen.includes(p.id)?'Staat in Mijn toer':'Toevoegen aan Mijn toer'}</button><a class="cta light" href="/toer/mijn-toer/#aanbod">Mijn toer bekijken & Betalen</a></div></div>`;bind();bindPhotoGallery($('#detail-content'));$('#detail').showModal()}
 function named(term){return items.find(p=>p.name.toLowerCase().includes(term.toLowerCase()))||items[0]}
 const headerRides=[['Topolino','HET DOLCE VITA GEVOEL!','topolino'],['E-Chopper','ELEKTRISCH EN GENIETEN!','e-chopper'],['Buggy','AVONTUUR IN TWENTE!','buggy'],['E-Bike','BELEEF HET OP DE FIETS!','e-bike'],['Fatmax','ELEKTRISCH OP AVONTUUR!','fatmax']];
 function photoHeader(){return `<section class="original-photo-header" aria-label="Ontdek TwenteToer"><div class="photo-slider" aria-roledescription="carrousel">${headerRides.map(([name,title,term],i)=>`<div class="photo-slide ${i===0?'active':''}" aria-hidden="${i!==0}"><img src="/toer/thema/assets/header-slide-${i+1}.jpg" alt="${name} rijden in Ootmarsum en omgeving" ${i?'loading="lazy"':'fetchpriority="high"'}><div class="photo-caption"><h2>${title}</h2></div></div>`).join('')}<div class="photo-controls"><div class="photo-dots">${headerRides.map(([name],i)=>`<button data-slide="${i}" aria-label="Toon foto ${name}" aria-pressed="${i===0}"><span></span></button>`).join('')}</div><button class="photo-pause" aria-label="Diavoorstelling pauzeren">Pauze</button></div></div><nav class="vehicle-brush-row" aria-label="Kies je voertuig">${headerRides.map(([name,title,term],i)=>`<a href="${term==='buggy'?'/toer/voertuigen/?voertuig=5':'/toer/voertuigen/?voertuig='+named(term).id}"><span class="brush-disc"><img src="/toer/thema/assets/header-icon-${i+1}.png" alt=""></span><strong>${name}</strong></a>`).join('')}</nav></section>`}
