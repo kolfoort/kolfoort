@@ -668,7 +668,7 @@ function homeReviews() {
         <p>${esc(quote)}</p><figcaption>${esc(name)} · ${esc(source)}</figcaption>
       </figure>`).join('')}
     </div>
-    <div class="home-trustpilot"><a href="https://nl.trustpilot.com/review/twentetoer.nl" target="_blank" rel="noopener noreferrer">Alle Bewertungen auf Trustpilot ↗</a></div>
+    <div class="home-trustpilot"><a href="https://nl.trustpilot.com/review/twentetoer.nl" target="_blank" rel="noopener noreferrer">Alle Bewertungen auf Trustpilot</a></div>
     <h2>Erfahrungen</h2>
     <div class="home-experiences">
       ${experiences.map(([title, description, photo]) => `<article>
