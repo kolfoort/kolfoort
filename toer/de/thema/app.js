@@ -839,7 +839,65 @@ function arrangementOverview() {
   </div>`;
 }
 
-function arrangements(){const combos=[["Dolce Vita & gemütliches Essen",'topolino','lunch'],["Abenteuer & Barbecue",'buggy','barbecue incl'],["Touring & Pizza backen",'e-chopper','top your pizza'],["Aktiv & Getränke",'fatmax','borrel bbq']];$('#main').innerHTML=`<div class="wrap"><div class="page-head"><div class="eyebrow">Gemeinsam unterwegs</div><h1>EUER TAG. EURE KOMBINATION.</h1><p>Inspiration für einen ganzen Tag. Hierbei handelt es sich um Beispielkombinationen bestehender Angebote; Zusammensetzung, Planung und Preis werden auf Anfrage bestätigt.</p></div>${arrangementOverview()}<section class="section"><h2>Selbst kombinieren</h2><div class="grid">${combos.map((combo, i) => ({combo, audience: i % 2 ? "Freunde und Kollegen" : "Familie und Freunde"})).sort((a,b) => compareTitle(a.combo[0], b.combo[0])).map(({combo:[title,v,f],audience})=>`<article class="card"><img class="card-photo" src="${photo(named(v))}" alt="${esc(title)}"><div class="card-body"><span class="tag">Inspiration · ${audience}</span><h3>${title}</h3><p>Kombinieren Sie ${esc(named(v).name)} mit ${esc(named(f).name.toLowerCase())}. Speichern Sie beide Teile und koordinieren Sie den Tag gemeinsam.</p><button class="cta green" data-combo="${named(v).id},${named(f).id}">Wählen Sie diese Kombination</button></div></article>`).join('')}</div></section><div class="hero-small"><h2>MISCHEN SIE LIEBER SELBST?</h2><p>Wählen Sie aus dem gesamten Sortiment und treffen Sie Ihre eigene Auswahl in „Meine Tour“.</p><a class="cta" href="/toer/de/mijn-toer/">Gestalte meinen Tag</a></div></div>`;bind();document.querySelectorAll('[data-arrangement]').forEach(button => button.addEventListener('click', () => openArrangement(button)));document.querySelectorAll('[data-combo]').forEach(b=>b.onclick=()=>{chosen=[...new Set([...chosen,...b.dataset.combo.split(',').map(Number)])];localStorage.setItem('toer-plan',JSON.stringify(chosen));location.href='/toer/de/mijn-toer/'})}
+function arrangements() {
+  const combinations = [
+    ["Dolce Vita & gemütliches Essen", 3, 51, "Familie und Freunde"],
+    ["Abenteuer & Barbecue", 5, 50, "Freunde und Kollegen"],
+    ["Touring & Pizza backen", 2, 49, "Familie und Freunde"],
+    ["Aktiv & Getränke", 9, 65, "Freunde und Kollegen"],
+  ].map(([title, vehicleId, foodId, audience]) => ({
+    title, audience,
+    vehicle: items.find(item => item.id === vehicleId),
+    food: items.find(item => item.id === foodId),
+  })).filter(({vehicle, food}) => vehicle && food)
+    .sort((a, b) => compareTitle(a.title, b.title));
+
+  function choose({vehicle, food}) {
+    chosen = [...new Set([...chosen, vehicle.id, food.id])];
+    localStorage.setItem('toer-plan', JSON.stringify(chosen));
+    location.href = "/toer/de/mijn-toer/";
+  }
+
+  function showCombination(combination) {
+    const {title, vehicle, food} = combination;
+    const dialog = $('#detail');
+    dialog.classList.remove('drinks-detail');
+    $('#detail-content').innerHTML = `<img class="detail-img" src="${photo(vehicle)}" alt="${esc(vehicle.name)}">
+      <div class="detail-pad">
+        <h2>${esc(title)}</h2>
+        <ul><li>${esc(vehicle.name)}</li><li>${esc(food.name)}</li></ul>
+        <p>Die Zusammenstellung, Planung und den Preis stimmen wir auf Anfrage ab.</p>
+        <button type="button" class="cta green" id="choose-combination">Diese Kombination wählen</button>
+      </div>`;
+    $('#choose-combination').onclick = () => choose(combination);
+    dialog.showModal();
+  }
+
+  $('#main').innerHTML = `<div class="wrap"><div class="page-head"><div class="eyebrow">Gemeinsam unterwegs</div><h1>EUER TAG. EURE KOMBINATION.</h1><p>Inspiration für einen ganzen Tag. Hierbei handelt es sich um Beispielkombinationen bestehender Angebote; Zusammensetzung, Planung und Preis werden auf Anfrage bestätigt.</p></div>${arrangementOverview()}<section class="section"><h2>Selbst kombinieren</h2><div class="grid">
+    ${combinations.map(({title, vehicle, food, audience}, index) => `<article class="card">
+      <button type="button" class="card-photo" data-view-combo="${index}" aria-label="Details ansehen ${esc(title)}">
+        <img src="${photo(vehicle)}" alt="${esc(vehicle.name)}">
+      </button>
+      <div class="card-body">
+        <span class="tag">Inspiration · ${esc(audience)}</span>
+        <h3><button type="button" class="textlink card-details" data-view-combo="${index}">${esc(title)}</button></h3>
+        <p>${esc(vehicle.name)} und ${esc(food.name)}.</p>
+        <button type="button" class="cta green" data-combo="${index}">Diese Kombination wählen</button>
+      </div>
+    </article>`).join('')}
+  </div></section><div class="hero-small"><h2>MISCHEN SIE LIEBER SELBST?</h2><p>Wählen Sie aus dem gesamten Sortiment und treffen Sie Ihre eigene Auswahl in „Meine Tour“.</p><a class="cta" href="/toer/de/mijn-toer/">Gestalte meinen Tag</a></div></div>`;
+  bind();
+  document.querySelectorAll('[data-arrangement]').forEach(button => {
+    button.onclick = () => openArrangement(button);
+  });
+  document.querySelectorAll('[data-view-combo]').forEach(button => {
+    button.onclick = () => showCombination(combinations[button.dataset.viewCombo]);
+  });
+  document.querySelectorAll('[data-combo]').forEach(button => {
+    button.onclick = () => choose(combinations[button.dataset.combo]);
+  });
+}
+
 let refreshPlanner;
 function plan(){refreshPlanner=initPlanner({items:[...items].sort(byName),chosen,onChange:ids=>{chosen=[...ids];updateCount()}})}
 function renderSelection(){refreshPlanner?.()}
