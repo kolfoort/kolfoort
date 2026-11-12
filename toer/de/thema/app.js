@@ -649,11 +649,12 @@ const headerRides=[['Topolino',"DAS DOLCE VITA-GEFÜHL!",'topolino'],['E-Chopper
 function photoHeader(){return `<section class="original-photo-header" aria-label="Entdecken Sie TwenteToer"><div class="photo-slider" aria-roledescription="carrousel">${headerRides.map(([name,title,term],i)=>`<div class="photo-slide ${i===0?'active':''}" aria-hidden="${i!==0}"><img src="/toer/thema/assets/header-slide-${i+1}.jpg" alt="${name} fährt in Ootmarsum und Umgebung" ${i?'loading="lazy"':'fetchpriority="high"'}><div class="photo-caption"><h2>${title}</h2></div></div>`).join('')}<div class="photo-controls"><div class="photo-dots">${headerRides.map(([name],i)=>`<button data-slide="${i}" aria-label="Foto anzeigen ${name}" aria-pressed="${i===0}"><span></span></button>`).join('')}</div><button class="photo-pause" aria-label="Diashow anhalten">Pause</button></div></div><nav class="vehicle-brush-row" aria-label="Wählen Sie Ihr Fahrzeug">${headerRides.map(([name,title,term],i)=>`<a href="${term==='buggy'?'/toer/de/voertuigen/?voertuig=5':'/toer/de/voertuigen/?voertuig='+named(term).id}"><span class="brush-disc"><img src="/toer/thema/assets/header-icon-${i+1}.png" alt=""></span><strong>${name}</strong></a>`).join('')}</nav></section>`}
 function initPhotoHeader(){let index=0,paused=matchMedia('(prefers-reduced-motion: reduce)').matches;const slides=[...document.querySelectorAll('.photo-slide')],dots=[...document.querySelectorAll('[data-slide]')],pause=document.querySelector('.photo-pause');const show=i=>{index=i;slides.forEach((s,n)=>{s.classList.toggle('active',n===i);s.setAttribute('aria-hidden',String(n!==i))});dots.forEach((d,n)=>d.setAttribute('aria-pressed',String(n===i)))};dots.forEach(d=>d.onclick=()=>show(Number(d.dataset.slide)));const label=()=>{pause.textContent=paused?"Spielen":"Pause";pause.setAttribute('aria-label',paused?"Diashow abspielen":"Diashow anhalten")};pause.onclick=()=>{paused=!paused;label()};label();setInterval(()=>{if(!paused&&!document.hidden&&!document.querySelector('.photo-slider:hover')&&!document.querySelector('.photo-slider:focus-within'))show((index+1)%slides.length)},6000)}
 function homeReviews() {
-  const reviews = [["Hidde Norder", "Drei kleine Fiats gemietet. Gut gepflegt und wie vereinbart bereit."], ["Jerry Kaletruckert", "Hat richtig Spaß gemacht! Tipp: Bucht die dreistündige Tour und den E-Chopper für drei Stunden."], ["Joop Leferink", "Zwei Fahrräder für eine Woche gemietet. Bei der Abholung wurden wir freundlich beraten."], ["Li Lit", "Gefällt mir."]];
+  const reviews = [["Kyra Schiphorst", "Freundlicher Empfang und klare Einführung. Mit der App entdeckten sie Orte, an denen sie sonst kaum vorbeigekommen wären."], ["J. van Gans", "Eine Fahrt mit dem Fiat Topolino war eine schöne Art, die Landschaft rund um Ootmarsum zu entdecken."], ["Liesbeth", "Zum zweiten Mal mit dem Topolino unterwegs, diesmal ohne Türen und in Richtung Lutterzand."], ["Debbie Heyboer-Vermeij", "Als der Akku unterwegs fast leer war, bekamen sie einen anderen Topolino, um die Route zu Ende zu fahren."], ["Ingrid", "Mit dem Team im Topolino unterwegs und danach gemeinsam Pizza gegessen."], ["Wim Kreulen", "Alles war gut organisiert, vom Kaffee mit Kuchen und dem Proviant bis zu den Routen in der App."]];
   const experiences = [["Ein schöner Tag mit dem Team", "Die Sportlehrkräfte des TCC an der Potskampstraat waren gemeinsam mit E-Choppern unterwegs.", "ervaring-team.jpg"], ["Ein toller Familientag", "Nach der TukTuk-Tour gab es ein Buffet. Fahrt, Organisation und Restaurant kamen bei der Familie gut an.", "ervaring-familie.jpg"], ["Mit dem Trike unterwegs", "Das Paar lobte den freundlichen Empfang, die schöne Strecke und das Mittagessen bei Erve Bossem.", "ervaring-trike.jpg"]];
   return `<section class="section home-reviews" aria-labelledby="home-reviews-title">
-    <div class="section-head"><h2 id="home-reviews-title">Gästebewertungen</h2>
+    <div class="section-head"><h2 id="home-reviews-title">Eine Auswahl von Trustpilot</h2>
       <div class="home-review-controls">
+        <button type="button" data-review-toggle aria-controls="home-review-track">Pause</button>
         <button type="button" data-review-step="-1" aria-controls="home-review-track" aria-label="Vorherige Bewertung">←</button>
         <button type="button" data-review-step="1" aria-controls="home-review-track" aria-label="Nächste Bewertung">→</button>
       </div>
@@ -661,7 +662,7 @@ function homeReviews() {
     <div class="home-review-track" id="home-review-track">
       ${reviews.map(([name, quote]) => `<figure class="home-review">
         <span class="home-review-stars" aria-label="5/5">★★★★★</span>
-        <blockquote>${esc(quote)}</blockquote><figcaption>${esc(name)}</figcaption>
+        <p>${esc(quote)}</p><figcaption>${esc(name)}</figcaption>
       </figure>`).join('')}
     </div>
     <h2>Erfahrungen</h2>
@@ -690,6 +691,30 @@ function bindHomeReviews() {
       track.scrollBy({left: step * Number(button.dataset.reviewStep), behavior});
     };
   });
+  const toggle = $('[data-review-toggle]');
+  const reducedMotion = matchMedia('(prefers-reduced-motion: reduce)');
+  let paused = reducedMotion.matches;
+  let visible = false;
+  function updateToggle() {
+    toggle.textContent = paused ? "Abspielen" : "Pause";
+  }
+  toggle.onclick = () => {
+    paused = !paused;
+    updateToggle();
+  };
+  reducedMotion.addEventListener('change', event => {
+    paused = event.matches;
+    updateToggle();
+  });
+  new IntersectionObserver(([entry]) => {
+    visible = entry.isIntersecting;
+  }, {threshold: 0.25}).observe(track);
+  setInterval(() => {
+    if (paused || !visible || document.hidden || track.matches(':hover, :focus-within')) return;
+    if (buttons[1].disabled) track.scrollTo({left: 0, behavior: 'instant'});
+    else buttons[1].click();
+  }, 6000);
+  updateToggle();
   track.addEventListener('scroll', updateControls, {passive: true});
   new ResizeObserver(updateControls).observe(track);
   updateControls();
