@@ -473,7 +473,6 @@ function info() {
   $('#main').innerHTML = `<div class="wrap">
   <div class="page-head"><div class="eyebrow">Voor je op pad gaat</div><h1>HANDIG OM TE WETEN.</h1><p>Een helder vertrekpunt voor jullie uitje in Ootmarsum.</p></div>
   <div class="tt-information">
-    <nav class="actions" aria-label="Onderwerpen op deze pagina"><a class="cta light" href="#bezoek">Plan je bezoek</a><a class="cta light" href="#voorwaarden">Voertuigen en voorwaarden</a><a class="cta light" href="#cadeaubonnen">Cadeaubonnen</a><a class="cta light" href="#overnachten">Overnachten</a><a class="cta light" href="#twentetoer">Over TwenteToer</a><a class="cta light" href="#catering">Catering op locatie</a></nav>
   <section class="section" id="bezoek">
     <h2>Plan je bezoek</h2>
     <details><summary>Openingstijden 2026/2027</summary><p>Van maart tot en met november zijn we dagelijks geopend vanaf 10.00 uur. Van december tot en met februari openen we op reservering, als het weer het toelaat, of voor feestjes.</p><p>Gesloten op Koningsdag, Hemelvaartsdag, eerste en tweede kerstdag, oudejaarsdag, nieuwjaarsdag en tijdens de Koale Kermis.</p></details>

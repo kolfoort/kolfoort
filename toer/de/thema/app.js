@@ -473,7 +473,6 @@ function info() {
   $('#main').innerHTML = `<div class="wrap">
   <div class="page-head"><div class="eyebrow">Bevor Sie auf die Straße gehen</div><h1>NÜTZLICH ZU WISSEN.</h1><p>Ein klarer Ausgangspunkt für Ihren Ausflug in Ootmarsum.</p></div>
   <div class="tt-information">
-    <nav class="actions" aria-label="Themen auf dieser Seite"><a class="cta light" href="#bezoek">Besuch planen</a><a class="cta light" href="#voorwaarden">Fahrzeuge und Bedingungen</a><a class="cta light" href="#cadeaubonnen">Geschenkgutscheine</a><a class="cta light" href="#overnachten">Übernachten</a><a class="cta light" href="#twentetoer">Über TwenteToer</a><a class="cta light" href="#catering">Catering vor Ort</a></nav>
   <section class="section" id="bezoek">
     <h2>Besuch planen</h2>
     <details><summary>Öffnungszeiten 2026/2027</summary><p>Von März bis November haben wir täglich ab 10 Uhr geöffnet. Von Dezember bis Februar öffnen wir nach Reservierung, sofern das Wetter es zulässt, oder für Feiern.</p><p>Geschlossen am Königstag, an Christi Himmelfahrt, an beiden Weihnachtsfeiertagen, an Silvester, Neujahr und während der Koale Kermis.</p></details>

@@ -884,19 +884,6 @@ body[data-page="info"] main .tt-information {
   gap: 24px;
   padding: clamp(16px, 3vw, 36px);
 }
-body[data-page="info"] .tt-information > nav {
-  grid-column: 1 / -1;
-  display: grid;
-  grid-template-columns: repeat(auto-fit, minmax(min(100%, 145px), 1fr));
-  margin: 0;
-}
-body[data-page="info"] .tt-information > nav a {
-  display: grid;
-  place-items: center;
-  padding: 10px;
-  text-align: center;
-  text-decoration: none;
-}
 body[data-page="info"] .tt-information > section {
   min-width: 0;
   padding: 0;
