@@ -932,3 +932,44 @@ body[data-page="arrangements"] .tt-information details[open] > summary {
     color: #263821;
   }
 }
+
+/* TwenteToer palette inspired by the Topolino sticker. */
+:root {
+  --tt-apple: #b9e331;
+  --tt-sun: #ffda55;
+  --tt-mint: #d5f4e6;
+  --tt-deep-green: #173e24;
+}
+
+body { --tt-shell-sand: #fff5cd; }
+body > header { border-bottom-color: var(--tt-apple); }
+body footer { background: var(--tt-mint); border-top-color: var(--tt-apple); }
+body .cta.green,
+body .cta:not(.light):not(.green) {
+  background: var(--tt-apple);
+  color: var(--tt-deep-green);
+}
+body .cta:not(.light):is(:hover, :focus-visible) {
+  background: var(--tt-sun);
+  color: var(--tt-deep-green);
+}
+body .occasion-links a:nth-child(1),
+body .home-experiences article { background: var(--tt-mint); }
+body .occasion-links a:nth-child(2) { background: #ecf8c0; }
+body .occasion-links a:nth-child(3) { background: #fff0ae; }
+body .occasion-links a:is(:hover, :focus-visible) { background: var(--tt-sun); }
+body .home-stamp,
+body .mud-stamp { background-color: var(--tt-sun); color: var(--tt-deep-green); }
+body .food-nav { background: #ecf8c0; }
+
+.detail-page { padding-block: 30px 56px; }
+.detail-page .detail-back { display: inline-block; margin-bottom: 18px; }
+.detail-page article {
+  overflow: hidden;
+  background: white;
+  border: 1px solid #dbe8d9;
+  border-radius: 16px 32px 16px 32px;
+}
+.detail-page .detail-img { height: clamp(220px, 42vw, 470px); object-fit: contain; background: #eff9ee; }
+.detail-page h1 { color: var(--tt-deep-green); overflow-wrap: anywhere; }
+.detail-page .detail-pad > section { margin-top: 24px; }
