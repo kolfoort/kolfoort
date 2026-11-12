@@ -788,8 +788,13 @@ footer .tt-footer-information ul {
   gap: 4px 18px;
 }
 
-footer .tt-footer-information a {
+footer .tt-footer-bottom > span,
+footer .tt-footer-bottom .tt-footer-information a {
   font-size: .875rem;
   font-weight: 500;
+  line-height: 1.5;
+}
+
+footer .tt-footer-bottom .tt-footer-information a {
   padding-block: 5px;
 }
