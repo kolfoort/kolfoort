@@ -683,3 +683,78 @@ header #nav .tt-food-dropdown-panel a:is(:hover, :focus-visible) {
   color: #642900;
   text-decoration: none;
 }
+
+/* Use a single-column dropdown at widths where the menu button is shown. */
+@media (max-width: 1050px) {
+  header .nav-toggle {
+    min-height: 44px;
+    background: #fffaf0;
+    border-color: #d4bd96;
+    color: #285438;
+    font: 700 24px/1 Caveat, cursive;
+  }
+  header .nav-toggle[aria-expanded="true"] { background: #ffe2bd; }
+  header #nav {
+    position: absolute;
+    z-index: 10;
+    top: 100%;
+    inset-inline: 5%;
+    width: auto;
+    max-height: 72vh;
+    max-height: 72dvh;
+    overflow-y: auto;
+    box-sizing: border-box;
+    flex-direction: column;
+    align-items: stretch;
+    flex-wrap: nowrap;
+    gap: 2px;
+    padding: 8px;
+    margin: 0;
+    background: #fffaf0;
+    border: 1px solid #d4bd96;
+    border-radius: 0 0 12px 12px;
+    box-shadow: 0 8px 18px #35271928;
+  }
+  header #nav a {
+    display: flex;
+    align-items: center;
+    min-height: 44px;
+    padding: 6px 12px;
+    font-size: 25px;
+    white-space: normal;
+  }
+  header #nav .tt-food-nav,
+  header #nav .tt-food-nav:has(details[open]) {
+    display: grid;
+    grid-template-columns: minmax(0, 1fr) auto;
+    margin: 0;
+  }
+  header #nav details.tt-food-dropdown { grid-column: 2; }
+  header #nav details.tt-food-dropdown[open] {
+    grid-column: 1 / -1;
+    margin-top: -44px;
+    pointer-events: none;
+  }
+  header #nav details.tt-food-dropdown[open] > :is(summary, div) { pointer-events: auto; }
+  header #nav details.tt-food-dropdown[open] summary { margin-left: auto; }
+  header #nav .tt-food-nav:has(details[open]) > a { align-self: start; }
+  header #nav details.tt-food-dropdown[open] .tt-food-dropdown-panel {
+    position: relative;
+    inset: auto;
+    margin: 0 6px 5px 0;
+  }
+  header #nav .tt-food-dropdown summary { width: 44px; min-height: 44px; }
+  header #nav .tt-food-dropdown-panel {
+    position: static;
+    grid-column: 1 / -1;
+    margin: 0 8px 5px 15px;
+    min-width: 0;
+    padding: 0 0 0 7px;
+    border: 0;
+    border-left: 2px solid #d4bd96;
+    border-radius: 0;
+    background: transparent;
+    box-shadow: none;
+  }
+  header #nav .tt-food-dropdown-panel a { padding: 6px 12px; }
+}
