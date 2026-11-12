@@ -876,7 +876,7 @@ main .tt-rental-terms p:last-child {
   border-radius: 10px 20px 6px 18px;
 }
 
-body[data-page="info"] main .tt-information {
+body:is([data-page="info"], [data-page="arrangements"]) main .tt-information {
   width: 100%;
   display: grid;
   grid-template-columns: repeat(3, minmax(0, 1fr));
@@ -884,20 +884,20 @@ body[data-page="info"] main .tt-information {
   gap: 24px;
   padding: clamp(16px, 3vw, 36px);
 }
-body[data-page="info"] .tt-information > section {
+body:is([data-page="info"], [data-page="arrangements"]) .tt-information > section {
   min-width: 0;
   padding: 0;
 }
-body[data-page="info"] .tt-information > section h2 {
+body:is([data-page="info"], [data-page="arrangements"]) .tt-information > section h2 {
   margin-top: 0;
 }
 @media (max-width: 1020px) {
-  body[data-page="info"] main .tt-information {
+  body:is([data-page="info"], [data-page="arrangements"]) main .tt-information {
     grid-template-columns: repeat(2, minmax(0, 1fr));
   }
 }
 @media (max-width: 660px) {
-  body[data-page="info"] main .tt-information {
+  body:is([data-page="info"], [data-page="arrangements"]) main .tt-information {
     grid-template-columns: minmax(0, 1fr);
   }
 }
