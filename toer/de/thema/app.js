@@ -12,6 +12,11 @@ function add(id){if(!chosen.includes(id))chosen.push(id);localStorage.setItem('t
 function updateCount(){document.querySelectorAll('.plan-count').forEach(e=>{e.textContent=chosen.length?String(chosen.length):'';e.hidden=chosen.length===0})}
 function toast(text){$('#toast').textContent=text;if(text==="Zu „Meine Tour“ hinzugefügt"){const link=document.createElement('a');link.href='/toer/de/mijn-toer/#aanbod';link.textContent="Ansehen und bezahlen";$('#toast').append(link)}$('#toast').hidden=false;setTimeout(()=>$('#toast').hidden=true,6000)}
 function drinksMenu(id){if(![52,76].includes(id))return '';const group=(title,drinks)=>`<section><h3>${title}</h3><ul>${drinks.map(d=>`<li>${d}</li>`).join('')}</ul></section>`;return `<div class="drinks-menu"><div class="drinks-included">${id===52?"Standardsortiment + Premium-Extras 12,00 € Aufpreis":"Im Standard-Getränkepaket enthalten · 0,00 € Aufpreis"}</div>${id===52?`<div class="drinks-premium">${group("Besondere Biere",["Texel","Othmar-Bier"])}${group("Mixgetränke",["Gin Tonic","Bacardi-Cola","Wodka Sprite","Weitere Mixgetränke aus dem Premium-Sortiment"])}<p>Alle unten aufgeführten Standardgetränke sind ebenfalls enthalten.</p></div>`:''}<div class="drinks-groups">${group("Erfrischungsgetränke",['Coca-Cola',"Coca Cola Zero","Fanta-Orange",'Fanta Cassis','Sprite'])}${group("Königliche Glückseligkeit",['Ginger Ale',"BitterLemon",'Signature Tonic Water',"Ingwerbier","Rosa aromatische Beere"])}${group("Wasser & Frisch",['Chaudfontaine Still','Chaudfontaine Sparkling','Rivella'])}${group("Eistee und Saft",["Fuze Tea Grüner Tee","Fuze Tea Pfirsich",'Fuze Tea Mango',"Fuze Tee Zitrone",'Minute Maid Orange','Minute Maid Apple'])}${group("Flaschenbier",["Grolsch-Pfeife · Premium-Pilsner","Grolsch 0,0 %",'Grolsch Radler 2%','Grolsch Radler 0,0%'])}${group("Wein vom Fass",["Weiß · Sauvignon Blanc · Domaine la Colombette, Frankreich","Rosé · Grenache · Domaine la Colombette, Frankreich","Rot · Puech D'hortes · Domaine la Colombette, Frankreich","Süß · Rheinhessen, Deutschland"])}</div><p class="drinks-footnote">Der Zuschlag ist Bestandteil der Getränkepauschale; 0,00 € bedeutet kein Aufpreis, keine kostenlosen Getränke. Alkohol nur ab 18 Jahren.</p></div>`}
+const routeAppLinks = `<div class="actions">
+      <a class="textlink" href="https://apps.apple.com/nl/app/twentetoer/id1469183012">App Store</a>
+      <a class="textlink" href="https://play.google.com/store/apps/details?id=com.thar.edityourapp.twentetoer">Google Play</a>
+    </div>`;
+
 function eChopperDetails(id) {
   if (id !== 2) return '';
   return `<section>
@@ -21,10 +26,7 @@ function eChopperDetails(id) {
   <section>
     <h3>Routen in der App</h3>
     <p>Lade vor der Abfahrt die kostenlose TwenteToer-App herunter. Wähle eine Route passend zur Mietdauer, durch Wälder und Wiesen in Twente oder direkt hinter der Grenze in Deutschland. Du kannst auch selbst eine Route planen.</p>
-    <div class="actions">
-      <a class="textlink" href="https://apps.apple.com/nl/app/twentetoer/id1469183012">App Store</a>
-      <a class="textlink" href="https://play.google.com/store/apps/details?id=com.thar.edityourapp.twentetoer">Google Play</a>
-    </div>
+    ${routeAppLinks}
   </section>
   <section>
     <h3>E-Chopper mit Kindern</h3>
@@ -33,7 +35,31 @@ function eChopperDetails(id) {
     <p>Mit einem Kind unterwegs? Schau dir auch den <a class="textlink" href="https://www.twentetoer.nl/voertuigen/goccia/">E-Puch</a> an.</p>
   </section>`;
 }
-function detail(id){if(id===5){location.href='/toer/de/buggy-experience/';return}const p=items.find(x=>x.id===id);$('#detail').classList.toggle('drinks-detail',[52,76].includes(id));$('#detail-content').innerHTML=`<img class="detail-img" src="${photo(p)}" alt="${esc(p.name)}"><div class="detail-pad"><div class="eyebrow">${groupLabel[p.group]} · TwenteToer</div><h2>${esc(p.name)}</h2><p>${esc(p.description)}</p>${eChopperDetails(id)}${drinksMenu(id)}<div class="price"><small>${[52,76].includes(id)?"Aufpreis auf die Getränkepauschale":"Indikativer Startpreis gemäß der vorhandenen Website"}</small><b>${p.price===null?"Auf Anfrage":money(p.price)}</b></div><div class="notice">Der genaue Preis, die Dauer, die Mindestteilnehmerzahl, das Alter und die Führerscheinanforderungen werden je Aktivität bestätigt. Diese Testseite prüft nicht die Verfügbarkeit und nimmt keine Reservierungen vor.</div><div class="actions"><button class="cta green" data-add="${p.id}">${chosen.includes(p.id)?"In „Meine Tour“ gespeichert":"Zu „Meine Tour“ hinzufügen"}</button><a class="cta light" href="/toer/de/mijn-toer/#aanbod">Meine Tour ansehen und bezahlen</a><a class="cta light" href="${p.source}" target="_blank" rel="noopener">Details auf aktueller Website</a></div></div>`;bind();$('#detail').showModal()}
+function topolinoDetails(id) {
+  if (id !== 3) return '';
+  return `<section>
+    <h3>Dolce Vita in Twente</h3>
+    <p>Erkundet Ootmarsum zu zweit im vollelektrischen Fiat Topolino. Das kleine Cabrio hat statt Türen ein Einstiegsseil und ein Verdeck, das ihr selbst öffnen und schließen könnt. Für eure Lieblingsmusik könnt ihr euer Handy mit einem Bluetooth-Lautsprecher verbinden.</p>
+  </section>
+  <section>
+    <h3>Routen in der TwenteToer-App</h3>
+    <p>Ladet die kostenlose App vor der Abfahrt herunter und steckt das Handy in die Halterung am Armaturenbrett. Die Routen führen an Natur, Sehenswürdigkeiten und Terrassen vorbei.</p>
+    ${routeAppLinks}
+  </section>
+  <section>
+    <h3>Mietpreise und Bedingungen</h3>
+    <p><strong>2 Stunden 30 € · 3 Stunden 40 € · 4 Stunden 50 €</strong> pro Person bei zwei Personen pro Fahrzeug. Die Mietpreise stammen von der TwenteToer-Website. In der Buchungsdemo gelten eigene Testpreise.</p>
+    <ul>
+      <li>Höchstens zwei Personen pro Fahrzeug. Haustiere sind nicht erlaubt.</li>
+      <li>Fahrer müssen mindestens 24 Jahre alt sein und seit mindestens einem Jahr einen Führerschein der Klasse B haben.</li>
+      <li>Bis zu 75 km Reichweite. Das Fahrzeug darf nur auf den vorgesehenen Routen genutzt werden und ist mit GPS gegen Missbrauch ausgestattet.</li>
+      <li>Keine Kaution. Mehrwertsteuer und Kfz-Haftpflichtversicherung sind im Preis enthalten.</li>
+    </ul>
+    <p>Kombiniert die Fahrt zum Beispiel mit einem Grillessen, einem Mittagessen oder einer QR-Schnitzeljagd. <a class="textlink" href="/toer/de/arrangementen/">Arrangements ansehen</a></p>
+  </section>`;
+}
+
+function detail(id){if(id===5){location.href='/toer/de/buggy-experience/';return}const p=items.find(x=>x.id===id);$('#detail').classList.toggle('drinks-detail',[52,76].includes(id));$('#detail-content').innerHTML=`<img class="detail-img" src="${photo(p)}" alt="${esc(p.name)}"><div class="detail-pad"><div class="eyebrow">${groupLabel[p.group]} · TwenteToer</div><h2>${esc(p.name)}</h2><p>${esc(p.description)}</p>${eChopperDetails(id)}${topolinoDetails(id)}${drinksMenu(id)}${id === 3 ? '' : `<div class="price"><small>${[52,76].includes(id)?"Aufpreis auf die Getränkepauschale":"Indikativer Startpreis gemäß der vorhandenen Website"}</small><b>${p.price===null?"Auf Anfrage":money(p.price)}</b></div>`}<div class="notice">Der genaue Preis, die Dauer, die Mindestteilnehmerzahl, das Alter und die Führerscheinanforderungen werden je Aktivität bestätigt. Diese Testseite prüft nicht die Verfügbarkeit und nimmt keine Reservierungen vor.</div><div class="actions"><button class="cta green" data-add="${p.id}">${chosen.includes(p.id)?"In „Meine Tour“ gespeichert":"Zu „Meine Tour“ hinzufügen"}</button><a class="cta light" href="/toer/de/mijn-toer/#aanbod">Meine Tour ansehen und bezahlen</a><a class="cta light" href="${p.source}" target="_blank" rel="noopener">Details auf aktueller Website</a></div></div>`;bind();$('#detail').showModal()}
 function named(term){return items.find(p=>(p.catalogOriginalName || p.name).toLowerCase().includes(term.toLowerCase()))||items[0]}
 const headerRides=[['Topolino',"DAS DOLCE VITA-GEFÜHL!",'topolino'],['E-Chopper',"ELEKTRISCH UND GENIESSEN!",'e-chopper'],['Buggy',"ABENTEUER IN TWENTE!",'buggy'],['E-Bike',"ERLEBEN SIE ES AUF DEM FAHRRAD!",'e-bike'],['Fatmax',"ELEKTRISCH AUF ABENTEUER!",'fatmax']];
 function photoHeader(){return `<section class="original-photo-header" aria-label="Entdecken Sie TwenteToer"><div class="photo-slider" aria-roledescription="carrousel">${headerRides.map(([name,title,term],i)=>`<div class="photo-slide ${i===0?'active':''}" aria-hidden="${i!==0}"><img src="/toer/thema/assets/header-slide-${i+1}.jpg" alt="${name} fährt in Ootmarsum und Umgebung" ${i?'loading="lazy"':'fetchpriority="high"'}><div class="photo-caption"><h2>${title}</h2></div></div>`).join('')}<div class="photo-controls"><div class="photo-dots">${headerRides.map(([name],i)=>`<button data-slide="${i}" aria-label="Foto anzeigen ${name}" aria-pressed="${i===0}"><span></span></button>`).join('')}</div><button class="photo-pause" aria-label="Diashow anhalten">Pause</button></div></div><nav class="vehicle-brush-row" aria-label="Wählen Sie Ihr Fahrzeug">${headerRides.map(([name,title,term],i)=>`<a href="${term==='buggy'?'/toer/de/buggy-experience/':'/toer/de/voertuigen/?voertuig='+named(term).id}"><span class="brush-disc"><img src="/toer/thema/assets/header-icon-${i+1}.png" alt=""></span><strong>${name}</strong></a>`).join('')}</nav></section>`}
