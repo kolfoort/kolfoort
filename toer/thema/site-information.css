@@ -804,3 +804,5 @@ footer .tt-footer-bottom .tt-footer-information a {
 footer .tt-footer-bottom .tt-footer-information a {
   padding-block: 5px;
 }
+
+main .tt-rental-terms :is(h1, h2, h3, strong, b, .tt-concept) { color: #245538; }
