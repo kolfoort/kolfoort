@@ -53,6 +53,26 @@ function eChopperDetails(id) {
   </section>`;
 }
 
+function vehiclePhotoGallery(name, files) {
+  return `<section>
+    <h3 id="vehicle-gallery-title">Foto-impressie</h3>
+    <div class="grid vehicle-photo-grid" data-photo-gallery>
+      ${files.map((file, index) => `<a class="card" href="/toer/thema/assets/${file}">
+        <img class="card-photo" src="/toer/thema/assets/${file}" alt="${name}, foto ${index + 1}" loading="lazy">
+      </a>`).join('')}
+    </div>
+    <dialog class="buggy-lightbox" aria-labelledby="vehicle-gallery-title">
+      <form method="dialog"><button class="close" aria-label="Sluiten">×</button></form>
+      <img alt="">
+      <div class="buggy-lightbox-controls">
+        <button type="button" data-gallery-step="-1" aria-label="Vorige foto">←</button>
+        <span aria-live="polite"></span>
+        <button type="button" data-gallery-step="1" aria-label="Volgende foto">→</button>
+      </div>
+    </dialog>
+  </section>`;
+}
+
 function topolinoDetails(id) {
   if (id !== 3) return '';
   return `<section>
@@ -89,7 +109,8 @@ function topolinoDetails(id) {
     <p>Schuif na de rit aan voor barbecue met drankjes en softijs, warme en koude tapas of een lunch. Bij het pizza-arrangement beleg je je eigen pizza.</p>
     <p>Voor groepen is er een rally met roadbook, een QR-speurtocht of de escapebox ‘Het Verloren Goud’. Wie onderweg iets wil proeven kan de rit combineren met Proef de Boer of een high tea bij Dennenoord in Vasse.</p>
     <p><a class="textlink" href="/toer/arrangementen/">Bekijk arrangementen</a></p>
-  </section>`;
+  </section>
+  ${vehiclePhotoGallery('Topolino Dolce Vita', ['topolino-impressie-1.jpg', 'topolino-impressie-2.jpg', 'topolino-impressie-3.png', 'topolino-impressie-4.jpg', 'topolino-impressie-5.jpg', 'topolino-impressie-6.jpg', 'topolino-impressie-7.jpg'])}`;
 }
 
 const eBikeRentalInfo = `<p><strong>1 dag € 25 · 2 dagen € 45 · 3 dagen € 60 · 4 dagen € 75 · 5 dagen € 90 · 6 dagen € 100 · 7 dagen € 110</strong> per fiets.</p><p>Ophalen vanaf 10.00 uur, terugbrengen uiterlijk 18.00 uur. Bij eerder terugbrengen geldt de volledige huur. De oplader zit in de gratis fietstas. Het zadel verstel je met de snelspanner.</p>`;
@@ -384,7 +405,51 @@ function buggyDetails(id) {
   </section>`;
 }
 
-function detail(id){const p=items.find(x=>x.id===id);$('#detail').classList.toggle('drinks-detail',[52,76].includes(id));$('#detail-content').innerHTML=`<img class="detail-img" src="${photo(p)}" alt="${esc(p.name)}"><div class="detail-pad"><div class="eyebrow">${groupLabel[p.group]} · TwenteToer</div><h2>${esc(p.name)}</h2><p>${esc(p.description)}</p>${eChopperDetails(id)}${topolinoDetails(id)}${rentalVehicleDetails(id)}${dafDetails(id)}${buggyDetails(id)}${drinksMenu(id)}${[3, 5, 10, 21].includes(id) ? '' : `<div class="price"><small>${[52,76].includes(id)?'Toeslag op het drankarrangement':'Indicatieve vanafprijs volgens de bestaande site'}</small><b>${p.price===null?'Op aanvraag':money(p.price)}</b></div>`}<div class="notice">De exacte prijs, duur, minimumdeelname, leeftijds- en rijbewijsvoorwaarden worden per activiteit bevestigd. Deze testsite controleert geen beschikbaarheid en maakt geen reservering.</div><div class="actions"><button class="cta green" data-add="${p.id}">${chosen.includes(p.id)?'Staat in Mijn toer':'Toevoegen aan Mijn toer'}</button><a class="cta light" href="/toer/mijn-toer/#aanbod">Mijn toer bekijken & Betalen</a><a class="cta light" href="${p.source}" target="_blank" rel="noopener">Details op huidige website</a></div></div>`;bind();if([5,21].includes(id))bindPhotoGallery($('#detail-content'));$('#detail').showModal()}
+function piaggioDetails(id) {
+  if (id === 19) {
+    return `<section>
+    <h3>Originele Piaggio Ape voor evenementen</h3>
+    <p>TwenteToer verhuurt verschillende originele modellen van de Italiaanse driewieler. Gebruik de Ape als foodtruck, verkoopwagen, reclamewagen of blikvanger op een beurs. Ook voor catering op locatie kun je hem inzetten.</p>
+    <h3>Huurprijs en bezorging</h3>
+    <p><strong>Vanaf € 175 per dag.</strong> Bezorging op locatie is in overleg mogelijk in heel Europa. Je kunt ook overleggen over reclame voor je eigen bedrijf op de wagen. Wil je een rit maken, dan kun je een <a class="textlink" href="/toer/voertuigen/?voertuig=1">TukTuk</a> huren.</p>
+  </section>
+  ${vehiclePhotoGallery('Piaggio Ape Classic', ['ape-classic-impressie-1.jpg', 'ape-classic-impressie-2.jpg', 'ape-classic-impressie-3.jpg', 'ape-classic-impressie-4.jpg', 'ape-classic-impressie-5.jpg', 'ape-classic-impressie-6.jpg'])}`;
+  }
+  if (id === 20) {
+    return `<section>
+    <h3>Een mobiele keuken voor je feest</h3>
+    <p>De zijkleppen van de Piaggio Ape Fly gaan open, zodat je vanaf de wagen kunt serveren. Zet hem neer op een feest of klein festival en schenk champagne of serveer warme pizza en wafels.</p>
+    <h3>Uitrusting en huuraanvraag</h3>
+    <ul>
+      <li>Ledverlichting in het dak en een 230V-stroomaansluiting.</li>
+      <li>Een koelkast en een warmhoudbak in formaat GN 1/1.</li>
+      <li>Meerdere lades, waarvan één op slot kan voor bijvoorbeeld de kassa.</li>
+    </ul>
+    <p><strong>€ 400 volgens de voertuigpagina.</strong> De details stem je bij je aanvraag af met TwenteToer.</p>
+  </section>
+  ${vehiclePhotoGallery('Piaggio Ape Keuken', ['ape-keuken-impressie-1.jpg', 'item-20.jpg'])}`;
+  }
+  return '';
+}
+
+function dikkeDafDetails(id) {
+  if (id !== 22) return '';
+  return `<section>
+    <h3>Achterin de DAF YA 328</h3>
+    <p>Deze originele legertruck uit 1955 neemt jullie met chauffeur mee rond Ootmarsum. De tocht van drie uur gaat door het Springendal en langs de Duitse grens, over verharde en onverharde wegen. Op onverharde stukken komt de 6×6-aandrijving goed van pas.</p>
+  </section>
+  <section>
+    <h3>Grensverhalen en stops onderweg</h3>
+    <p>Het Springendal was vroeger smokkelgebied. Onderweg is er tijd om stil te staan bij die geschiedenis. TwenteToer plant ongeveer twee stops, met hapjes en drankjes. Waar mogelijk kun je een uitkijktoren beklimmen. Bij de drankjes hoort ook een Twentse borrel, de fusel.</p>
+  </section>
+  <section>
+    <h3>Kosten en informatie</h3>
+    <p><strong>€ 500 per truck</strong>, inclusief chauffeur, tapashapjes en drankjes. Er is plaats voor maximaal 12 personen per truck. Voor een kleinere groep blijft de prijs per truck gelijk. Voor grotere groepen zijn meerdere trucks beschikbaar.</p>
+  </section>
+  ${vehiclePhotoGallery('Dikke Daf Toer', ['dikke-daf-impressie-1.jpg', 'dikke-daf-impressie-2.jpg', 'item-22.jpg'])}`;
+}
+
+function detail(id){const p=items.find(x=>x.id===id);$('#detail').classList.toggle('drinks-detail',[52,76].includes(id));$('#detail-content').innerHTML=`<img class="detail-img" src="${photo(p)}" alt="${esc(p.name)}"><div class="detail-pad"><div class="eyebrow">${groupLabel[p.group]} · TwenteToer</div><h2>${esc(p.name)}</h2><p>${esc(p.description)}</p>${eChopperDetails(id)}${topolinoDetails(id)}${rentalVehicleDetails(id)}${dafDetails(id)}${buggyDetails(id)}${piaggioDetails(id)}${dikkeDafDetails(id)}${drinksMenu(id)}${[3, 5, 10, 19, 20, 21, 22].includes(id) ? '' : `<div class="price"><small>${[52,76].includes(id)?'Toeslag op het drankarrangement':'Indicatieve vanafprijs volgens de bestaande site'}</small><b>${p.price===null?'Op aanvraag':money(p.price)}</b></div>`}<div class="notice">De exacte prijs, duur, minimumdeelname, leeftijds- en rijbewijsvoorwaarden worden per activiteit bevestigd. Deze testsite controleert geen beschikbaarheid en maakt geen reservering.</div><div class="actions"><button class="cta green" data-add="${p.id}">${chosen.includes(p.id)?'Staat in Mijn toer':'Toevoegen aan Mijn toer'}</button><a class="cta light" href="/toer/mijn-toer/#aanbod">Mijn toer bekijken & Betalen</a></div></div>`;bind();bindPhotoGallery($('#detail-content'));$('#detail').showModal()}
 function named(term){return items.find(p=>p.name.toLowerCase().includes(term.toLowerCase()))||items[0]}
 const headerRides=[['Topolino','HET DOLCE VITA GEVOEL!','topolino'],['E-Chopper','ELEKTRISCH EN GENIETEN!','e-chopper'],['Buggy','AVONTUUR IN TWENTE!','buggy'],['E-Bike','BELEEF HET OP DE FIETS!','e-bike'],['Fatmax','ELEKTRISCH OP AVONTUUR!','fatmax']];
 function photoHeader(){return `<section class="original-photo-header" aria-label="Ontdek TwenteToer"><div class="photo-slider" aria-roledescription="carrousel">${headerRides.map(([name,title,term],i)=>`<div class="photo-slide ${i===0?'active':''}" aria-hidden="${i!==0}"><img src="/toer/thema/assets/header-slide-${i+1}.jpg" alt="${name} rijden in Ootmarsum en omgeving" ${i?'loading="lazy"':'fetchpriority="high"'}><div class="photo-caption"><h2>${title}</h2></div></div>`).join('')}<div class="photo-controls"><div class="photo-dots">${headerRides.map(([name],i)=>`<button data-slide="${i}" aria-label="Toon foto ${name}" aria-pressed="${i===0}"><span></span></button>`).join('')}</div><button class="photo-pause" aria-label="Diavoorstelling pauzeren">Pauze</button></div></div><nav class="vehicle-brush-row" aria-label="Kies je voertuig">${headerRides.map(([name,title,term],i)=>`<a href="${term==='buggy'?'/toer/voertuigen/?voertuig=5':'/toer/voertuigen/?voertuig='+named(term).id}"><span class="brush-disc"><img src="/toer/thema/assets/header-icon-${i+1}.png" alt=""></span><strong>${name}</strong></a>`).join('')}</nav></section>`}
@@ -410,6 +475,7 @@ function contact(){ $('#main').innerHTML=`<div class="wrap"><div class="page-hea
 function bindPhotoGallery(root) {
   let galleryLinks = [];
   const lightbox = root.querySelector('.buggy-lightbox');
+  if (!lightbox) return;
   const fullPhoto = lightbox.querySelector('img');
   const counter = lightbox.querySelector('[aria-live]');
   let currentPhoto = 0;

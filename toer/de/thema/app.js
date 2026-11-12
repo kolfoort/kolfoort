@@ -53,6 +53,26 @@ function eChopperDetails(id) {
   </section>`;
 }
 
+function vehiclePhotoGallery(name, files) {
+  return `<section>
+    <h3 id="vehicle-gallery-title">Fotoimpressionen</h3>
+    <div class="grid vehicle-photo-grid" data-photo-gallery>
+      ${files.map((file, index) => `<a class="card" href="/toer/thema/assets/${file}">
+        <img class="card-photo" src="/toer/thema/assets/${file}" alt="${name}, Foto ${index + 1}" loading="lazy">
+      </a>`).join('')}
+    </div>
+    <dialog class="buggy-lightbox" aria-labelledby="vehicle-gallery-title">
+      <form method="dialog"><button class="close" aria-label="Schließen">×</button></form>
+      <img alt="">
+      <div class="buggy-lightbox-controls">
+        <button type="button" data-gallery-step="-1" aria-label="Vorheriges Foto">←</button>
+        <span aria-live="polite"></span>
+        <button type="button" data-gallery-step="1" aria-label="Nächstes Foto">→</button>
+      </div>
+    </dialog>
+  </section>`;
+}
+
 function topolinoDetails(id) {
   if (id !== 3) return '';
   return `<section>
@@ -89,7 +109,8 @@ function topolinoDetails(id) {
     <p>Nach der Fahrt könnt ihr euch zum Grillen mit Getränken und Softeis, zu warmen und kalten Tapas oder zum Mittagessen treffen. Beim Pizza-Arrangement belegt ihr eure Pizza selbst.</p>
     <p>Für Gruppen gibt es eine Rallye mit Roadbook, eine QR-Schnitzeljagd oder die Escapebox „Het Verloren Goud“. Wer unterwegs etwas probieren möchte, kann die Fahrt mit „Proef de Boer“ oder einem High Tea bei Dennenoord in Vasse verbinden.</p>
     <p><a class="textlink" href="/toer/de/arrangementen/">Arrangements ansehen</a></p>
-  </section>`;
+  </section>
+  ${vehiclePhotoGallery('Topolino Dolce Vita', ['topolino-impressie-1.jpg', 'topolino-impressie-2.jpg', 'topolino-impressie-3.png', 'topolino-impressie-4.jpg', 'topolino-impressie-5.jpg', 'topolino-impressie-6.jpg', 'topolino-impressie-7.jpg'])}`;
 }
 
 const eBikeRentalInfo = `<p><strong>1 Tag 25 € · 2 Tage 45 € · 3 Tage 60 € · 4 Tage 75 € · 5 Tage 90 € · 6 Tage 100 € · 7 Tage 110 €</strong> pro Fahrrad.</p><p>Abholung ab 10 Uhr, Rückgabe spätestens um 18 Uhr. Bei früherer Rückgabe gilt der volle Mietpreis. Das Ladegerät steckt in der kostenlosen Fahrradtasche. Die Sattelhöhe stellt ihr mit dem Schnellspanner ein.</p>`;
@@ -384,7 +405,51 @@ function buggyDetails(id) {
   </section>`;
 }
 
-function detail(id){const p=items.find(x=>x.id===id);$('#detail').classList.toggle('drinks-detail',[52,76].includes(id));$('#detail-content').innerHTML=`<img class="detail-img" src="${photo(p)}" alt="${esc(p.name)}"><div class="detail-pad"><div class="eyebrow">${groupLabel[p.group]} · TwenteToer</div><h2>${esc(p.name)}</h2><p>${esc(p.description)}</p>${eChopperDetails(id)}${topolinoDetails(id)}${rentalVehicleDetails(id)}${dafDetails(id)}${buggyDetails(id)}${drinksMenu(id)}${[3, 5, 10, 21].includes(id) ? '' : `<div class="price"><small>${[52,76].includes(id)?"Aufpreis auf die Getränkepauschale":"Indikativer Startpreis gemäß der vorhandenen Website"}</small><b>${p.price===null?"Auf Anfrage":money(p.price)}</b></div>`}<div class="notice">Der genaue Preis, die Dauer, die Mindestteilnehmerzahl, das Alter und die Führerscheinanforderungen werden je Aktivität bestätigt. Diese Testseite prüft nicht die Verfügbarkeit und nimmt keine Reservierungen vor.</div><div class="actions"><button class="cta green" data-add="${p.id}">${chosen.includes(p.id)?"In „Meine Tour“ gespeichert":"Zu „Meine Tour“ hinzufügen"}</button><a class="cta light" href="/toer/de/mijn-toer/#aanbod">Meine Tour ansehen und bezahlen</a><a class="cta light" href="${p.source}" target="_blank" rel="noopener">Details auf aktueller Website</a></div></div>`;bind();if([5,21].includes(id))bindPhotoGallery($('#detail-content'));$('#detail').showModal()}
+function piaggioDetails(id) {
+  if (id === 19) {
+    return `<section>
+    <h3>Originale Piaggio Ape für Veranstaltungen</h3>
+    <p>TwenteToer vermietet verschiedene originale Modelle des italienischen Dreirads. Die Ape eignet sich als Foodtruck, Verkaufswagen, Werbefläche oder Blickfang für einen Messestand. Ihr könnt sie auch beim Catering vor Ort einsetzen.</p>
+    <h3>Miete und Lieferung</h3>
+    <p><strong>Ab 175 € pro Tag.</strong> Lieferung zum Veranstaltungsort ist nach Absprache europaweit möglich. Auch eine Gestaltung mit eurer Firmenwerbung kann vereinbart werden. Für eine Fahrt könnt ihr ein <a class="textlink" href="/toer/de/voertuigen/?voertuig=1">TukTuk</a> mieten.</p>
+  </section>
+  ${vehiclePhotoGallery('Piaggio Ape Classic', ['ape-classic-impressie-1.jpg', 'ape-classic-impressie-2.jpg', 'ape-classic-impressie-3.jpg', 'ape-classic-impressie-4.jpg', 'ape-classic-impressie-5.jpg', 'ape-classic-impressie-6.jpg'])}`;
+  }
+  if (id === 20) {
+    return `<section>
+    <h3>Eine mobile Küche für euer Fest</h3>
+    <p>Bei der Piaggio Ape Fly lassen sich die Seitenklappen öffnen. So könnt ihr auf einem Fest oder kleinen Festival beispielsweise Sekt, warme Pizza oder Waffeln servieren.</p>
+    <h3>Ausstattung und Mietanfrage</h3>
+    <ul>
+      <li>LED-Beleuchtung im Dach und 230-Volt-Stromanschluss.</li>
+      <li>Kühlschrank und Warmhaltebehälter im Format GN 1/1.</li>
+      <li>Mehrere Schubladen, darunter eine abschließbare für die Kasse.</li>
+    </ul>
+    <p><strong>400 € laut Fahrzeugseite.</strong> Die Einzelheiten stimmt ihr bei der Anfrage mit TwenteToer ab.</p>
+  </section>
+  ${vehiclePhotoGallery('Piaggio Ape Küche', ['ape-keuken-impressie-1.jpg', 'item-20.jpg'])}`;
+  }
+  return '';
+}
+
+function dikkeDafDetails(id) {
+  if (id !== 22) return '';
+  return `<section>
+    <h3>Hinten im DAF YA 328</h3>
+    <p>Der originale Militärlastwagen von 1955 bringt euch mit Fahrer durch die Umgebung von Ootmarsum. Die dreistündige Tour führt auf befestigten und unbefestigten Wegen durchs Springendal und an der deutschen Grenze entlang. Auf unbefestigten Strecken kommt der 6×6-Antrieb zum Einsatz.</p>
+  </section>
+  <section>
+    <h3>Grenzgeschichten und Pausen unterwegs</h3>
+    <p>Das Springendal war früher ein Schmuggelgebiet. Unterwegs bleibt Zeit für Geschichten aus dieser Zeit. TwenteToer plant etwa zwei Stopps mit Snacks und Getränken. Wo es möglich ist, könnt ihr einen Aussichtsturm besteigen. Zu den Getränken gehört auch ein Twenter Schnaps, der Fusel.</p>
+  </section>
+  <section>
+    <h3>Preise und Hinweise</h3>
+    <p><strong>500 € pro Lastwagen</strong>, inklusive Fahrer, Tapas und Getränken. Pro Fahrzeug können höchstens 12 Personen mitfahren. Für kleinere Gruppen bleibt der Preis pro Lastwagen gleich. Für größere Gruppen stehen mehrere Fahrzeuge zur Verfügung.</p>
+  </section>
+  ${vehiclePhotoGallery('Dikke Daf Toer', ['dikke-daf-impressie-1.jpg', 'dikke-daf-impressie-2.jpg', 'item-22.jpg'])}`;
+}
+
+function detail(id){const p=items.find(x=>x.id===id);$('#detail').classList.toggle('drinks-detail',[52,76].includes(id));$('#detail-content').innerHTML=`<img class="detail-img" src="${photo(p)}" alt="${esc(p.name)}"><div class="detail-pad"><div class="eyebrow">${groupLabel[p.group]} · TwenteToer</div><h2>${esc(p.name)}</h2><p>${esc(p.description)}</p>${eChopperDetails(id)}${topolinoDetails(id)}${rentalVehicleDetails(id)}${dafDetails(id)}${buggyDetails(id)}${piaggioDetails(id)}${dikkeDafDetails(id)}${drinksMenu(id)}${[3, 5, 10, 19, 20, 21, 22].includes(id) ? '' : `<div class="price"><small>${[52,76].includes(id)?"Aufpreis auf die Getränkepauschale":"Indikativer Startpreis gemäß der vorhandenen Website"}</small><b>${p.price===null?"Auf Anfrage":money(p.price)}</b></div>`}<div class="notice">Der genaue Preis, die Dauer, die Mindestteilnehmerzahl, das Alter und die Führerscheinanforderungen werden je Aktivität bestätigt. Diese Testseite prüft nicht die Verfügbarkeit und nimmt keine Reservierungen vor.</div><div class="actions"><button class="cta green" data-add="${p.id}">${chosen.includes(p.id)?"In „Meine Tour“ gespeichert":"Zu „Meine Tour“ hinzufügen"}</button><a class="cta light" href="/toer/de/mijn-toer/#aanbod">Meine Tour ansehen und bezahlen</a></div></div>`;bind();bindPhotoGallery($('#detail-content'));$('#detail').showModal()}
 function named(term){return items.find(p=>(p.catalogOriginalName || p.name).toLowerCase().includes(term.toLowerCase()))||items[0]}
 const headerRides=[['Topolino',"DAS DOLCE VITA-GEFÜHL!",'topolino'],['E-Chopper',"ELEKTRISCH UND GENIESSEN!",'e-chopper'],['Buggy',"ABENTEUER IN TWENTE!",'buggy'],['E-Bike',"ERLEBEN SIE ES AUF DEM FAHRRAD!",'e-bike'],['Fatmax',"ELEKTRISCH AUF ABENTEUER!",'fatmax']];
 function photoHeader(){return `<section class="original-photo-header" aria-label="Entdecken Sie TwenteToer"><div class="photo-slider" aria-roledescription="carrousel">${headerRides.map(([name,title,term],i)=>`<div class="photo-slide ${i===0?'active':''}" aria-hidden="${i!==0}"><img src="/toer/thema/assets/header-slide-${i+1}.jpg" alt="${name} fährt in Ootmarsum und Umgebung" ${i?'loading="lazy"':'fetchpriority="high"'}><div class="photo-caption"><h2>${title}</h2></div></div>`).join('')}<div class="photo-controls"><div class="photo-dots">${headerRides.map(([name],i)=>`<button data-slide="${i}" aria-label="Foto anzeigen ${name}" aria-pressed="${i===0}"><span></span></button>`).join('')}</div><button class="photo-pause" aria-label="Diashow anhalten">Pause</button></div></div><nav class="vehicle-brush-row" aria-label="Wählen Sie Ihr Fahrzeug">${headerRides.map(([name,title,term],i)=>`<a href="${term==='buggy'?'/toer/de/voertuigen/?voertuig=5':'/toer/de/voertuigen/?voertuig='+named(term).id}"><span class="brush-disc"><img src="/toer/thema/assets/header-icon-${i+1}.png" alt=""></span><strong>${name}</strong></a>`).join('')}</nav></section>`}
@@ -410,6 +475,7 @@ function contact(){ $('#main').innerHTML=`<div class="wrap"><div class="page-hea
 function bindPhotoGallery(root) {
   let galleryLinks = [];
   const lightbox = root.querySelector('.buggy-lightbox');
+  if (!lightbox) return;
   const fullPhoto = lightbox.querySelector('img');
   const counter = lightbox.querySelector('[aria-live]');
   let currentPhoto = 0;
