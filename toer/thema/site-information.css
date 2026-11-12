@@ -204,8 +204,14 @@ footer .tt-footer-information a[aria-current=page] {
 }
 
 header #nav a, header .header-plan { white-space: nowrap; }
+header .header-plan { flex-shrink: 0; }
 @media (min-width: 1051px) {
-  header #nav { gap: clamp(6px, 1.1vw, 18px); }
+  header #nav {
+    min-width: 0;
+    flex-wrap: wrap;
+    justify-content: center;
+    gap: 4px clamp(6px, 1.1vw, 18px);
+  }
   header #nav a, header #nav a[aria-current=page] { padding-inline: 8px; }
 }
 @media (min-width: 781px) and (max-width: 1050px) {
