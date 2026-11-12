@@ -305,7 +305,36 @@ function rentalVehicleDetails(id) {
   }
 }
 
-function detail(id){if(id===5){location.href='/toer/buggy-experience/';return}const p=items.find(x=>x.id===id);$('#detail').classList.toggle('drinks-detail',[52,76].includes(id));$('#detail-content').innerHTML=`<img class="detail-img" src="${photo(p)}" alt="${esc(p.name)}"><div class="detail-pad"><div class="eyebrow">${groupLabel[p.group]} · TwenteToer</div><h2>${esc(p.name)}</h2><p>${esc(p.description)}</p>${eChopperDetails(id)}${topolinoDetails(id)}${rentalVehicleDetails(id)}${drinksMenu(id)}${[3, 10].includes(id) ? '' : `<div class="price"><small>${[52,76].includes(id)?'Toeslag op het drankarrangement':'Indicatieve vanafprijs volgens de bestaande site'}</small><b>${p.price===null?'Op aanvraag':money(p.price)}</b></div>`}<div class="notice">De exacte prijs, duur, minimumdeelname, leeftijds- en rijbewijsvoorwaarden worden per activiteit bevestigd. Deze testsite controleert geen beschikbaarheid en maakt geen reservering.</div><div class="actions"><button class="cta green" data-add="${p.id}">${chosen.includes(p.id)?'Staat in Mijn toer':'Toevoegen aan Mijn toer'}</button><a class="cta light" href="/toer/mijn-toer/#aanbod">Mijn toer bekijken & Betalen</a><a class="cta light" href="${p.source}" target="_blank" rel="noopener">Details op huidige website</a></div></div>`;bind();$('#detail').showModal()}
+function dafDetails(id) {
+  if (id !== 21) return '';
+  return `<section>
+    <h3>Met de DAF YA 126 op pad</h3>
+    <p>Stap met vrienden, familie of collega’s achterin een originele Nederlandse legertruck uit de jaren vijftig. Jullie kunnen de rit rond Ootmarsum combineren met een dropping, escapegame of wandeling. Ook voor een kinderfeestje of een groep met eigen wensen kan TwenteToer een voorstel maken.</p>
+  </section>
+  <section>
+    <h3>Kosten en informatie</h3>
+    <p><strong>€ 225 per uur per truck, inclusief btw</strong>. De truck rijdt altijd met chauffeur. De rit is voor 6 tot 14 personen per truck en blijft in de omgeving van Ootmarsum. De vertrektijd spreek je af met TwenteToer.</p>
+  </section>
+  <section>
+    <h3 id="daf-gallery-title">Foto-impressie legertrucks</h3>
+    <div class="grid vehicle-photo-grid" data-photo-gallery>
+      <a class="card" href="/toer/thema/assets/leger-truck-1.jpg"><img class="card-photo" src="/toer/thema/assets/leger-truck-1.jpg" alt="Foto-impressie legertrucks 1" loading="lazy"></a>
+      <a class="card" href="/toer/thema/assets/leger-truck-2.jpg"><img class="card-photo" src="/toer/thema/assets/leger-truck-2.jpg" alt="Foto-impressie legertrucks 2" loading="lazy"></a>
+      <a class="card" href="/toer/thema/assets/leger-truck-3.jpg"><img class="card-photo" src="/toer/thema/assets/leger-truck-3.jpg" alt="Foto-impressie legertrucks 3" loading="lazy"></a>
+    </div>
+    <dialog class="buggy-lightbox" aria-labelledby="daf-gallery-title">
+      <form method="dialog"><button class="close" aria-label="Sluiten">×</button></form>
+      <img alt="">
+      <div class="buggy-lightbox-controls">
+        <button type="button" data-gallery-step="-1" aria-label="Vorige foto">←</button>
+        <span aria-live="polite"></span>
+        <button type="button" data-gallery-step="1" aria-label="Volgende foto">→</button>
+      </div>
+    </dialog>
+  </section>`;
+}
+
+function detail(id){if(id===5){location.href='/toer/buggy-experience/';return}const p=items.find(x=>x.id===id);$('#detail').classList.toggle('drinks-detail',[52,76].includes(id));$('#detail-content').innerHTML=`<img class="detail-img" src="${photo(p)}" alt="${esc(p.name)}"><div class="detail-pad"><div class="eyebrow">${groupLabel[p.group]} · TwenteToer</div><h2>${esc(p.name)}</h2><p>${esc(p.description)}</p>${eChopperDetails(id)}${topolinoDetails(id)}${rentalVehicleDetails(id)}${dafDetails(id)}${drinksMenu(id)}${[3, 10, 21].includes(id) ? '' : `<div class="price"><small>${[52,76].includes(id)?'Toeslag op het drankarrangement':'Indicatieve vanafprijs volgens de bestaande site'}</small><b>${p.price===null?'Op aanvraag':money(p.price)}</b></div>`}<div class="notice">De exacte prijs, duur, minimumdeelname, leeftijds- en rijbewijsvoorwaarden worden per activiteit bevestigd. Deze testsite controleert geen beschikbaarheid en maakt geen reservering.</div><div class="actions"><button class="cta green" data-add="${p.id}">${chosen.includes(p.id)?'Staat in Mijn toer':'Toevoegen aan Mijn toer'}</button><a class="cta light" href="/toer/mijn-toer/#aanbod">Mijn toer bekijken & Betalen</a><a class="cta light" href="${p.source}" target="_blank" rel="noopener">Details op huidige website</a></div></div>`;bind();if(id===21)bindPhotoGallery($('#detail-content'));$('#detail').showModal()}
 function named(term){return items.find(p=>p.name.toLowerCase().includes(term.toLowerCase()))||items[0]}
 const headerRides=[['Topolino','HET DOLCE VITA GEVOEL!','topolino'],['E-Chopper','ELEKTRISCH EN GENIETEN!','e-chopper'],['Buggy','AVONTUUR IN TWENTE!','buggy'],['E-Bike','BELEEF HET OP DE FIETS!','e-bike'],['Fatmax','ELEKTRISCH OP AVONTUUR!','fatmax']];
 function photoHeader(){return `<section class="original-photo-header" aria-label="Ontdek TwenteToer"><div class="photo-slider" aria-roledescription="carrousel">${headerRides.map(([name,title,term],i)=>`<div class="photo-slide ${i===0?'active':''}" aria-hidden="${i!==0}"><img src="/toer/thema/assets/header-slide-${i+1}.jpg" alt="${name} rijden in Ootmarsum en omgeving" ${i?'loading="lazy"':'fetchpriority="high"'}><div class="photo-caption"><h2>${title}</h2></div></div>`).join('')}<div class="photo-controls"><div class="photo-dots">${headerRides.map(([name],i)=>`<button data-slide="${i}" aria-label="Toon foto ${name}" aria-pressed="${i===0}"><span></span></button>`).join('')}</div><button class="photo-pause" aria-label="Diavoorstelling pauzeren">Pauze</button></div></div><nav class="vehicle-brush-row" aria-label="Kies je voertuig">${headerRides.map(([name,title,term],i)=>`<a href="${term==='buggy'?'/toer/buggy-experience/':'/toer/voertuigen/?voertuig='+named(term).id}"><span class="brush-disc"><img src="/toer/thema/assets/header-icon-${i+1}.png" alt=""></span><strong>${name}</strong></a>`).join('')}</nav></section>`}
@@ -346,7 +375,7 @@ function buggyExperience() {
   <div class="wrap">
     <div class="experience-strip"><span><b>1 uur rijden</b></span><span><b>Met begeleiding</b></span><span><b>Kinderen vanaf 5 jaar</b></span><span><b>€ 60 per persoon</b></span></div>
     <section class="section">
-      <div class="grid" data-buggy-gallery>
+      <div class="grid" data-photo-gallery>
       <a class="card" href="/toer/thema/assets/buggy-rit-2.jpg"><img class="card-photo" src="/toer/thema/assets/buggy-rit-2.jpg" alt="Buggy Experience in Ootmarsum, foto 2" loading="lazy"></a>
       <a class="card" href="/toer/thema/assets/buggy-rit-3.jpg"><img class="card-photo" src="/toer/thema/assets/buggy-rit-3.jpg" alt="Buggy Experience in Ootmarsum, foto 3" loading="lazy"></a>
       <a class="card" href="/toer/thema/assets/buggy-rit-4.jpg"><img class="card-photo" src="/toer/thema/assets/buggy-rit-4.jpg" alt="Buggy Experience in Ootmarsum, foto 4" loading="lazy"></a>
@@ -377,7 +406,7 @@ function buggyExperience() {
     </section>
     <section class="section">
       <div class="section-head"><h2 id="buggy-gallery-title">Foto-impressie</h2></div>
-      <div class="grid" id="buggy-gallery" data-buggy-gallery>
+      <div class="grid" id="buggy-gallery" data-photo-gallery>
       <a class="card" href="/toer/thema/assets/buggy-rit-3.jpg"><img class="card-photo" src="/toer/thema/assets/buggy-rit-3.jpg" alt="Buggy Experience in Ootmarsum, foto 3" loading="lazy"></a>
       <a class="card" href="/toer/thema/assets/buggy-rit-1.jpg"><img class="card-photo" src="/toer/thema/assets/buggy-rit-1.jpg" alt="Buggy Experience in Ootmarsum, foto 1" loading="lazy"></a>
       <a class="card" href="/toer/thema/assets/buggy-rit-9.jpg"><img class="card-photo" src="/toer/thema/assets/buggy-rit-9.jpg" alt="Buggy Experience in Ootmarsum, foto 9" loading="lazy"></a>
@@ -409,8 +438,12 @@ function buggyExperience() {
   </div>`;
   bind();
 
+  bindPhotoGallery($('#main'));
+}
+
+function bindPhotoGallery(root) {
   let galleryLinks = [];
-  const lightbox = $('.buggy-lightbox');
+  const lightbox = root.querySelector('.buggy-lightbox');
   const fullPhoto = lightbox.querySelector('img');
   const counter = lightbox.querySelector('[aria-live]');
   let currentPhoto = 0;
@@ -423,7 +456,7 @@ function buggyExperience() {
     counter.textContent = (currentPhoto + 1) + ' / ' + galleryLinks.length;
   }
 
-  document.querySelectorAll('[data-buggy-gallery]').forEach(gallery => {
+  root.querySelectorAll('[data-photo-gallery]').forEach(gallery => {
     const links = [...gallery.querySelectorAll('a')];
     links.forEach((link, index) => {
       link.addEventListener('click', event => {

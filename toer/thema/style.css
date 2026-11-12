@@ -135,3 +135,12 @@ body{background:#fffefa}header{border-bottom:3px solid #edf1d9}nav{font-size:13p
   cursor: pointer;
   font-size: 24px;
 }
+
+.vehicle-photo-grid {
+  grid-template-columns: repeat(3, minmax(0, 1fr));
+  gap: 8px;
+}
+.vehicle-photo-grid .card-photo {
+  height: auto;
+  aspect-ratio: 4 / 3;
+}
