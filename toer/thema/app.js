@@ -481,9 +481,15 @@ function info() {
     <details><summary>Ootmarsum en omgeving</summary><p>Wandel door de straatjes van Ootmarsum langs historische gevels, galeries en terrassen. In het Springendal vind je bronnen, beekjes, heide en oude boerderijen. Ook Vasse en het Dal van de Mosbeek zijn geschikt voor een wandeling of fietstocht.</p></details>
   </section>
   <section class="section" id="voorwaarden">
-    <h2>Voertuigen en voorwaarden</h2>
+    <h2>Voertuigen en Voorwaarden</h2>
     <details><summary>Leeftijd en rijbewijs</summary><ul class="benefits"><li>TukTuk: vanaf 24 jaar, motorrijbewijs A of A1 en ervaring op een motorfiets.</li><li>Buggy: vanaf 20 jaar, rijbewijs B minstens één jaar in bezit.</li><li>Topolino: vanaf 24 jaar, rijbewijs B minstens één jaar in bezit.</li><li>E-Chopper: vanaf 18 jaar, rijbewijs AM, A of B. Goccia: rijbewijs AM, A of B.</li><li>Fatmax en Trike: vanaf 16 jaar. Fatbike: vanaf 155 cm. Beachcruiser: vanaf 160 cm.</li></ul><p>Bekijk de voorwaarden bij het voertuig en neem het vereiste rijbewijs mee.</p></details>
     <details><summary>Huurvoorwaarden en Plus+ Verzekering</summary><p>De gewone WA-dekking geldt voor voertuigen waarvoor die verplicht is. TwenteToer biedt daarnaast Plus+ aan. De productinformatie noemt een maximaal eigen risico van € 150 bij gedekte schade. Voor diefstaldekking noemt TwenteToer een politieaangifte binnen 24 uur en het kunnen overhandigen van de originele sleutel(s). Controleer vóór vertrek samen het voertuig en vraag bij je boeking naar de premie, dekking en uitsluitingen.</p><p><a class="textlink" href="/toer/huurvoorwaarden/">Huurvoorwaarden</a> · <a class="textlink" href="/toer/boekings-en-huurvoorwaarden/">Boekingsvoorwaarden</a></p></details>
+  </section>
+  <section class="section" id="twentetoer">
+    <h2>Over TwenteToer</h2>
+    <details><summary>Ons verhaal</summary><p>TwenteToer begon in 2013 met één TukTuk. Inmiddels organiseren we voertuigverhuur en groepsuitjes vanuit Ootmarsum. Sinds 2021 ontvangen we gasten ook in het café-restaurant aan de rand van het centrum, voorheen ’t Witte Peard.</p><a class="textlink" href="/toer/bedrijfsgegevens/">Bedrijfsgegevens</a></details>
+    <details><summary>Werken bij TwenteToer</summary><p>Interesse in verhuur, onderhoud, keuken, bar of vakantie- en weekendwerk? Neem contact op om te vragen welke functies openstaan en bespreek je beschikbaarheid.</p><a class="textlink" href="/toer/contact/">Informeer naar vacatures</a></details>
+    <details><summary>Ervaringen van gasten</summary><p>Lees ervaringen van bezoekers over onder andere bedrijfsuitjes met buggy’s, familiedagen en tochten met E-Choppers.</p><a class="textlink" href="https://nl.trustpilot.com/review/twentetoer.nl" target="_blank" rel="noopener noreferrer">Lees beoordelingen op Trustpilot</a></details>
   </section>
   <section class="section" id="cadeaubonnen">
     <h2>Cadeaubonnen</h2>
@@ -495,12 +501,6 @@ function info() {
     <details><summary>Vakantiewoning in Ootmarsum</summary><p>De vakantiewoning ligt op ongeveer 300 meter van het centrum en biedt plaats aan maximaal zeven personen, inclusief slaapbank. Er zijn twee slaapkamers, een ingerichte keuken en een infraroodsauna. De woning ligt op de eerste verdieping en is bereikbaar via een buitentrap. Inchecken kan vanaf 15.00 uur, uitchecken is vóór 11.00 uur. Bedlinnen, eindschoonmaak en toeristenbelasting zijn volgens de accommodatiepagina inbegrepen. Huisdieren, roken en feesten zijn niet toegestaan.</p><a class="textlink" href="https://www.booking.com/hotel/nl/slapen-in-ootmarsum-ootmarsum.nl.html">Bekijk beschikbaarheid bij Booking.com</a></details>
     <details><summary>Campings</summary><p><a href="https://www.dewitteberg.nl/">De Witte Berg</a> ligt op ongeveer 800 meter en heeft kampeerplaatsen, bungalows, chalets en zwembaden. <a href="https://www.campingbijdebronnen.nl/">Bij de Bronnen</a> ligt op ongeveer 900 meter, bij het Springendal, en is een uitvalsbasis voor wandelingen en fietstochten.</p></details>
     <details><summary>Hotels en bed &amp; breakfasts</summary><p>Voor hotels kun je het regionale verblijfsoverzicht bekijken. Voor bed &amp; breakfast noemt TwenteToer <a href="https://ervehowerboer.nl/">Erve Höwerboer</a>, <a href="https://thofke-ootmarsum.nl/t-hofke">’t Höfke</a> bij de Kuiperberg en <a href="https://www.bossem.nl/">Erfgoed Bossem</a> met onder meer boerderijkamers en sterrenkubussen.</p><a class="textlink" href="https://www.ootmarsum-dinkelland.nl/">Verblijven in Ootmarsum-Dinkelland</a></details>
-  </section>
-  <section class="section" id="twentetoer">
-    <h2>Over TwenteToer</h2>
-    <details><summary>Ons verhaal</summary><p>TwenteToer begon in 2013 met één TukTuk. Inmiddels organiseren we voertuigverhuur en groepsuitjes vanuit Ootmarsum. Sinds 2021 ontvangen we gasten ook in het café-restaurant aan de rand van het centrum, voorheen ’t Witte Peard.</p><a class="textlink" href="/toer/bedrijfsgegevens/">Bedrijfsgegevens</a></details>
-    <details><summary>Werken bij TwenteToer</summary><p>Interesse in verhuur, onderhoud, keuken, bar of vakantie- en weekendwerk? Neem contact op om te vragen welke functies openstaan en bespreek je beschikbaarheid.</p><a class="textlink" href="/toer/contact/">Informeer naar vacatures</a></details>
-    <details><summary>Ervaringen van gasten</summary><p>Lees ervaringen van bezoekers over onder andere bedrijfsuitjes met buggy’s, familiedagen en tochten met E-Choppers.</p><a class="textlink" href="https://nl.trustpilot.com/review/twentetoer.nl" target="_blank" rel="noopener noreferrer">Lees beoordelingen op Trustpilot</a></details>
   </section>
   <section class="section" id="catering">
     <h2>Catering op locatie</h2>
