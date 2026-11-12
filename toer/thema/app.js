@@ -684,15 +684,35 @@ function homeReviews() {
     <div class="home-trustpilot"><a href="https://nl.trustpilot.com/review/twentetoer.nl" target="_blank" rel="noopener noreferrer">Lees alle reviews op Trustpilot</a></div>
     <h2>Ervaringen</h2>
     <div class="home-experiences">
-      ${experiences.map(([title, description, photo]) => `<article>
+      ${experiences.map(([title, description, photo], index) => `<article>
         <img src="/toer/thema/assets/${photo}" width="104" height="104" alt="" loading="lazy">
         <h3>${esc(title)}</h3><p>${esc(description)}</p>
+        ${index === 0 ? `<button type="button" class="textlink card-details" id="home-team-story">Lees de ervaring</button>` : ""}
       </article>`).join('')}
     </div>
   </section>`;
 }
 
+function openHomeTeamStory() {
+  const dialog = $('#detail');
+  dialog.classList.remove('drinks-detail');
+  $('#detail-content').innerHTML = `<img class="detail-img" src="/toer/thema/assets/ervaring-team.jpg" alt="">
+    <div class="detail-pad">
+      <div class="eyebrow">Gastverhaal · TwenteToer</div>
+      <h2>Een heerlijke dag met collega’s</h2>
+      <p>De gymdocenten van het TCC aan de Potskampstraat stapten voor hun teamuitje op de E-Chopper. Vanuit Ootmarsum gingen ze samen op pad door Twente. Een dag waarop je je collega’s eens spreekt buiten de gymzaal, met de wind om je oren en alle tijd om om je heen te kijken.</p>
+      <h3>Samen op pad vanuit Ootmarsum</h3><p>Wie Ootmarsum uit rijdt, zit al snel tussen de weilanden en de bomen. Op de E-Chopper volg je de landweggetjes op je eigen tempo. Je hoeft niet te trappen en kunt onderweg even stoppen voor een groepsfoto of om van het uitzicht te genieten.</p>
+      <h3>Na de rit nog even samen zitten</h3><p>Wie er een langer uitje van wil maken, kan de rit combineren met een lunch, borrel of barbecue bij TwenteToer. Dan heb je na het toeren alle tijd om nog even bij te praten over wat jullie onderweg hebben meegemaakt.</p>
+      <div class="actions">
+        <a class="cta green" href="/toer/voertuigen/?voertuig=2">Bekijk de E-Chopper</a>
+        <a class="cta light" href="/toer/mijn-toer/">Mijn toer</a>
+      </div>
+    </div>`;
+  dialog.showModal();
+}
+
 function bindHomeReviews() {
+  $('#home-team-story').onclick = openHomeTeamStory;
   const track = $('#home-review-track');
   const buttons = [...document.querySelectorAll('[data-review-step]')];
   function updateControls() {

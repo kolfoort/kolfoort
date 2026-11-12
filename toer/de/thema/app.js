@@ -684,15 +684,35 @@ function homeReviews() {
     <div class="home-trustpilot"><a href="https://nl.trustpilot.com/review/twentetoer.nl" target="_blank" rel="noopener noreferrer">Alle Bewertungen auf Trustpilot</a></div>
     <h2>Erfahrungen</h2>
     <div class="home-experiences">
-      ${experiences.map(([title, description, photo]) => `<article>
+      ${experiences.map(([title, description, photo], index) => `<article>
         <img src="/toer/thema/assets/${photo}" width="104" height="104" alt="" loading="lazy">
         <h3>${esc(title)}</h3><p>${esc(description)}</p>
+        ${index === 0 ? `<button type="button" class="textlink card-details" id="home-team-story">Erfahrung lesen</button>` : ""}
       </article>`).join('')}
     </div>
   </section>`;
 }
 
+function openHomeTeamStory() {
+  const dialog = $('#detail');
+  dialog.classList.remove('drinks-detail');
+  $('#detail-content').innerHTML = `<img class="detail-img" src="/toer/thema/assets/ervaring-team.jpg" alt="">
+    <div class="detail-pad">
+      <div class="eyebrow">Erfahrung · TwenteToer</div>
+      <h2>Ein schöner Tag mit dem Team</h2>
+      <p>Die Sportlehrkräfte des TCC an der Potskampstraat stiegen für ihren Teamausflug auf den E-Chopper. Von Ootmarsum aus ging es gemeinsam durch Twente. Eine Gelegenheit, die Kollegen außerhalb der Sporthalle zu treffen.</p>
+      <h3>Gemeinsam ab Ootmarsum</h3><p>Kurz hinter Ootmarsum führen die Landstraßen zwischen Wiesen und Bäumen entlang. Mit dem elektrischen E-Chopper könnt ihr im eigenen Tempo fahren und unterwegs für ein Gruppenfoto oder eine Pause anhalten.</p>
+      <h3>Nach der Tour zusammensitzen</h3><p>Wer mehr Zeit miteinander verbringen möchte, kann die Fahrt mit einem Mittagessen, einem Getränk oder einem Grillessen bei TwenteToer verbinden.</p>
+      <div class="actions">
+        <a class="cta green" href="/toer/de/voertuigen/?voertuig=2">E-Chopper ansehen</a>
+        <a class="cta light" href="/toer/de/mijn-toer/">Meine Tour</a>
+      </div>
+    </div>`;
+  dialog.showModal();
+}
+
 function bindHomeReviews() {
+  $('#home-team-story').onclick = openHomeTeamStory;
   const track = $('#home-review-track');
   const buttons = [...document.querySelectorAll('[data-review-step]')];
   function updateControls() {
