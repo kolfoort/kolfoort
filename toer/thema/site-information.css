@@ -768,9 +768,18 @@ footer .tt-footer-contact-links {
   list-style: none;
 }
 
-footer .tt-footer-information {
+footer .tt-footer-bottom {
+  display: flex;
+  flex-wrap: wrap;
+  align-items: center;
+  gap: 4px 22px;
+}
+
+footer .tt-footer-bottom .tt-footer-information {
   display: block;
-  padding-top: 12px;
+  margin: 0;
+  padding: 0;
+  border: 0;
 }
 
 footer .tt-footer-information ul {
