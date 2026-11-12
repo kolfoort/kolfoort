@@ -613,6 +613,26 @@ const activityDetails = {
     ],
     images: ["item-46.jpg", "chopper-gids-toer.jpg", "chopper-gids-nutter.jpg", "bronnen-gids_springendal.jpg", "chopper-gids-schapen.jpg"],
   },
+  47: {
+    sections: [
+      ["Tagung in unserem Restaurant", "Für euer Team steht ein separater Bereich im Restaurant bereit. Die Zeiten legt ihr selbst fest. WLAN und ein 65-Zoll-HD-Bildschirm sind vorhanden. Wir öffnen täglich um 10 Uhr."],
+      ["Mittagsbuffet", "Nach der Tagung gibt es ein Buffet mit verschiedenen Brotbelägen, Spiegelei, Kroketten und Obst. Milch und Orangensaft sind inklusive, ebenso Kaffee und Tee ohne Mengenbegrenzung."],
+      ["Gemeinsam aktiv unterwegs", "Wählt eine Tour mit E-Chopper, Topolino, Fatmax Kickbike oder Retro Fatbike. Alternativ könnt ihr Bogenschießen, Luftgewehrschießen oder eine Buggyfahrt wählen. Die Buggyfahrt kostet 25 € Aufpreis pro Person."],
+      ["Preise und Infos", "72,50 € pro Person. Die Tagung ist für bis zu etwa 40 Personen möglich. Zum Abschluss könnt ihr einen Grillabend, ein Buffet oder einen Pizza-Workshop dazubuchen."],
+    ],
+    images: ["item-47.jpg", "vergaderen-restaurant.jpeg", "vergaderen-lunch.jpg", "vergaderen-topolino.jpeg", "vergaderen-fatmax.jpg", "item-2.jpg"],
+  },
+  48: {
+    sections: [
+      ["10.30 Uhr · Empfang", "Wir begrüßen euch mit Beukenhorst-Kaffee oder Tee und einer Scheibe Ootmarsumer Rosinenbrot."],
+      ["11.00 Uhr · Geführter Stadtrundgang", "Ein einheimischer Guide zeigt euch das alte Rathaus, die Kirchen, das Kloster und die kleinen Gassen. Unterwegs erfahrt ihr auch mehr über die Osterbräuche in Ootmarsum."],
+      ["12.30 Uhr · Mittagessen", "Am Buffet gibt es Suppe und belegte Brötchen. Bei gutem Wetter serviert der Foodtruck draußen Brötchen mit Kroketten. Orangensaft, Milch, Kaffee und Tee sind inklusive."],
+      ["13.30 Uhr · Zwei Stunden auf Tour", "Wählt E-Chopper, Topolino, Fatmax, Retro Fatbike oder Beachcruiser. Ihr fahrt selbstständig nach einer Route aus der kostenlosen TwenteToer-App. Für das gewählte Fahrzeug gelten die jeweiligen Alters- und Führerscheinanforderungen."],
+      ["16.00 Uhr · Grillen mit Getränkepauschale", "Nach der Fahrt grillt ihr selbst, etwa Burger, Garnelenspieße und Hähnchen. Dazu gibt es ein Salatbuffet, Baguette und Soßen. Alkoholische und alkoholfreie Getränke sind inklusive."],
+      ["18.00 Uhr · Programmende", "110 € pro Person inklusive Mehrwertsteuer, für Gruppen ab etwa 35 Personen. Kleinere Gruppen können ein individuelles Programm anfragen. Die Zeiten sind Richtwerte und lassen sich anpassen."],
+    ],
+    images: ["item-48.jpg", "dagje-wegge.jpg", "stadswandeling-straten.jpg", "dagje-lunch.jpg", "dagje-bbq.jpg", "dagje-veranda.jpg"],
+  },
 };
 
 function renderActivityDetails(activity, name) {

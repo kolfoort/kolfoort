@@ -613,6 +613,26 @@ const activityDetails = {
     ],
     images: ["item-46.jpg", "chopper-gids-toer.jpg", "chopper-gids-nutter.jpg", "bronnen-gids_springendal.jpg", "chopper-gids-schapen.jpg"],
   },
+  47: {
+    sections: [
+      ["Vergaderen in ons restaurant", "Neem met jullie team plaats in een apart gedeelte van het restaurant. Jullie bepalen zelf de tijden. Er is wifi en een 65-inch HD-scherm. We openen dagelijks om 10.00 uur."],
+      ["Lunchbuffet", "Na de vergadering staat er een buffet klaar met verschillende soorten broodbeleg, gebakken ei, kroket en fruit. Melk en jus d’orange zijn inbegrepen, net als onbeperkt koffie en thee."],
+      ["Samen actief op pad", "Kies een rit met de E-Chopper, Topolino, Fatmax Kickbike of Retro Fatbike. Jullie kunnen ook kiezen voor boogschieten, luchtbuksschieten of een buggyrit. Voor de buggy geldt € 25 toeslag per persoon."],
+      ["Kosten en informatie", "€ 72,50 per persoon. Vergaderen kan tot ongeveer 40 personen. Sluit de dag desgewenst af met een BBQ, buffet of pizzaworkshop."],
+    ],
+    images: ["item-47.jpg", "vergaderen-restaurant.jpeg", "vergaderen-lunch.jpg", "vergaderen-topolino.jpeg", "vergaderen-fatmax.jpg", "item-2.jpg"],
+  },
+  48: {
+    sections: [
+      ["10.30 uur · Ontvangst", "We verwelkomen jullie met Beukenhorst-koffie of thee en een plak Ootmarsumse krentenwegge."],
+      ["11.00 uur · Stadswandeling met gids", "Een plaatselijke gids neemt jullie mee langs het oude stadhuis, de kerken, het klooster en de steegjes. Onderweg hoor je ook over de Ootmarsumse paasgebruiken."],
+      ["12.30 uur · Lunch", "Schuif aan voor soep en een buffet met belegde broodjes. Bij mooi weer staat er buiten een foodtruck met broodjes kroket. Jus d’orange, melk, koffie en thee zijn inbegrepen."],
+      ["13.30 uur · Twee uur toeren", "Kies een E-Chopper, Topolino, Fatmax, Retro Fatbike of Beachcruiser. Jullie rijden zelfstandig een route uit de gratis TwenteToer-app. Voor het gekozen voertuig gelden de bijbehorende leeftijds- en rijbewijseisen."],
+      ["16.00 uur · BBQ met drankjes all-in", "Na de rit gaan jullie zelf aan de grill. Er zijn onder meer burgers, garnalenspiesen en kipdij, met een saladebuffet, stokbrood en sausjes. Drankjes met en zonder alcohol zijn inbegrepen."],
+      ["18.00 uur · Einde van het programma", "€ 110 per persoon inclusief btw, voor groepen vanaf ongeveer 35 personen. Voor kleinere groepen kun je een programma op maat aanvragen. De tijden zijn indicatief en kunnen worden aangepast."],
+    ],
+    images: ["item-48.jpg", "dagje-wegge.jpg", "stadswandeling-straten.jpg", "dagje-lunch.jpg", "dagje-bbq.jpg", "dagje-veranda.jpg"],
+  },
 };
 
 function renderActivityDetails(activity, name) {
