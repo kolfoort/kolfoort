@@ -92,6 +92,8 @@ function topolinoDetails(id) {
   </section>`;
 }
 
+const eBikeRentalInfo = `<p><strong>1 dag € 25 · 2 dagen € 45 · 3 dagen € 60 · 4 dagen € 75 · 5 dagen € 90 · 6 dagen € 100 · 7 dagen € 110</strong> per fiets.</p><p>Ophalen vanaf 10.00 uur, terugbrengen uiterlijk 18.00 uur. Bij eerder terugbrengen geldt de volledige huur. De oplader zit in de gratis fietstas. Het zadel verstel je met de snelspanner.</p>`;
+
 function rentalVehicleDetails(id) {
   switch (id) {
     case 1:
@@ -170,7 +172,7 @@ function rentalVehicleDetails(id) {
   </section>
   <section>
     <h3>Op pad met kinderen</h3>
-    <p>Stop onderweg bij een speeltuin of boerderij. Voor oudere kinderen langer dan 1,30 meter noemt TwenteToer de Fatbike als alternatief om zelf mee te rijden. Een kinderzitje is op deze scooter niet mogelijk. Bekijk daarvoor de <a class="textlink" href="/toer/voertuigen/?voertuig=7">Goccia E-Puch</a>.</p>
+    <p>Stop onderweg bij een speeltuin of boerderij. Voor oudere kinderen kun je de Fatbike bekijken. Daarvoor geldt een minimumlengte van 155 cm. Een kinderzitje is op deze scooter niet mogelijk. Bekijk daarvoor de <a class="textlink" href="/toer/voertuigen/?voertuig=7">Goccia E-Puch</a>.</p>
   </section>
   <section>
     <h3>Een hele dag toeren</h3>
@@ -181,12 +183,129 @@ function rentalVehicleDetails(id) {
     <p><strong>2 uur € 30 · 3 uur € 35 · 4 uur € 40 · daghuur € 47,50</strong> per scooter.</p>
     <p>Een geldig (bromfiets)rijbewijs is verplicht. Btw en WA-verzekering zijn inbegrepen. Brandstof is inbegrepen bij de huur per uur.</p>
   </section>`;
+    case 9:
+      return `<section>
+    <h3>Op pad met de Fatmax E-Kickbike</h3>
+    <p>Met deze elektrische step op brede banden rijd je tot 25 km/u door Ootmarsum en de natuur eromheen. Na uitleg en een proefronde kun je op pad met vrienden, familie of collega’s.</p>
+  </section>
+  <section>
+    <h3>Vanaf 16 jaar</h3>
+    <p>Voor de Fatmax geldt volgens TwenteToer een minimumleeftijd van 16 jaar. Een rijbewijs is niet nodig. Je kunt een rit combineren met de E-Chopper. Voor wie jonger is, noemt TwenteToer de Fatbike als alternatief.</p>
+  </section>
+  <section>
+    <h3>Routes in de app</h3>
+    <p>Kies in de gratis TwenteToer-app een route die past bij de actieradius van de accu. Onderweg kun je stoppen bij een café of restaurant of een bezienswaardigheid bekijken, zoals Huis Singraven.</p>
+    ${routeAppLinks}
+  </section>
+  <section>
+    <h3>Kosten en informatie</h3>
+    <p><strong>1 uur € 25 · 2 uur € 30 · 3 uur € 35</strong> per Fatmax. De actieradius is maximaal 30 km. Neem een rugtas mee voor bagage. Btw en WA-verzekering zijn inbegrepen. Je vertrekt vanuit Ootmarsum en krijgt hulp onderweg. Bij slecht weer kun je gratis verplaatsen.</p>
+  </section>
+  <section>
+    <h3>Combineer de rit</h3>
+    <p>Ga met een gids op pad, neem een smikkeltas mee of sluit af met barbecue, buffet of high tea. TwenteToer biedt ook een combinatie met een escapebox aan.</p>
+  </section>`;
+    case 10:
+      return `<section>
+    <h3>Op pad met de Fatbike</h3>
+    <p>De elektrische Fatbike heeft brede banden en krachtige trapondersteuning. Rijd over de zandwegen van het Springendal, langs de bronvijvers en heide, of richting Singraven en Bad Bentheim. De fiets haalt volgens TwenteToer ongeveer 24 km/u en je hebt geen rijbewijs nodig.</p>
+  </section>
+  <section>
+    <h3>Samen met kinderen</h3>
+    <p>Het kleine frame is verstelbaar. Voor de huur geldt een minimumlengte van 155 cm, zoals vermeld bij de voorwaarden. Iedereen rijdt op een eigen Fatbike.</p>
+  </section>
+  <section>
+    <h3>Kosten en informatie</h3>
+    <p><strong>2 uur € 25 · 3 uur € 30 · 4 uur € 35</strong> per Fatbike. De actieradius is maximaal 50 km en de motor heeft 250 watt. TwenteToer heeft twee modellen en wijst er bij de verhuur één toe. Bij slecht weer kun je gratis verplaatsen. Gratis routes staan in de app.</p>
+    ${routeAppLinks}
+  </section>`;
+    case 11:
+      return `<section>
+    <h3>Op pad met de Beachcruiser</h3>
+    <p>De elektrische Beachcruiser combineert een retroframe met brede banden en trapondersteuning. Fiets over bospaden en zandwegen rond Ootmarsum en Vasse, of kies een tocht richting Denekamp of de Duitse grens.</p>
+  </section>
+  <section>
+    <h3>Ook voor kinderen</h3>
+    <p>Een rijbewijs is niet nodig. De Beachcruiser is geschikt vanaf 160 cm. Ouders kunnen de tocht bijvoorbeeld combineren met een E-Chopper. De gratis TwenteToer-app bevat fietsroutes voor onderweg.</p>
+    ${routeAppLinks}
+  </section>
+  <section>
+    <h3>Kosten en informatie</h3>
+    <p><strong>2 uur € 30 · 3 uur € 35</strong> per Beachcruiser. De actieradius is ongeveer 35 km. Er is plek voor één persoon en een kinderzitje is niet mogelijk. Neem een rugtas mee voor bagage. Ophalen en vertrekken doe je in Ootmarsum.</p>
+  </section>`;
+    case 12:
+      return `<section>
+    <h3>Fietsverhuur in Ootmarsum</h3>
+    <p>Verken het Springendal tussen Ootmarsum en Vasse, fiets naar Singraven bij Denekamp of steek de grens over richting Bad Bentheim. De elektrische fiets wordt goed onderhouden en heeft een stuurhouder voor je telefoon.</p>
+  </section>
+  <section>
+    <h3>Routes en service</h3>
+    <p>Kies een gratis route in de TwenteToer-app. Bij een lekke band of ander technisch probleem probeert TwenteToer zo snel mogelijk een vervangende fiets te brengen.</p>
+    ${routeAppLinks}
+  </section>
+  <section>
+    <h3>Kosten en informatie</h3>
+    <p>Geschikt voor een lengte van ongeveer 1,45 tot en met 1,90 m. De actieradius is ongeveer 80 km.</p>
+    ${eBikeRentalInfo}
+  </section>`;
+    case 13:
+      return `<section>
+    <h3>Elektrische fiets met groot frame</h3>
+    <p>Met de grote e-bike fiets je naar de Kuiperberg, door het Springendal of richting Denekamp. Bij helder weer kijk je vanaf de Kuiperberg uit richting Enschede, Hengelo, Almelo en Lingen.</p>
+  </section>
+  <section>
+    <h3>Routes en service</h3>
+    <p>Kies een gratis route in de TwenteToer-app of volg je eigen knooppuntenroute. Bij pech probeert TwenteToer zo snel mogelijk vervangend vervoer te regelen.</p>
+    ${routeAppLinks}
+  </section>
+  <section>
+    <h3>Kosten en informatie</h3>
+    <p>Geschikt vanaf 1,80 m. De actieradius is ongeveer 70 km.</p>
+    ${eBikeRentalInfo}
+  </section>`;
+    case 14:
+      return `<section>
+    <h3>Op pad met de E-Mountainbike</h3>
+    <p>Verken de natuur rond Ootmarsum op een elektrische mountainbike met middenmotor en een actieradius van ongeveer 70 km. De trapondersteuning helpt op heuvels en zandpaden.</p>
+  </section>
+  <section>
+    <h3>Offroad in Twente</h3>
+    <p>Fiets langs de bossen en heide van het Springendal of kies een mountainbikeroute in het grensgebied met Duitsland. In het Springendal zijn routes van verschillende afstanden uitgezet.</p>
+  </section>
+  <section>
+    <h3>Kies je route</h3>
+    <p>De middenmotor biedt ondersteuning voor zowel recreatieve als ervaren mountainbikers. Download de gratis TwenteToer-app voor extra route-ideeën.</p>
+    ${routeAppLinks}
+  </section>
+  <section>
+    <h3>Huurprijs</h3>
+    <p>Op de voertuigpagina staat een prijs van <strong>€ 25</strong>.</p>
+  </section>`;
+    case 15:
+      return `<section>
+    <h3>Stadsfiets in Ootmarsum</h3>
+    <p>De stadsfiets heeft zeven versnellingen en wordt geleverd met een fietstas. TwenteToer biedt service onderweg. Op de voertuigpagina staat een prijs van <strong>€ 13,50</strong>.</p>
+  </section>`;
+    case 16:
+      return `<section>
+    <h3>Op pad met de elektrische bakfiets</h3>
+    <p>Fiets met de kinderen naar het Springendal of richting Singraven bij Denekamp. De bak is ook handig voor boodschappen. De actieradius is ongeveer 50 km. Huisdieren mogen niet mee in de bak.</p>
+  </section>
+  <section>
+    <h3>Eropuit met kinderen</h3>
+    <p>De middenmotor geeft ondersteuning zodra je begint te trappen, ook met een volle bak. De bakfiets ligt stabiel op de weg en TwenteToer vermeldt een belastbaar gewicht van 220 kg. De rest van het gezin kan meefietsen op een gewone e-bike.</p>
+  </section>
+  <section>
+    <h3>Kosten en informatie</h3>
+    <p><strong>1 dag € 37,50 · 2 dagen € 62,50 · 3 dagen € 90 · 7 dagen € 155</strong> per bakfiets. Je haalt de fiets op in Ootmarsum. TwenteToer biedt routes in de app en service onderweg.</p>
+    ${routeAppLinks}
+  </section>`;
     default:
       return '';
   }
 }
 
-function detail(id){if(id===5){location.href='/toer/buggy-experience/';return}const p=items.find(x=>x.id===id);$('#detail').classList.toggle('drinks-detail',[52,76].includes(id));$('#detail-content').innerHTML=`<img class="detail-img" src="${photo(p)}" alt="${esc(p.name)}"><div class="detail-pad"><div class="eyebrow">${groupLabel[p.group]} · TwenteToer</div><h2>${esc(p.name)}</h2><p>${esc(p.description)}</p>${eChopperDetails(id)}${topolinoDetails(id)}${rentalVehicleDetails(id)}${drinksMenu(id)}${id === 3 ? '' : `<div class="price"><small>${[52,76].includes(id)?'Toeslag op het drankarrangement':'Indicatieve vanafprijs volgens de bestaande site'}</small><b>${p.price===null?'Op aanvraag':money(p.price)}</b></div>`}<div class="notice">De exacte prijs, duur, minimumdeelname, leeftijds- en rijbewijsvoorwaarden worden per activiteit bevestigd. Deze testsite controleert geen beschikbaarheid en maakt geen reservering.</div><div class="actions"><button class="cta green" data-add="${p.id}">${chosen.includes(p.id)?'Staat in Mijn toer':'Toevoegen aan Mijn toer'}</button><a class="cta light" href="/toer/mijn-toer/#aanbod">Mijn toer bekijken & Betalen</a><a class="cta light" href="${p.source}" target="_blank" rel="noopener">Details op huidige website</a></div></div>`;bind();$('#detail').showModal()}
+function detail(id){if(id===5){location.href='/toer/buggy-experience/';return}const p=items.find(x=>x.id===id);$('#detail').classList.toggle('drinks-detail',[52,76].includes(id));$('#detail-content').innerHTML=`<img class="detail-img" src="${photo(p)}" alt="${esc(p.name)}"><div class="detail-pad"><div class="eyebrow">${groupLabel[p.group]} · TwenteToer</div><h2>${esc(p.name)}</h2><p>${esc(p.description)}</p>${eChopperDetails(id)}${topolinoDetails(id)}${rentalVehicleDetails(id)}${drinksMenu(id)}${[3, 10].includes(id) ? '' : `<div class="price"><small>${[52,76].includes(id)?'Toeslag op het drankarrangement':'Indicatieve vanafprijs volgens de bestaande site'}</small><b>${p.price===null?'Op aanvraag':money(p.price)}</b></div>`}<div class="notice">De exacte prijs, duur, minimumdeelname, leeftijds- en rijbewijsvoorwaarden worden per activiteit bevestigd. Deze testsite controleert geen beschikbaarheid en maakt geen reservering.</div><div class="actions"><button class="cta green" data-add="${p.id}">${chosen.includes(p.id)?'Staat in Mijn toer':'Toevoegen aan Mijn toer'}</button><a class="cta light" href="/toer/mijn-toer/#aanbod">Mijn toer bekijken & Betalen</a><a class="cta light" href="${p.source}" target="_blank" rel="noopener">Details op huidige website</a></div></div>`;bind();$('#detail').showModal()}
 function named(term){return items.find(p=>p.name.toLowerCase().includes(term.toLowerCase()))||items[0]}
 const headerRides=[['Topolino','HET DOLCE VITA GEVOEL!','topolino'],['E-Chopper','ELEKTRISCH EN GENIETEN!','e-chopper'],['Buggy','AVONTUUR IN TWENTE!','buggy'],['E-Bike','BELEEF HET OP DE FIETS!','e-bike'],['Fatmax','ELEKTRISCH OP AVONTUUR!','fatmax']];
 function photoHeader(){return `<section class="original-photo-header" aria-label="Ontdek TwenteToer"><div class="photo-slider" aria-roledescription="carrousel">${headerRides.map(([name,title,term],i)=>`<div class="photo-slide ${i===0?'active':''}" aria-hidden="${i!==0}"><img src="/toer/thema/assets/header-slide-${i+1}.jpg" alt="${name} rijden in Ootmarsum en omgeving" ${i?'loading="lazy"':'fetchpriority="high"'}><div class="photo-caption"><h2>${title}</h2></div></div>`).join('')}<div class="photo-controls"><div class="photo-dots">${headerRides.map(([name],i)=>`<button data-slide="${i}" aria-label="Toon foto ${name}" aria-pressed="${i===0}"><span></span></button>`).join('')}</div><button class="photo-pause" aria-label="Diavoorstelling pauzeren">Pauze</button></div></div><nav class="vehicle-brush-row" aria-label="Kies je voertuig">${headerRides.map(([name,title,term],i)=>`<a href="${term==='buggy'?'/toer/buggy-experience/':'/toer/voertuigen/?voertuig='+named(term).id}"><span class="brush-disc"><img src="/toer/thema/assets/header-icon-${i+1}.png" alt=""></span><strong>${name}</strong></a>`).join('')}</nav></section>`}

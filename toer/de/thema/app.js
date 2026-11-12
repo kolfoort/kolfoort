@@ -92,6 +92,8 @@ function topolinoDetails(id) {
   </section>`;
 }
 
+const eBikeRentalInfo = `<p><strong>1 Tag 25 € · 2 Tage 45 € · 3 Tage 60 € · 4 Tage 75 € · 5 Tage 90 € · 6 Tage 100 € · 7 Tage 110 €</strong> pro Fahrrad.</p><p>Abholung ab 10 Uhr, Rückgabe spätestens um 18 Uhr. Bei früherer Rückgabe gilt der volle Mietpreis. Das Ladegerät steckt in der kostenlosen Fahrradtasche. Die Sattelhöhe stellt ihr mit dem Schnellspanner ein.</p>`;
+
 function rentalVehicleDetails(id) {
   switch (id) {
     case 1:
@@ -170,7 +172,7 @@ function rentalVehicleDetails(id) {
   </section>
   <section>
     <h3>Unterwegs mit Kindern</h3>
-    <p>Macht unterwegs an einem Spielplatz oder Bauernhof Halt. Für ältere Kinder über 1,30 m nennt TwenteToer das Fatbike als Alternative zum Selberfahren. Für diesen Roller gibt es keinen Kindersitz. Dafür verweist TwenteToer auf die <a class="textlink" href="/toer/de/voertuigen/?voertuig=7">Goccia E-Puch</a>.</p>
+    <p>Macht unterwegs an einem Spielplatz oder Bauernhof Halt. Für ältere Kinder kommt das Fatbike infrage. Dafür gilt eine Mindestkörpergröße von 155 cm. Für diesen Roller gibt es keinen Kindersitz. Dafür verweist TwenteToer auf die <a class="textlink" href="/toer/de/voertuigen/?voertuig=7">Goccia E-Puch</a>.</p>
   </section>
   <section>
     <h3>Einen ganzen Tag unterwegs</h3>
@@ -181,12 +183,129 @@ function rentalVehicleDetails(id) {
     <p><strong>2 Stunden 30 € · 3 Stunden 35 € · 4 Stunden 40 € · Tagesmiete 47,50 €</strong> pro Roller.</p>
     <p>Ein gültiger Führerschein für das Fahrzeug ist Pflicht. Mehrwertsteuer und Kfz-Haftpflichtversicherung sind inklusive. Bei stundenweiser Miete ist auch der Kraftstoff enthalten.</p>
   </section>`;
+    case 9:
+      return `<section>
+    <h3>Unterwegs mit dem Fatmax E-Kickbike</h3>
+    <p>Mit dem elektrischen Tretroller auf breiten Reifen fahrt ihr bis zu 25 km/h durch Ootmarsum und die umliegende Natur. Nach einer Einweisung und einer Proberunde könnt ihr mit Freunden, Familie oder Kollegen losfahren.</p>
+  </section>
+  <section>
+    <h3>Ab 16 Jahren</h3>
+    <p>TwenteToer gibt für das Fatmax ein Mindestalter von 16 Jahren an. Ein Führerschein ist nicht nötig. Ihr könnt die Tour mit einem E-Chopper kombinieren. Für Jüngere nennt TwenteToer das Fatbike als Alternative.</p>
+  </section>
+  <section>
+    <h3>Routen in der App</h3>
+    <p>Wählt in der kostenlosen TwenteToer-App eine Route passend zur Akkureichweite. Unterwegs könnt ihr in einem Café oder Restaurant einkehren oder etwa das Haus Singraven besichtigen.</p>
+    ${routeAppLinks}
+  </section>
+  <section>
+    <h3>Mietpreise und Hinweise</h3>
+    <p><strong>1 Stunde 25 € · 2 Stunden 30 € · 3 Stunden 35 €</strong> pro Fatmax. Die Reichweite beträgt bis zu 30 km. Bringt für Gepäck einen Rucksack mit. Mehrwertsteuer und Kfz-Haftpflichtversicherung sind inklusive. Ihr startet in Ootmarsum und bekommt unterwegs Hilfe. Bei schlechtem Wetter ist eine kostenlose Umbuchung möglich.</p>
+  </section>
+  <section>
+    <h3>Die Fahrt kombinieren</h3>
+    <p>Fahrt mit einem Guide, nehmt eine gefüllte Provianttasche mit oder rundet die Tour mit Grillen, Buffet oder High Tea ab. TwenteToer bietet auch eine Kombination mit einer Escapebox an.</p>
+  </section>`;
+    case 10:
+      return `<section>
+    <h3>Unterwegs mit dem Fatbike</h3>
+    <p>Das elektrische Fatbike hat breite Reifen und eine kräftige Tretunterstützung. Fahrt über die Sandwege des Springendals, vorbei an Quellteichen und Heide oder Richtung Singraven und Bad Bentheim. Laut TwenteToer erreicht das Rad rund 24 km/h. Ein Führerschein ist nicht nötig.</p>
+  </section>
+  <section>
+    <h3>Mit Kindern unterwegs</h3>
+    <p>Der kleine Rahmen lässt sich einstellen. Laut Mietbedingungen gilt eine Mindestkörpergröße von 155 cm. Jede Person fährt auf einem eigenen Fatbike.</p>
+  </section>
+  <section>
+    <h3>Mietpreise und Hinweise</h3>
+    <p><strong>2 Stunden 25 € · 3 Stunden 30 € · 4 Stunden 35 €</strong> pro Fatbike. Die Reichweite beträgt bis zu 50 km und der Motor hat 250 Watt. TwenteToer weist euch eines von zwei Modellen zu. Bei schlechtem Wetter ist eine kostenlose Umbuchung möglich. Kostenlose Routen findet ihr in der App.</p>
+    ${routeAppLinks}
+  </section>`;
+    case 11:
+      return `<section>
+    <h3>Unterwegs mit dem Beachcruiser</h3>
+    <p>Der elektrische Beachcruiser verbindet einen Retrorahmen mit breiten Reifen und Tretunterstützung. Fahrt über Wald- und Sandwege rund um Ootmarsum und Vasse oder Richtung Denekamp und deutsche Grenze.</p>
+  </section>
+  <section>
+    <h3>Auch für Kinder</h3>
+    <p>Ein Führerschein ist nicht nötig. Der Beachcruiser eignet sich ab 160 cm Körpergröße. Eltern können die Fahrt etwa mit einem E-Chopper kombinieren. Die kostenlose TwenteToer-App enthält Fahrradrouten.</p>
+    ${routeAppLinks}
+  </section>
+  <section>
+    <h3>Mietpreise und Hinweise</h3>
+    <p><strong>2 Stunden 30 € · 3 Stunden 35 €</strong> pro Beachcruiser. Die Reichweite beträgt rund 35 km. Das Rad ist für eine Person ausgelegt. Ein Kindersitz ist nicht möglich. Bringt für Gepäck einen Rucksack mit. Abholung und Start sind in Ootmarsum.</p>
+  </section>`;
+    case 12:
+      return `<section>
+    <h3>Fahrradverleih in Ootmarsum</h3>
+    <p>Erkundet das Springendal zwischen Ootmarsum und Vasse, fahrt nach Singraven bei Denekamp oder über die Grenze Richtung Bad Bentheim. Das gepflegte E-Bike hat eine Handyhalterung am Lenker.</p>
+  </section>
+  <section>
+    <h3>Routen und Hilfe unterwegs</h3>
+    <p>Wählt eine kostenlose Route in der TwenteToer-App. Bei einem platten Reifen oder einem technischen Defekt bemüht sich TwenteToer darum, schnell ein Ersatzrad zu bringen.</p>
+    ${routeAppLinks}
+  </section>
+  <section>
+    <h3>Mietpreise und Hinweise</h3>
+    <p>Geeignet für eine Körpergröße von etwa 1,45 bis 1,90 m. Die Reichweite beträgt rund 80 km.</p>
+    ${eBikeRentalInfo}
+  </section>`;
+    case 13:
+      return `<section>
+    <h3>E-Bike mit großem Rahmen</h3>
+    <p>Fahrt zum Kuiperberg, durch das Springendal oder Richtung Denekamp. Bei klarer Sicht könnt ihr vom Kuiperberg aus Richtung Enschede, Hengelo, Almelo und Lingen blicken.</p>
+  </section>
+  <section>
+    <h3>Routen und Hilfe unterwegs</h3>
+    <p>Wählt eine kostenlose Route in der TwenteToer-App oder plant eure eigene Tour entlang der Radknotenpunkte. Bei einer Panne bemüht sich TwenteToer schnell um Ersatz.</p>
+    ${routeAppLinks}
+  </section>
+  <section>
+    <h3>Mietpreise und Hinweise</h3>
+    <p>Geeignet ab 1,80 m Körpergröße. Die Reichweite beträgt rund 70 km.</p>
+    ${eBikeRentalInfo}
+  </section>`;
+    case 14:
+      return `<section>
+    <h3>Unterwegs mit dem E-Mountainbike</h3>
+    <p>Entdeckt die Natur rund um Ootmarsum auf einem E-Mountainbike mit Mittelmotor und rund 70 km Reichweite. Die Tretunterstützung hilft an Steigungen und auf Sandwegen.</p>
+  </section>
+  <section>
+    <h3>Abseits der Straße in Twente</h3>
+    <p>Fahrt durch Wälder und Heide im Springendal oder wählt eine Mountainbikestrecke im deutsch-niederländischen Grenzgebiet. Im Springendal gibt es ausgeschilderte Routen in verschiedenen Längen.</p>
+  </section>
+  <section>
+    <h3>Die passende Route wählen</h3>
+    <p>Der Mittelmotor unterstützt Freizeitradler und erfahrene Mountainbiker. In der kostenlosen TwenteToer-App findet ihr weitere Routenvorschläge.</p>
+    ${routeAppLinks}
+  </section>
+  <section>
+    <h3>Mietpreis</h3>
+    <p>Auf der Fahrzeugseite ist ein Preis von <strong>25 €</strong> angegeben.</p>
+  </section>`;
+    case 15:
+      return `<section>
+    <h3>Stadtrad in Ootmarsum</h3>
+    <p>Das Stadtrad hat sieben Gänge und wird mit einer Fahrradtasche vermietet. TwenteToer bietet Hilfe unterwegs. Auf der Fahrzeugseite ist ein Preis von <strong>13,50 €</strong> angegeben.</p>
+  </section>`;
+    case 16:
+      return `<section>
+    <h3>Unterwegs mit dem elektrischen Lastenrad</h3>
+    <p>Fahrt mit den Kindern ins Springendal oder Richtung Singraven bei Denekamp. Die Box bietet auch Platz für Einkäufe. Die Reichweite beträgt rund 50 km. Haustiere dürfen nicht in der Box mitfahren.</p>
+  </section>
+  <section>
+    <h3>Mit Kindern unterwegs</h3>
+    <p>Der Mittelmotor unterstützt euch ab dem Anfahren, auch mit voller Box. Das Lastenrad liegt stabil auf der Straße. TwenteToer nennt ein belastbares Gewicht von 220 kg. Der Rest der Familie kann auf normalen E-Bikes mitfahren.</p>
+  </section>
+  <section>
+    <h3>Mietpreise und Hinweise</h3>
+    <p><strong>1 Tag 37,50 € · 2 Tage 62,50 € · 3 Tage 90 € · 7 Tage 155 €</strong> pro Lastenrad. Ihr holt das Rad in Ootmarsum ab. TwenteToer bietet Routen in der App und Hilfe unterwegs.</p>
+    ${routeAppLinks}
+  </section>`;
     default:
       return '';
   }
 }
 
-function detail(id){if(id===5){location.href='/toer/de/buggy-experience/';return}const p=items.find(x=>x.id===id);$('#detail').classList.toggle('drinks-detail',[52,76].includes(id));$('#detail-content').innerHTML=`<img class="detail-img" src="${photo(p)}" alt="${esc(p.name)}"><div class="detail-pad"><div class="eyebrow">${groupLabel[p.group]} · TwenteToer</div><h2>${esc(p.name)}</h2><p>${esc(p.description)}</p>${eChopperDetails(id)}${topolinoDetails(id)}${rentalVehicleDetails(id)}${drinksMenu(id)}${id === 3 ? '' : `<div class="price"><small>${[52,76].includes(id)?"Aufpreis auf die Getränkepauschale":"Indikativer Startpreis gemäß der vorhandenen Website"}</small><b>${p.price===null?"Auf Anfrage":money(p.price)}</b></div>`}<div class="notice">Der genaue Preis, die Dauer, die Mindestteilnehmerzahl, das Alter und die Führerscheinanforderungen werden je Aktivität bestätigt. Diese Testseite prüft nicht die Verfügbarkeit und nimmt keine Reservierungen vor.</div><div class="actions"><button class="cta green" data-add="${p.id}">${chosen.includes(p.id)?"In „Meine Tour“ gespeichert":"Zu „Meine Tour“ hinzufügen"}</button><a class="cta light" href="/toer/de/mijn-toer/#aanbod">Meine Tour ansehen und bezahlen</a><a class="cta light" href="${p.source}" target="_blank" rel="noopener">Details auf aktueller Website</a></div></div>`;bind();$('#detail').showModal()}
+function detail(id){if(id===5){location.href='/toer/de/buggy-experience/';return}const p=items.find(x=>x.id===id);$('#detail').classList.toggle('drinks-detail',[52,76].includes(id));$('#detail-content').innerHTML=`<img class="detail-img" src="${photo(p)}" alt="${esc(p.name)}"><div class="detail-pad"><div class="eyebrow">${groupLabel[p.group]} · TwenteToer</div><h2>${esc(p.name)}</h2><p>${esc(p.description)}</p>${eChopperDetails(id)}${topolinoDetails(id)}${rentalVehicleDetails(id)}${drinksMenu(id)}${[3, 10].includes(id) ? '' : `<div class="price"><small>${[52,76].includes(id)?"Aufpreis auf die Getränkepauschale":"Indikativer Startpreis gemäß der vorhandenen Website"}</small><b>${p.price===null?"Auf Anfrage":money(p.price)}</b></div>`}<div class="notice">Der genaue Preis, die Dauer, die Mindestteilnehmerzahl, das Alter und die Führerscheinanforderungen werden je Aktivität bestätigt. Diese Testseite prüft nicht die Verfügbarkeit und nimmt keine Reservierungen vor.</div><div class="actions"><button class="cta green" data-add="${p.id}">${chosen.includes(p.id)?"In „Meine Tour“ gespeichert":"Zu „Meine Tour“ hinzufügen"}</button><a class="cta light" href="/toer/de/mijn-toer/#aanbod">Meine Tour ansehen und bezahlen</a><a class="cta light" href="${p.source}" target="_blank" rel="noopener">Details auf aktueller Website</a></div></div>`;bind();$('#detail').showModal()}
 function named(term){return items.find(p=>(p.catalogOriginalName || p.name).toLowerCase().includes(term.toLowerCase()))||items[0]}
 const headerRides=[['Topolino',"DAS DOLCE VITA-GEFÜHL!",'topolino'],['E-Chopper',"ELEKTRISCH UND GENIESSEN!",'e-chopper'],['Buggy',"ABENTEUER IN TWENTE!",'buggy'],['E-Bike',"ERLEBEN SIE ES AUF DEM FAHRRAD!",'e-bike'],['Fatmax',"ELEKTRISCH AUF ABENTEUER!",'fatmax']];
 function photoHeader(){return `<section class="original-photo-header" aria-label="Entdecken Sie TwenteToer"><div class="photo-slider" aria-roledescription="carrousel">${headerRides.map(([name,title,term],i)=>`<div class="photo-slide ${i===0?'active':''}" aria-hidden="${i!==0}"><img src="/toer/thema/assets/header-slide-${i+1}.jpg" alt="${name} fährt in Ootmarsum und Umgebung" ${i?'loading="lazy"':'fetchpriority="high"'}><div class="photo-caption"><h2>${title}</h2></div></div>`).join('')}<div class="photo-controls"><div class="photo-dots">${headerRides.map(([name],i)=>`<button data-slide="${i}" aria-label="Foto anzeigen ${name}" aria-pressed="${i===0}"><span></span></button>`).join('')}</div><button class="photo-pause" aria-label="Diashow anhalten">Pause</button></div></div><nav class="vehicle-brush-row" aria-label="Wählen Sie Ihr Fahrzeug">${headerRides.map(([name,title,term],i)=>`<a href="${term==='buggy'?'/toer/de/buggy-experience/':'/toer/de/voertuigen/?voertuig='+named(term).id}"><span class="brush-disc"><img src="/toer/thema/assets/header-icon-${i+1}.png" alt=""></span><strong>${name}</strong></a>`).join('')}</nav></section>`}
