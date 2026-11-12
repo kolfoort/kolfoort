@@ -901,3 +901,9 @@ body:is([data-page="info"], [data-page="arrangements"]) .tt-information > sectio
     grid-template-columns: minmax(0, 1fr);
   }
 }
+
+@media (min-width: 1021px) {
+  body[data-page="arrangements"] main .tt-information {
+    grid-template-columns: repeat(4, minmax(0, 1fr));
+  }
+}
