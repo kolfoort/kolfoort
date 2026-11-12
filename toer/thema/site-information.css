@@ -875,3 +875,42 @@ main .tt-rental-terms p:last-child {
   background: #f5e7ce;
   border-radius: 10px 20px 6px 18px;
 }
+
+body[data-page="info"] main .tt-information {
+  width: 100%;
+  display: grid;
+  grid-template-columns: repeat(3, minmax(0, 1fr));
+  align-items: start;
+  gap: 24px;
+  padding: clamp(16px, 3vw, 36px);
+}
+body[data-page="info"] .tt-information > nav {
+  grid-column: 1 / -1;
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(min(100%, 145px), 1fr));
+  margin: 0;
+}
+body[data-page="info"] .tt-information > nav a {
+  display: grid;
+  place-items: center;
+  padding: 10px;
+  text-align: center;
+  text-decoration: none;
+}
+body[data-page="info"] .tt-information > section {
+  min-width: 0;
+  padding: 0;
+}
+body[data-page="info"] .tt-information > section h2 {
+  margin-top: 0;
+}
+@media (max-width: 1020px) {
+  body[data-page="info"] main .tt-information {
+    grid-template-columns: repeat(2, minmax(0, 1fr));
+  }
+}
+@media (max-width: 660px) {
+  body[data-page="info"] main .tt-information {
+    grid-template-columns: minmax(0, 1fr);
+  }
+}
