@@ -350,6 +350,7 @@ function buggyExperience() {
       <a class="card" href="/toer/thema/assets/buggy-rit-2.jpg"><img class="card-photo" src="/toer/thema/assets/buggy-rit-2.jpg" alt="Buggy Experience in Ootmarsum, foto 2" loading="lazy"></a>
       <a class="card" href="/toer/thema/assets/buggy-rit-3.jpg"><img class="card-photo" src="/toer/thema/assets/buggy-rit-3.jpg" alt="Buggy Experience in Ootmarsum, foto 3" loading="lazy"></a>
       <a class="card" href="/toer/thema/assets/buggy-rit-4.jpg"><img class="card-photo" src="/toer/thema/assets/buggy-rit-4.jpg" alt="Buggy Experience in Ootmarsum, foto 4" loading="lazy"></a>
+      <a class="card" href="/toer/thema/assets/buggy-rit-11.jpg"><img class="card-photo" src="/toer/thema/assets/buggy-rit-11.jpg" alt="Buggy Experience in Ootmarsum, foto 11" loading="lazy"></a>
     </div>
     </section>
     <section class="section experience-story">
@@ -375,8 +376,8 @@ function buggyExperience() {
       <img src="/toer/thema/assets/buggy-rit-8.jpg" alt="Buggy Experience in Ootmarsum, foto 8" loading="lazy">
     </section>
     <section class="section">
-      <div class="section-head"><h2>Foto-impressie</h2></div>
-      <div class="grid">
+      <div class="section-head"><h2 id="buggy-gallery-title">Foto-impressie</h2></div>
+      <div class="grid" id="buggy-gallery">
       <a class="card" href="/toer/thema/assets/buggy-rit-3.jpg"><img class="card-photo" src="/toer/thema/assets/buggy-rit-3.jpg" alt="Buggy Experience in Ootmarsum, foto 3" loading="lazy"></a>
       <a class="card" href="/toer/thema/assets/buggy-rit-1.jpg"><img class="card-photo" src="/toer/thema/assets/buggy-rit-1.jpg" alt="Buggy Experience in Ootmarsum, foto 1" loading="lazy"></a>
       <a class="card" href="/toer/thema/assets/buggy-rit-9.jpg"><img class="card-photo" src="/toer/thema/assets/buggy-rit-9.jpg" alt="Buggy Experience in Ootmarsum, foto 9" loading="lazy"></a>
@@ -387,6 +388,15 @@ function buggyExperience() {
       <a class="card" href="/toer/thema/assets/buggy-rit-5.jpg"><img class="card-photo" src="/toer/thema/assets/buggy-rit-5.jpg" alt="Buggy Experience in Ootmarsum, foto 5" loading="lazy"></a>
       <a class="card" href="/toer/thema/assets/buggy-rit-11.jpg"><img class="card-photo" src="/toer/thema/assets/buggy-rit-11.jpg" alt="Buggy Experience in Ootmarsum, foto 11" loading="lazy"></a>
     </div>
+      <dialog class="buggy-lightbox" aria-labelledby="buggy-gallery-title">
+        <form method="dialog"><button class="close" aria-label="Sluiten">×</button></form>
+        <img alt="">
+        <div class="buggy-lightbox-controls">
+          <button type="button" data-gallery-step="-1" aria-label="Vorige foto">←</button>
+          <span aria-live="polite"></span>
+          <button type="button" data-gallery-step="1" aria-label="Volgende foto">→</button>
+        </div>
+      </dialog>
     </section>
     <section class="section">
       <div class="section-head"><h2>Combineer je buggyrit</h2></div>
@@ -398,6 +408,37 @@ function buggyExperience() {
     </section>
   </div>`;
   bind();
+
+  const galleryLinks = [...document.querySelectorAll('#buggy-gallery a')];
+  const lightbox = $('.buggy-lightbox');
+  const fullPhoto = lightbox.querySelector('img');
+  const counter = lightbox.querySelector('[aria-live]');
+  let currentPhoto = 0;
+
+  function showPhoto(index) {
+    currentPhoto = (index + galleryLinks.length) % galleryLinks.length;
+    const link = galleryLinks[currentPhoto];
+    fullPhoto.alt = link.querySelector('img').alt;
+    fullPhoto.src = link.href;
+    counter.textContent = (currentPhoto + 1) + ' / ' + galleryLinks.length;
+  }
+
+  galleryLinks.forEach((link, index) => {
+    link.addEventListener('click', event => {
+      if (event.metaKey || event.ctrlKey || event.shiftKey || event.altKey) return;
+      event.preventDefault();
+      showPhoto(index);
+      lightbox.showModal();
+    });
+  });
+  lightbox.querySelectorAll('[data-gallery-step]').forEach(button => {
+    button.addEventListener('click', () => showPhoto(currentPhoto + Number(button.dataset.galleryStep)));
+  });
+  lightbox.addEventListener('keydown', event => {
+    if (event.key !== 'ArrowLeft' && event.key !== 'ArrowRight') return;
+    event.preventDefault();
+    showPhoto(currentPhoto + (event.key === 'ArrowLeft' ? -1 : 1));
+  });
 }
 
 function playfulPages(){

@@ -103,3 +103,35 @@ body{background:#fffefa}header{border-bottom:3px solid #edf1d9}nav{font-size:13p
 .season-copy p { margin-inline: auto; }
 
 .season-copy .handwritten { color: #a6520a; }
+
+.buggy-lightbox {
+  width: min(1000px, 94vw);
+  max-height: 92vh;
+  max-height: 92dvh;
+  background: #18271b;
+  color: white;
+}
+.buggy-lightbox img {
+  display: block;
+  width: 100%;
+  height: min(74vh, 650px);
+  height: min(74dvh, 650px);
+  object-fit: contain;
+}
+.buggy-lightbox-controls {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  padding: 8px 16px;
+  font-variant-numeric: tabular-nums;
+}
+.buggy-lightbox-controls button {
+  min-width: 44px;
+  min-height: 44px;
+  border: 0;
+  border-radius: 50%;
+  background: white;
+  color: #18271b;
+  cursor: pointer;
+  font-size: 24px;
+}
