@@ -659,35 +659,169 @@ function activityCatalog(){const groups=[{id:'actief',name:"Aktiv & Spielen",sub
 
 function vehicleCatalog(){const groups=[{id:'buggy',name:'Buggy Experience',subtitle:"Unbefestigte Straßen. Dreck. Großes Grinsen.",copy:"Fahren Sie selbst unter Aufsicht im Gelände. Entdecken Sie alles über das Buggy-Erlebnis.",ids:[5]},{id:'samen',name:"Gemeinsam auf Tour",subtitle:"Einsteigen. Gemeinsam rausgehen.",copy:"Eine Cabriofahrt im Topolino oder eine gemütliche Fahrt im TukTuk.",ids:[3,1]},{id:'tweewielers',name:"Roller & E-Chopper",subtitle:"Ihre Tour durch Tukkerland.",copy:"Wählen Sie Ihren Lieblingsroller oder E-Chopper. Lassen Sie sich den Führerschein und die Altersvoraussetzungen pro Fahrzeug bestätigen.",ids:[2,4,6,7,8]},{id:'fietsen',name:"Fahrräder & E-Scooter",subtitle:"Erkunden Sie aktiv die Gegend.",copy:"Vom Citybike bis zum Elektro-Mountainbike oder Fatmax. Wählen Sie, was zu Ihrer Route passt.",ids:[12,13,15,14,10,11,9,16]},{id:'chauffeur',name:"Mit Fahrer",subtitle:"Mitfahren mit einer Geschichte.",copy:"Unterwegs mit einem charakterstarken Armeelastwagen oder Jeep. Passen Sie die Optionen für Ihre Gruppe an.",ids:[21,22,23]},{id:'evenementen',name:"Events & Foodtrucks",subtitle:"Ein besonderer Hingucker.",copy:"Ein Piaggio Ape als originelle Ergänzung zu einer Veranstaltung oder Party.",ids:[19,20]},{id:'extra',name:"Kindersitze",subtitle:"Bringen Sie auch die Kleinen mit.",copy:"Sehen Sie sich die Sitze an und entscheiden Sie vorab, welche Kombination für Ihr Kind und Ihr Fahrrad geeignet ist.",ids:[17,18]}];let selected=new URLSearchParams(location.search).get('categorie')||'all',sorted=false;if(!groups.some(g=>g.id===selected))selected='all';$('#main').innerHTML=`<div class="wrap"><div class="page-head food-intro"><div><div class="eyebrow">Fahrzeuge · Ootmarsum</div><h1>WÄHLEN SIE IHR FAHRZEUG.<br>ENTDECKEN SIE DAS TUKKERLAND.</h1><p>Gemeinsam im Topolino, im E-Chopper oder auf dem Fahrrad. Sehen Sie sich die Optionen pro Fahrzeugtyp an und speichern Sie Ihre Favoriten unter „Meine Tour“.</p></div><aside class="food-help"><strong>Wählen Sie zuerst</strong><p>Wählen Sie, wie Sie reisen möchten. Dann kombinieren Sie Ihre Fahrt mit einer Aktivität, einem Mittag- oder Abendessen.</p><a class="textlink" href="/toer/de/mijn-toer/">Erstelle meine Tour</a></aside></div><div class="food-nav" aria-label="Wählen Sie einen Fahrzeugtyp"><div class="chips"><button data-vehicle="all" aria-pressed="true">Alle anzeigen</button>${groups.map(g=>`<button data-vehicle="${g.id}" aria-pressed="false">${g.name}</button>`).join('')}</div></div><div class="tools"><input type="search" id="vehicle-search" aria-label="Finden Sie ein Fahrzeug" placeholder="Suchen Sie zum Beispiel nach Topolino, Buggy oder E-Bike"><div class="chips"><button id="vehicle-sort" aria-pressed="false">Nach Preis aufsteigend</button></div></div><p class="result-count" id="vehicle-count"></p><div id="vehicle-sections"></div><aside class="notice food-note"><b>Bitte koordinieren Sie sich vor Ihrer Abreise</b><br>Überprüfen Sie das Alter, den Führerschein, die Anzahl der Sitzplätze, die Route und die Mietdauer pro Fahrzeug. Preise und Verfügbarkeit werden mit Ihrer Anfrage bestätigt. Eine Auswahl in Meine Tour ist noch keine Buchung.</aside><div class="hero-small"><h2>Machen Sie Ihren Ausflug komplett.</h2><p>Fahrzeug gefunden? Wählen Sie eine Aktivität und etwas Leckeres dazu. Sammeln Sie Ihre Wünsche in Meine Tour.</p><div class="actions"><a class="cta green" href="/toer/de/activiteiten/">Wählen Sie eine Aktivität</a><a class="cta light" href="/toer/de/eten-drinken/">Wählen Sie Essen und Getränke</a></div></div></div>`;function render(){let count=0,html='';const q=$('#vehicle-search').value.toLowerCase().trim();for(const g of groups){if(selected!=='all'&&selected!==g.id)continue;let rows=g.ids.map(id=>items.find(p=>p.id===id)).filter(p=>p&&(p.name+' '+p.description).toLowerCase().includes(q));rows.sort(sorted ? byPrice : byName);if(!rows.length)continue;count+=rows.length;html+=`<section class="food-group" id="${g.id}"><div class="section-head"><div><div class="eyebrow">${g.name}</div><h2>${g.subtitle}</h2></div><p>${g.copy}</p></div><div class="grid">${rows.map(card).join('')}</div></section>`}$('#vehicle-sections').innerHTML=html||"<p class=\"empty\">Kein passendes Fahrzeug gefunden. Versuchen Sie es mit einem anderen Suchbegriff oder einer anderen Kategorie.</p>";$('#vehicle-count').textContent=count+" Möglichkeiten"+(selected==='all'?" · nach Fahrzeugtyp klassifiziert":' · '+groups.find(g=>g.id===selected).name);bind()}document.querySelectorAll('[data-vehicle]').forEach(b=>b.onclick=()=>{selected=b.dataset.vehicle;document.querySelectorAll('[data-vehicle]').forEach(x=>x.setAttribute('aria-pressed',String(x===b)));render()});document.querySelectorAll('[data-vehicle]').forEach(x=>x.setAttribute('aria-pressed',String(x.dataset.vehicle===selected)));$('#vehicle-search').oninput=render;$('#vehicle-sort').onclick=()=>{sorted=!sorted;$('#vehicle-sort').setAttribute('aria-pressed',String(sorted));render()};render()}
 
+const arrangementDetails = {
+  abraham: {
+    sections: [
+      ["Euren 50. Geburtstag feiern", "Feiert euren Geburtstag in geschlossener Gesellschaft im ’t Witte Peard in Ootmarsum. Es gibt eine Tanzfläche, ein Getränkebuffet und eine Veranda. Musik, Häppchen und Ernährungswünsche könnt ihr vorab abstimmen."],
+      ["All-inclusive-Feier", "Ab 39,50 € pro Person mit Begrüßungsgetränk, vier Stunden Getränken, je zwei kalten und warmen Häppchen sowie Nüssen und Chips. Ein Brötchen oder Pommes zum Abschluss könnt ihr dazubuchen. Drinnen ist Platz für rund 125 Gäste, mit Terrasse und Veranda für rund 300. Das Café schließt spätestens um 1 Uhr."],
+    ],
+    images: ["feest-ruimte.jpg", "feest-hapjes.jpg", "feest-welkomstdrank.jpg"],
+  },
+  party: {
+    sections: [
+      ["Feiert euer eigenes Fest", "Bucht das Café-Restaurant mit Tanzfläche und Veranda für eine private Feier. Gäste können sich selbst Getränke einschenken. Bedienung für den ganzen Abend kostet 150 € zusätzlich. Eigene Musik ist bis 0.30 Uhr möglich. Das Café schließt spätestens um 1 Uhr."],
+      ["Was ist inklusive?", "Ab 39,50 € pro Person mit Begrüßungsgetränk, vier Stunden Getränken, je zwei kalten und warmen Häppchen sowie Nüssen und Chips. Brötchen oder Pommes zum Abschluss könnt ihr dazubuchen. Platz für rund 125 Gäste, mit Terrasse und Veranda für rund 300."],
+    ],
+    images: ["feest-ruimte.jpg", "feest-drankbuffet.jpg", "feest-hapjes.jpg"],
+  },
+  nacalculatie: {
+    sections: [
+      ["Feier nach Verbrauch", "Die Gäste bestellen an der Bar. TwenteToer erfasst den Verbrauch und rechnet am Ende ab. Getränke ab 3,25 €. Das All-inclusive-Getränkebuffet bleibt bei diesem Angebot geschlossen."],
+      ["Snacks am Tisch", "Bestellt nach Wunsch Nüsse, Käse, Wurst oder warme Snacks wie Bitterballen. Eure Wünsche könnt ihr vorab besprechen."],
+    ],
+    images: ["feest-nacalculatie.jpeg", "feest-hapjes.jpg"],
+  },
+  borrel: {
+    sections: [
+      ["Gemeinsam anstoßen", "Für einen geschäftlichen Empfang oder ein ungezwungenes Treffen. Zwei Stunden lang bedient ihr euch am Getränkebuffet mit Bier, Hauswein und Softdrinks. Dazu gibt es Tapas und salzige Nüsse."],
+      ["Preis", "22,50 € pro Person."],
+    ],
+    images: ["feest-ruimte.jpg", "feest-drankbuffet.jpg"],
+  },
+  catering: {
+    sections: [
+      ["Food-TukTuk vor Ort", "Das Food-TukTuk hat einen Kühlschrank und eine Warmhaltevorrichtung. Warme Speisen werden vor Ort zubereitet, etwa Schinkenbrötchen, Hamburger, Pizzastücke oder Champignons mit Knoblauchsoße. Vegetarisch, glutenfrei oder halal nach Absprache."],
+      ["Individuelles Angebot", "Ab 25 € pro Person, standardmäßig mit zwei Stunden vor Ort. Der Preis hängt von Gruppengröße, Standort, Zeit und Menü ab. Berechnung ab Ootmarsum."],
+    ],
+    images: ["catering-foodtruck.jpg", "catering-hapjes.jpeg"],
+  },
+  kerstbuffet: {
+    sections: [
+      ["Gemeinsam am Weihnachtsbuffet", "Zum Empfang gibt es Glühwein oder heiße Schokolade. Am Buffet findet ihr unter anderem Schnitzel, Hähnchensaté, Spareribs, gebratenen Reis und Salate. Zum Abschluss gibt es Softeis mit Toppings."],
+      ["Preise und Infos", "47,50 € pro Person mit zwei Stunden Getränkepauschale. Ab zwanzig Teilnehmenden oder mindestens 950 € pro Gruppe. Halal, vegetarisch und glutenfrei nach Absprache."],
+    ],
+    images: ["kerstbuffet-warm.jpg", "kerstbuffet-salades.jpg", "feest-drankbuffet.jpg"],
+  },
+  kerstmini: {
+    sections: [
+      ["Zwei Stunden gemeinsam anstoßen", "Ein Weihnachts- oder Neujahrsempfang mit zwei Stunden Getränkepauschale. Ihr bedient euch selbst mit Bier, Hauswein oder Softdrinks. Dazu gibt es Nüsse sowie je eine Runde kalte und warme Häppchen."],
+      ["Preise und Infos", "25 € pro Person. Die Uhrzeit legt ihr selbst fest. Es gibt eine beheizte Veranda. Glutenfrei, halal oder vegetarisch nach Absprache."],
+    ],
+    images: ["feest-welkomstdrank.jpg", "feest-drankbuffet.jpg", "feest-hapjes.jpg"],
+  },
+  kerstborrel: {
+    sections: [
+      ["Vier Stunden Weihnachtsfeier", "Zum Empfang gibt es Glühwein oder heiße Schokolade. Danach ist das Getränkebuffet vier Stunden geöffnet. Dazu gibt es Nüsse sowie je zwei Runden kalte und warme Häppchen."],
+      ["Preise und Infos", "39,50 € pro Person. Auch als Neujahrsempfang buchbar. Die Zeiten legt ihr selbst fest. Glutenfrei oder vegetarisch nach Absprache."],
+    ],
+    images: ["feest-welkomstdrank.jpg", "feest-drankbuffet.jpg", "feest-hapjes.jpg"],
+  },
+  gezin: {
+    sections: [
+      ["Gemeinsam mit der Familie unterwegs", "Entdeckt Ootmarsum mit einem TukTuk oder wählt etwa ein Fatbike oder einen Beachcruiser. Unterwegs könnt ihr an einem Spielplatz oder Streichelzoo halten. Verschiedene Fahrzeuge lassen sich kombinieren."],
+      ["Gemeinsam essen", "Rundet den Tag mit Pfannkuchen, einem Buffet oder einem Grillessen ab. Der Preis richtet sich nach eurer Auswahl."],
+    ],
+    images: ["item-1.jpg", "item-10.jpg", "item-11.jpg"],
+  },
+  vrijgezel: {
+    sections: [
+      ["Ein Junggesellenabschied nach Wunsch", "Fahrt Buggy, Topolino oder E-Chopper oder löst gemeinsam die Escapebox. Für einen Ausflug in die Stadt könnt ihr eine Schnitzeljagd, einen Stadtrundgang oder eine Brauereiführung wählen."],
+      ["Gemeinsam essen und trinken", "Kombiniert den Ausflug mit Mittagessen, Tapas, Pizza backen oder Grillen. Der Preis richtet sich nach eurer Auswahl."],
+    ],
+    images: ["item-5.jpg", "item-3.jpg", "item-25.jpg", "item-49.jpg"],
+  },
+  fatmax10: {
+    sections: [
+      ["Ein Vormittag auf dem Fatmax", "Startet mit Kaffee oder Tee und fahrt anschließend zwei Stunden mit dem elektrischen Fatmax Kickbike. Die Route findet ihr in der kostenlosen TwenteToer-App. Zurück in Ootmarsum gibt es ein Getränk pro Person an der Bar."],
+      ["Preis", "25 € pro Person."],
+    ],
+    images: ["item-9.jpg", "vergaderen-fatmax.jpg"],
+  },
+  dealechopper: {
+    sections: [
+      ["Social Deal E-Chopper", "Auf der Angebotsseite steht eine Aktion bis Ende März 2026. Ein neuer Aktionspreis ist dort nicht angegeben. Für die beschriebene Aktion wurde über Social Deal reserviert, mit höchstens zehn Personen pro Gruppe."],
+      ["Voraussetzungen für die Tour", "Führerschein AM oder B und Helm sind Pflicht. Zum Helm gibt es ein Haarnetz. Kostenlose Routen findet ihr in der TwenteToer-App."],
+    ],
+    images: ["item-2.jpg", "chopper-gids-toer.jpg"],
+  },
+  dealfatbike: {
+    sections: [
+      ["Social Deal Fatbike", "Die beschriebene Aktion lief bis zum 29. Mai 2024, dienstags bis freitags und mit höchstens fünfzehn Personen pro Gruppe. Auf der Angebotsseite steht keine neue Aktion."],
+      ["Voraussetzungen für die Tour", "Der Vermieter nennt eine Mindestgröße von 1,55 Metern und erlaubt keine Mitfahrenden. Kostenlose Routen stehen in der TwenteToer-App."],
+    ],
+    images: ["item-10.jpg"],
+  },
+  dealfatmax: {
+    sections: [
+      ["Social Deal Fatmax", "TwenteToer nennt derzeit keinen laufenden Social Deal für den Fatmax. Der Fatmax ist regulär und beim Vormittagsangebot verfügbar."],
+    ],
+    images: ["item-9.jpg", "vergaderen-fatmax.jpg"],
+  },
+  sleutelwinter: {
+    sections: [
+      ["Auf der Suche nach dem Schlüssel", "Löst gemeinsam Aufgaben bei einem Spaziergang durch die Altstadt von Ootmarsum. Anschließend gibt es ein Twenter Stamppot-Buffet mit zwei Stunden Getränken beim Essen."],
+      ["Preise und Infos", "50 € pro Person für die Winterausgabe mit Buffet. Plant rund vier Stunden ein. Die Schnitzeljagd findet zu Fuß statt und ist auch einzeln buchbar."],
+    ],
+    images: ["sleutel-centrum.jpg", "winter-stamppot.jpeg", "sleutel-speurtocht.jpg"],
+  },
+  winterwandeling: {
+    sections: [
+      ["Mit Guide durchs Springendal", "Wandert an den Quellteichen entlang und erfahrt mehr über das Grenzgebiet und den gefundenen Goldschatz. Am Ende warten ein warmes Essen und ein Getränk an der holzbefeuerten Feldküche."],
+      ["Preise und Infos", "45 € pro Person. Anschließend bringt euch der Militärlaster zum Ausgangspunkt zurück."],
+    ],
+    images: ["winterwandeling-veldkeuken.jpeg", "winterwandeling-onderweg.jpeg", "bronnen-bronvijver_springendal.jpg"],
+  },
+};
+
+function openArrangement(button) {
+  const arrangement = arrangementDetails[button.dataset.arrangement];
+  const title = button.dataset.title;
+  const dialog = $('#detail');
+  const content = $('#detail-content');
+  dialog.classList.remove('drinks-detail');
+  content.innerHTML = `<img class="detail-img" src="/toer/thema/assets/${arrangement.images[0]}" alt="${esc(title)}">
+    <div class="detail-pad">
+      <div class="eyebrow">Arrangements · TwenteToer</div>
+      <h2>${esc(title)}</h2>
+      ${renderActivityDetails(arrangement, title)}
+      <div class="actions">
+        <a class="cta green" href="/toer/de/contact/">Kontakt aufnehmen</a>
+        <a class="cta light" href="/toer/de/mijn-toer/">Meine Tour zusammenstellen</a>
+      </div>
+    </div>`;
+  bindPhotoGallery(content);
+  dialog.showModal();
+}
+
 function arrangementOverview() {
   const groups = [
     ["Feiern?", [
-      ["50. Geburtstag", "Eine Feier zum 50. Geburtstag mit Essen und Getränken bei TwenteToer.", "https://www.twentetoer.nl/eten-en-drinken/feestje-vieren-in-ootmarsum/"],
-      ["All-inclusive-Feier", "Feiert mit einem Paket für Essen und Getränke.", "https://www.twentetoer.nl/eten-en-drinken/feestje-vieren-in-ootmarsum/"],
-      ["Feier nach Verbrauch", "Plant eure Feier und klärt vorab, welche Leistungen nach Verbrauch abgerechnet werden.", "https://www.twentetoer.nl/eten-en-drinken/feest-op-nacalculatie/"],
-      ["Gesellig anstoßen", "Ein geselliger Ausklang für eure Gruppe in Ootmarsum.", "https://www.twentetoer.nl/activiteiten/borrel/"],
-      ["Catering vor Ort", "Essen und Getränke für eine Feier an eurem eigenen Standort.", "https://www.twentetoer.nl/eten-en-drinken/catering/"],
-      ["Weihnachtsbuffet", "Ein gemeinsames Weihnachtsessen am Buffet.", "https://www.twentetoer.nl/eten-en-drinken/kerstbuffet/"],
-      ["Kleiner Weihnachtsempfang", "Ein Weihnachtsempfang für eure Gruppe.", "https://www.twentetoer.nl/activiteiten/kerstborrel-receptie/"],
-      ["Weihnachtsfeier", "Ein geselliger Jahresausklang für eure Gruppe.", "https://www.twentetoer.nl/activiteiten/kerstborrel/"],
+      ["50. Geburtstag", "Eine Feier zum 50. Geburtstag mit Essen und Getränken bei TwenteToer.", "abraham"],
+      ["All-inclusive-Feier", "Feiert mit einem Paket für Essen und Getränke.", "party"],
+      ["Feier nach Verbrauch", "Plant eure Feier und klärt vorab, welche Leistungen nach Verbrauch abgerechnet werden.", "nacalculatie"],
+      ["Gesellig anstoßen", "Ein geselliger Ausklang für eure Gruppe in Ootmarsum.", "borrel"],
+      ["Catering vor Ort", "Essen und Getränke für eine Feier an eurem eigenen Standort.", "catering"],
+      ["Weihnachtsbuffet", "Ein gemeinsames Weihnachtsessen am Buffet.", "kerstbuffet"],
+      ["Kleiner Weihnachtsempfang", "Ein Weihnachtsempfang für eure Gruppe.", "kerstmini"],
+      ["Weihnachtsfeier", "Ein geselliger Jahresausklang für eure Gruppe.", "kerstborrel"],
     ]],
     ["Gruppen", [
       ["Tagung & Aktivität", "Tagt im Restaurant, genießt das Mittagsbuffet und wählt anschließend eine Tour oder Aktivität.", 47],
       ["Ein Tag in Ootmarsum", "Ein kompletter Tag mit Stadtrundgang, Mittagessen, Fahrzeugtour und Grillen mit Getränken.", 48],
-      ["Familienausflug in Ootmarsum", "Ein gemeinsamer Tag mit der Familie in Ootmarsum und Umgebung.", "https://www.twentetoer.nl/gezinsuitje-in-ootmarsum/"],
-      ["Junggesellenabschied", "Findet einen Ausflug für die zukünftige Braut oder den zukünftigen Bräutigam und eure Gruppe.", "https://www.twentetoer.nl/vrijgezellenfeest/"],
+      ["Familienausflug in Ootmarsum", "Ein gemeinsamer Tag mit der Familie in Ootmarsum und Umgebung.", "gezin"],
+      ["Junggesellenabschied", "Findet einen Ausflug für die zukünftige Braut oder den zukünftigen Bräutigam und eure Gruppe.", "vrijgezel"],
     ]],
     ["Rabattaktionen", [
-      ["Fatmax um 10 Uhr", "Ein Fatmax-Angebot für alle, die morgens losfahren möchten.", "https://www.twentetoer.nl/voertuigen/fatmax-10-uurtje/"],
-      ["Social Deal E-Chopper", "Hier findet ihr das Angebot und die Bedingungen für eine E-Chopper-Tour.", "https://www.twentetoer.nl/socialdeal/"],
-      ["Social Deal Fatbike", "Hier findet ihr das Angebot und die Bedingungen für eine Fatbike-Tour.", "https://www.twentetoer.nl/socialdeal-fatbike/"],
-      ["Social Deal Fatmax", "Hier findet ihr das Angebot und die Bedingungen für eine Fatmax-Tour.", "https://www.twentetoer.nl/socialdeal_fatmax/"],
+      ["Fatmax um 10 Uhr", "Ein Fatmax-Angebot für alle, die morgens losfahren möchten.", "fatmax10"],
+      ["Social Deal E-Chopper", "Hier findet ihr das Angebot und die Bedingungen für eine E-Chopper-Tour.", "dealechopper"],
+      ["Social Deal Fatbike", "Hier findet ihr das Angebot und die Bedingungen für eine Fatbike-Tour.", "dealfatbike"],
+      ["Social Deal Fatmax", "Hier findet ihr das Angebot und die Bedingungen für eine Fatmax-Tour.", "dealfatmax"],
     ]],
     ["Winterausflüge", [
-      ["Der verborgene Schlüssel im Winter", "Löst unterwegs Aufgaben und entdeckt die historische Altstadt.", "https://www.twentetoer.nl/activiteiten/sleutel-speurtocht-ootmarsum/"],
+      ["Der verborgene Schlüssel im Winter", "Löst unterwegs Aufgaben und entdeckt die historische Altstadt.", "sleutelwinter"],
       ["Escapebox", "Löst als Team das Rätsel um die Kiste im Café-Restaurant.", 25],
       ["Stadtrundgang Ootmarsum", "Erkundet die Stadt mit einem einheimischen Guide.", 45],
-      ["Winterwanderung", "Zieht die Wanderschuhe an und erkundet die Umgebung im Winter.", "https://www.twentetoer.nl/activiteiten/winterwandeling/"],
+      ["Winterwanderung", "Zieht die Wanderschuhe an und erkundet die Umgebung im Winter.", "winterwandeling"],
       ["Schmuggler-Dropping", "Findet mit Karte und Kompass zurück nach Ootmarsum.", 28],
     ]],
   ];
@@ -697,15 +831,15 @@ function arrangementOverview() {
       ${entries.map(([title, description, destination]) => `<details>
         <summary>${esc(title)}</summary>
         <p>${esc(description)}</p>
-        ${typeof destination === 'number'
-          ? `<button class="textlink" data-detail="${destination}">Details ansehen</button>`
-          : `<a href="${esc(destination)}" hreflang="nl">Auf der niederländischen Website ansehen</a>`}
+        <button class="textlink" ${typeof destination === 'number'
+          ? `data-detail="${destination}"`
+          : `data-arrangement="${destination}" data-title="${esc(title)}"`}>Details ansehen</button>
       </details>`).join('')}
     </section>`).join('')}
   </div>`;
 }
 
-function arrangements(){const combos=[["Dolce Vita & gemütliches Essen",'topolino','lunch'],["Abenteuer & Barbecue",'buggy','barbecue incl'],["Touring & Pizza backen",'e-chopper','top your pizza'],["Aktiv & Getränke",'fatmax','borrel bbq']];$('#main').innerHTML=`<div class="wrap"><div class="page-head"><div class="eyebrow">Gemeinsam unterwegs</div><h1>EUER TAG. EURE KOMBINATION.</h1><p>Inspiration für einen ganzen Tag. Hierbei handelt es sich um Beispielkombinationen bestehender Angebote; Zusammensetzung, Planung und Preis werden auf Anfrage bestätigt.</p></div>${arrangementOverview()}<section class="section"><h2>Selbst kombinieren</h2><div class="grid">${combos.map((combo, i) => ({combo, audience: i % 2 ? "Freunde und Kollegen" : "Familie und Freunde"})).sort((a,b) => compareTitle(a.combo[0], b.combo[0])).map(({combo:[title,v,f],audience})=>`<article class="card"><img class="card-photo" src="${photo(named(v))}" alt="${esc(title)}"><div class="card-body"><span class="tag">Inspiration · ${audience}</span><h3>${title}</h3><p>Kombinieren Sie ${esc(named(v).name)} mit ${esc(named(f).name.toLowerCase())}. Speichern Sie beide Teile und koordinieren Sie den Tag gemeinsam.</p><button class="cta green" data-combo="${named(v).id},${named(f).id}">Wählen Sie diese Kombination</button></div></article>`).join('')}</div></section><div class="hero-small"><h2>MISCHEN SIE LIEBER SELBST?</h2><p>Wählen Sie aus dem gesamten Sortiment und treffen Sie Ihre eigene Auswahl in „Meine Tour“.</p><a class="cta" href="/toer/de/mijn-toer/">Gestalte meinen Tag</a></div></div>`;bind();document.querySelectorAll('[data-combo]').forEach(b=>b.onclick=()=>{chosen=[...new Set([...chosen,...b.dataset.combo.split(',').map(Number)])];localStorage.setItem('toer-plan',JSON.stringify(chosen));location.href='/toer/de/mijn-toer/'})}
+function arrangements(){const combos=[["Dolce Vita & gemütliches Essen",'topolino','lunch'],["Abenteuer & Barbecue",'buggy','barbecue incl'],["Touring & Pizza backen",'e-chopper','top your pizza'],["Aktiv & Getränke",'fatmax','borrel bbq']];$('#main').innerHTML=`<div class="wrap"><div class="page-head"><div class="eyebrow">Gemeinsam unterwegs</div><h1>EUER TAG. EURE KOMBINATION.</h1><p>Inspiration für einen ganzen Tag. Hierbei handelt es sich um Beispielkombinationen bestehender Angebote; Zusammensetzung, Planung und Preis werden auf Anfrage bestätigt.</p></div>${arrangementOverview()}<section class="section"><h2>Selbst kombinieren</h2><div class="grid">${combos.map((combo, i) => ({combo, audience: i % 2 ? "Freunde und Kollegen" : "Familie und Freunde"})).sort((a,b) => compareTitle(a.combo[0], b.combo[0])).map(({combo:[title,v,f],audience})=>`<article class="card"><img class="card-photo" src="${photo(named(v))}" alt="${esc(title)}"><div class="card-body"><span class="tag">Inspiration · ${audience}</span><h3>${title}</h3><p>Kombinieren Sie ${esc(named(v).name)} mit ${esc(named(f).name.toLowerCase())}. Speichern Sie beide Teile und koordinieren Sie den Tag gemeinsam.</p><button class="cta green" data-combo="${named(v).id},${named(f).id}">Wählen Sie diese Kombination</button></div></article>`).join('')}</div></section><div class="hero-small"><h2>MISCHEN SIE LIEBER SELBST?</h2><p>Wählen Sie aus dem gesamten Sortiment und treffen Sie Ihre eigene Auswahl in „Meine Tour“.</p><a class="cta" href="/toer/de/mijn-toer/">Gestalte meinen Tag</a></div></div>`;bind();document.querySelectorAll('[data-arrangement]').forEach(button => button.addEventListener('click', () => openArrangement(button)));document.querySelectorAll('[data-combo]').forEach(b=>b.onclick=()=>{chosen=[...new Set([...chosen,...b.dataset.combo.split(',').map(Number)])];localStorage.setItem('toer-plan',JSON.stringify(chosen));location.href='/toer/de/mijn-toer/'})}
 let refreshPlanner;
 function plan(){refreshPlanner=initPlanner({items:[...items].sort(byName),chosen,onChange:ids=>{chosen=[...ids];updateCount()}})}
 function renderSelection(){refreshPlanner?.()}

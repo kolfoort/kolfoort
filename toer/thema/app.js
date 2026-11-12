@@ -659,35 +659,169 @@ function activityCatalog(){const groups=[{id:'actief',name:'Actief & Spelen',sub
 
 function vehicleCatalog(){const groups=[{id:'buggy',name:'Buggy Experience',subtitle:'Zandwegen. Modder. Grote grijns.',copy:'Zelf off-road rijden onder begeleiding. Ontdek alles over de Buggy Experience.',ids:[5]},{id:'samen',name:'Samen toeren',subtitle:'Stap in. Samen eropuit.',copy:'Een cabriorit in de Topolino of gezellig tuffen in een TukTuk.',ids:[3,1]},{id:'tweewielers',name:'Scooters & E-choppers',subtitle:'Jouw rondje Tukkerland.',copy:'Kies je favoriete scooter of e-chopper. Laat de rijbewijs- en leeftijdsvoorwaarden per voertuig bevestigen.',ids:[2,4,6,7,8]},{id:'fietsen',name:'Fietsen & E-steps',subtitle:'Actief de omgeving in.',copy:'Van een stadsfiets tot een elektrische mountainbike of Fatmax. Kies wat past bij jullie route.',ids:[12,13,15,14,10,11,9,16]},{id:'chauffeur',name:'Met chauffeur',subtitle:'Meerijden met een verhaal.',copy:'Op pad met een karaktervolle legertruck of jeep. Stem de mogelijkheden voor jullie groep af.',ids:[21,22,23]},{id:'evenementen',name:'Evenementen & Foodtrucks',subtitle:'Een bijzondere blikvanger.',copy:'Een Piaggio Ape als originele toevoeging aan een evenement of feest.',ids:[19,20]},{id:'extra',name:'Kinderzitjes',subtitle:'Ook de kleintjes mee.',copy:'Bekijk de zitjes en stem vooraf af welke combinatie geschikt is voor jouw kind en fiets.',ids:[17,18]}];let selected=new URLSearchParams(location.search).get('categorie')||'all',sorted=false;if(!groups.some(g=>g.id===selected))selected='all';$('#main').innerHTML=`<div class="wrap"><div class="page-head food-intro"><div><div class="eyebrow">Voertuigen · Ootmarsum</div><h1>KIES JE VOERTUIG.<br>ONTDEK HET TUKKERLAND.</h1><p>Samen in een Topolino, op een e-chopper of lekker op de fiets. Bekijk de mogelijkheden per soort voertuig en bewaar je favorieten in Mijn toer.</p></div><aside class="food-help"><strong>Eerst even kiezen</strong><p>Kies hoe je wilt reizen. Combineer je rit daarna met een activiteit, lunch of diner.</p><a class="textlink" href="/toer/mijn-toer/">Stel mijn toer samen</a></aside></div><div class="food-nav" aria-label="Kies een soort voertuig"><div class="chips"><button data-vehicle="all" aria-pressed="true">Alles bekijken</button>${groups.map(g=>`<button data-vehicle="${g.id}" aria-pressed="false">${g.name}</button>`).join('')}</div></div><div class="tools"><input type="search" id="vehicle-search" aria-label="Zoek een voertuig" placeholder="Zoek bijvoorbeeld Topolino, buggy of e-bike"><div class="chips"><button id="vehicle-sort" aria-pressed="false">Vanafprijs oplopend</button></div></div><p class="result-count" id="vehicle-count"></p><div id="vehicle-sections"></div><aside class="notice food-note"><b>Even afstemmen voor vertrek</b><br>Controleer per voertuig de leeftijd, het rijbewijs, het aantal zitplaatsen, de route en de huurduur. Tarieven en beschikbaarheid worden bij je aanvraag bevestigd. Een selectie in Mijn toer is nog geen boeking.</aside><div class="hero-small"><h2>MAAK JE UITJE COMPLEET.</h2><p>Voertuig gevonden? Kies er een activiteit en iets lekkers bij. Verzamel jullie wensen in Mijn toer.</p><div class="actions"><a class="cta green" href="/toer/activiteiten/">Kies een activiteit</a><a class="cta light" href="/toer/eten-drinken/">Kies eten & Drinken</a></div></div></div>`;function render(){let count=0,html='';const q=$('#vehicle-search').value.toLowerCase().trim();for(const g of groups){if(selected!=='all'&&selected!==g.id)continue;let rows=g.ids.map(id=>items.find(p=>p.id===id)).filter(p=>p&&(p.name+' '+p.description).toLowerCase().includes(q));rows.sort(sorted ? byPrice : byName);if(!rows.length)continue;count+=rows.length;html+=`<section class="food-group" id="${g.id}"><div class="section-head"><div><div class="eyebrow">${g.name}</div><h2>${g.subtitle}</h2></div><p>${g.copy}</p></div><div class="grid">${rows.map(card).join('')}</div></section>`}$('#vehicle-sections').innerHTML=html||'<p class="empty">Geen passend voertuig gevonden. Probeer een andere zoekterm of categorie.</p>';$('#vehicle-count').textContent=count+' mogelijkheden'+(selected==='all'?' · ingedeeld op soort voertuig':' · '+groups.find(g=>g.id===selected).name);bind()}document.querySelectorAll('[data-vehicle]').forEach(b=>b.onclick=()=>{selected=b.dataset.vehicle;document.querySelectorAll('[data-vehicle]').forEach(x=>x.setAttribute('aria-pressed',String(x===b)));render()});document.querySelectorAll('[data-vehicle]').forEach(x=>x.setAttribute('aria-pressed',String(x.dataset.vehicle===selected)));$('#vehicle-search').oninput=render;$('#vehicle-sort').onclick=()=>{sorted=!sorted;$('#vehicle-sort').setAttribute('aria-pressed',String(sorted));render()};render()}
 
+const arrangementDetails = {
+  abraham: {
+    sections: [
+      ["Jullie vijftigste vieren", "Vier jullie verjaardag met een besloten feest in ’t Witte Peard in Ootmarsum. Er is ruimte om te dansen, een drankbuffet en een veranda. Stem muziek, hapjes en dieetwensen vooraf af."],
+      ["All-in feest", "Vanaf € 39,50 per persoon met een welkomstdrankje, vier uur drankjes, twee koude en twee warme hapjes en nootjes en chips. Een afsluitend broodje of friet is bij te boeken. Binnen is er plek voor ongeveer 125 gasten en met terras en veranda voor ongeveer 300. Uiterlijk om 01.00 uur sluit het café."],
+    ],
+    images: ["feest-ruimte.jpg", "feest-hapjes.jpg", "feest-welkomstdrank.jpg"],
+  },
+  party: {
+    sections: [
+      ["Vier jullie eigen feest", "Huur het café-restaurant voor een besloten feest met dansvloer en veranda. Gasten kunnen zelf drank inschenken. Bediening voor de hele avond kan voor € 150 extra. Jullie kunnen eigen muziek draaien tot 00.30 uur. Het café sluit uiterlijk om 01.00 uur."],
+      ["Wat is inbegrepen?", "Vanaf € 39,50 per persoon met een welkomstdrankje, vier uur drankjes, twee koude en twee warme hapjes en nootjes en chips. Broodjes of friet na afloop zijn apart bij te boeken. De ruimte biedt plek aan ongeveer 125 gasten, of circa 300 met terras en veranda."],
+    ],
+    images: ["feest-ruimte.jpg", "feest-drankbuffet.jpg", "feest-hapjes.jpg"],
+  },
+  nacalculatie: {
+    sections: [
+      ["Een feest op rekening", "Gasten bestellen hun drankjes aan de bar. TwenteToer houdt bij wat er wordt besteld en rekent na afloop af op basis van verbruik. Consumpties vanaf € 3,25. Het all-in drankbuffet is bij dit arrangement gesloten."],
+      ["Hapjes aan tafel", "Bestel naar wens nootjes, kaas, worst of warme snacks, zoals bitterballen. Stem jullie voorkeuren vooraf af."],
+    ],
+    images: ["feest-nacalculatie.jpeg", "feest-hapjes.jpg"],
+  },
+  borrel: {
+    sections: [
+      ["Samen borrelen", "Voor een zakelijke borrel, receptie of informele bijeenkomst. Twee uur lang pakken jullie zelf bier, huiswijn of fris van het drankbuffet. Op tafel komen tapas en hartige nootjes."],
+      ["Prijs", "€ 22,50 per persoon."],
+    ],
+    images: ["feest-ruimte.jpg", "feest-drankbuffet.jpg"],
+  },
+  catering: {
+    sections: [
+      ["Food TukTuk op locatie", "De Food TukTuk heeft een koelkast en warmhoudvoorziening. Warme hapjes worden ter plekke bereid. Denk aan broodjes beenham, hamburgers, pizzapunten of champignons met knoflooksaus. Vegetarisch, glutenvrij of halal kan in overleg."],
+      ["Prijs op maat", "Vanaf € 25 per persoon, met standaard twee uur bediening op locatie. De prijs hangt af van groepsgrootte, locatie, tijdstip en menu. TwenteToer rekent vanaf Ootmarsum."],
+    ],
+    images: ["catering-foodtruck.jpg", "catering-hapjes.jpeg"],
+  },
+  kerstbuffet: {
+    sections: [
+      ["Samen aan het kerstbuffet", "Begin met glühwein of warme chocolademelk. Aan het buffet staan onder meer schnitzel, kipsaté, spareribs, nasi en salades. Sluit af met softijs en kies je eigen toppings."],
+      ["Kosten en informatie", "€ 47,50 per persoon met twee uur all-in drankjes. Vanaf twintig deelnemers of minimaal € 950 per groep. Halal, vegetarisch en glutenvrij zijn mogelijk in overleg."],
+    ],
+    images: ["kerstbuffet-warm.jpg", "kerstbuffet-salades.jpg", "feest-drankbuffet.jpg"],
+  },
+  kerstmini: {
+    sections: [
+      ["Twee uur samen proosten", "Een kerst- of nieuwjaarsborrel met twee uur drankjes all-in. Jullie schenken zelf bier, huiswijn of fris in. Er zijn nootjes op tafel en er komt één ronde koude en één ronde warme hapjes."],
+      ["Kosten en informatie", "€ 25 per persoon. Jullie kiezen zelf het tijdstip. Er is een verwarmde veranda. Glutenvrij, halal of vegetarisch kan in overleg."],
+    ],
+    images: ["feest-welkomstdrank.jpg", "feest-drankbuffet.jpg", "feest-hapjes.jpg"],
+  },
+  kerstborrel: {
+    sections: [
+      ["Vier uur kerstborrel", "Bij aankomst krijgen jullie glühwein of warme chocolademelk. Daarna is het drankbuffet vier uur open. Op tafel staan nootjes en we serveren twee rondes koude en twee rondes warme hapjes."],
+      ["Kosten en informatie", "€ 39,50 per persoon. Ook als nieuwjaarsborrel te boeken. Jullie bepalen zelf de tijden. Glutenvrij of vegetarisch kan in overleg."],
+    ],
+    images: ["feest-welkomstdrank.jpg", "feest-drankbuffet.jpg", "feest-hapjes.jpg"],
+  },
+  gezin: {
+    sections: [
+      ["Samen op pad met het gezin", "Verken Ootmarsum met een TukTuk of kies bijvoorbeeld een Fatbike of Beachcruiser. Maak onderweg een stop bij een speeltuin of kinderboerderij. Jullie kunnen verschillende voertuigen combineren."],
+      ["Samen aan tafel", "Maak de dag compleet met pannenkoeken, een buffet of een BBQ. De prijs hangt af van jullie keuze van voertuigen en eten."],
+    ],
+    images: ["item-1.jpg", "item-10.jpg", "item-11.jpg"],
+  },
+  vrijgezel: {
+    sections: [
+      ["Een vrijgezellendag op maat", "Ga buggy rijden, stap in een Topolino, rijd op een E-Chopper of speel samen de Escapebox. Liever door de stad? Kies een speurtocht, stadswandeling of bezoek aan de brouwerij."],
+      ["Samen eten en drinken", "Combineer jullie uitje met lunch, tapas, pizza bakken of een BBQ. De prijs hangt af van de gekozen onderdelen."],
+    ],
+    images: ["item-5.jpg", "item-3.jpg", "item-25.jpg", "item-49.jpg"],
+  },
+  fatmax10: {
+    sections: [
+      ["Een ochtend op de Fatmax", "Begin met koffie of thee en maak daarna een rit van twee uur op de elektrische Fatmax Kickbike. De route staat in de gratis TwenteToer-app. Terug in Ootmarsum krijgen jullie één drankje per persoon aan de bar."],
+      ["Prijs", "€ 25 per persoon."],
+    ],
+    images: ["item-9.jpg", "vergaderen-fatmax.jpg"],
+  },
+  dealechopper: {
+    sections: [
+      ["Social Deal E-Chopper", "De bronpagina vermeldt een actie die liep tot eind maart 2026. TwenteToer heeft hier geen nieuw actietarief vermeld. Voor de beschreven actie reserveerde je via Social Deal, met maximaal tien personen per groep."],
+      ["Voorwaarden voor de rit", "Rijbewijs AM of B en een helm zijn verplicht. Een haarnetje krijg je bij de helm. Gratis routes staan in de TwenteToer-app."],
+    ],
+    images: ["item-2.jpg", "chopper-gids-toer.jpg"],
+  },
+  dealfatbike: {
+    sections: [
+      ["Social Deal Fatbike", "De beschreven actie liep tot en met 29 mei 2024, van dinsdag tot en met vrijdag en met maximaal vijftien personen per groep. De bronpagina vermeldt geen nieuwe actie."],
+      ["Voorwaarden voor de rit", "De verhuurpagina noemt een minimale lengte van 1,55 meter, geen passagiers en gratis routes in de TwenteToer-app."],
+    ],
+    images: ["item-10.jpg"],
+  },
+  dealfatmax: {
+    sections: [
+      ["Social Deal Fatmax", "TwenteToer vermeldt momenteel geen lopende Social Deal voor de Fatmax. De Fatmax staat wel bij de gewone verhuur en bij het 10-uurtje."],
+    ],
+    images: ["item-9.jpg", "vergaderen-fatmax.jpg"],
+  },
+  sleutelwinter: {
+    sections: [
+      ["Op zoek naar de sleutel", "Los samen opdrachten op tijdens een wandeling door het oude centrum van Ootmarsum. Daarna staat een Twents stamppotbuffet klaar, met twee uur drankjes tijdens het eten."],
+      ["Kosten en informatie", "€ 50 per persoon voor de wintereditie met buffet. Reken op ongeveer vier uur. De speurtocht gaat te voet. De gewone Sleutel van Ootmarsum is apart beschikbaar."],
+    ],
+    images: ["sleutel-centrum.jpg", "winter-stamppot.jpeg", "sleutel-speurtocht.jpg"],
+  },
+  winterwandeling: {
+    sections: [
+      ["Met gids door het Springendal", "Wandel langs de bronvijvers en hoor over de geschiedenis van het grensgebied en de gevonden goudschat. Aan het einde wacht een warme hap met een drankje bij de houtgestookte veldkeuken."],
+      ["Kosten en informatie", "€ 45 per persoon. Na afloop brengt de legertruck jullie terug naar het startpunt."],
+    ],
+    images: ["winterwandeling-veldkeuken.jpeg", "winterwandeling-onderweg.jpeg", "bronnen-bronvijver_springendal.jpg"],
+  },
+};
+
+function openArrangement(button) {
+  const arrangement = arrangementDetails[button.dataset.arrangement];
+  const title = button.dataset.title;
+  const dialog = $('#detail');
+  const content = $('#detail-content');
+  dialog.classList.remove('drinks-detail');
+  content.innerHTML = `<img class="detail-img" src="/toer/thema/assets/${arrangement.images[0]}" alt="${esc(title)}">
+    <div class="detail-pad">
+      <div class="eyebrow">Arrangementen · TwenteToer</div>
+      <h2>${esc(title)}</h2>
+      ${renderActivityDetails(arrangement, title)}
+      <div class="actions">
+        <a class="cta green" href="/toer/contact/">Neem contact op</a>
+        <a class="cta light" href="/toer/mijn-toer/">Stel Mijn toer samen</a>
+      </div>
+    </div>`;
+  bindPhotoGallery(content);
+  dialog.showModal();
+}
+
 function arrangementOverview() {
   const groups = [
     ["Feestje?", [
-      ["Abraham & Sarah", "Een feest voor jullie vijftigste verjaardag, met eten en drinken bij TwenteToer.", "https://www.twentetoer.nl/eten-en-drinken/feestje-vieren-in-ootmarsum/"],
-      ["All-in party", "Vier jullie feest met een arrangement voor eten en drinken.", "https://www.twentetoer.nl/eten-en-drinken/feestje-vieren-in-ootmarsum/"],
-      ["Feest op nacalculatie", "Stel het feest samen en stem vooraf af wat op nacalculatie wordt afgerekend.", "https://www.twentetoer.nl/eten-en-drinken/feest-op-nacalculatie/"],
-      ["Borrel", "Een borrel voor jullie groep in Ootmarsum.", "https://www.twentetoer.nl/activiteiten/borrel/"],
-      ["Catering op locatie", "Eten en drinken voor een feest op jullie eigen locatie.", "https://www.twentetoer.nl/eten-en-drinken/catering/"],
-      ["Kerstbuffet", "Samen aan tafel voor een kerstbuffet.", "https://www.twentetoer.nl/eten-en-drinken/kerstbuffet/"],
-      ["Kerstborrel Mini", "Een kerstborrel in receptievorm.", "https://www.twentetoer.nl/activiteiten/kerstborrel-receptie/"],
-      ["Kerstborrel", "Een gezellige afsluiting van het jaar met jullie groep.", "https://www.twentetoer.nl/activiteiten/kerstborrel/"],
+      ["Abraham & Sarah", "Een feest voor jullie vijftigste verjaardag, met eten en drinken bij TwenteToer.", "abraham"],
+      ["All-in party", "Vier jullie feest met een arrangement voor eten en drinken.", "party"],
+      ["Feest op nacalculatie", "Stel het feest samen en stem vooraf af wat op nacalculatie wordt afgerekend.", "nacalculatie"],
+      ["Borrel", "Een borrel voor jullie groep in Ootmarsum.", "borrel"],
+      ["Catering op locatie", "Eten en drinken voor een feest op jullie eigen locatie.", "catering"],
+      ["Kerstbuffet", "Samen aan tafel voor een kerstbuffet.", "kerstbuffet"],
+      ["Kerstborrel Mini", "Een kerstborrel in receptievorm.", "kerstmini"],
+      ["Kerstborrel", "Een gezellige afsluiting van het jaar met jullie groep.", "kerstborrel"],
     ]],
     ["Groepen", [
       ["Vergaderen & Actief", "Vergader in het restaurant, schuif aan bij het lunchbuffet en kies daarna een rit of activiteit.", 47],
       ["Dagje Ootmarsum", "Een compleet programma met stadswandeling, lunch, voertuigrit en een BBQ met drankjes.", 48],
-      ["Gezinsuitje in Ootmarsum", "Een dag op pad met het gezin in Ootmarsum en omgeving.", "https://www.twentetoer.nl/gezinsuitje-in-ootmarsum/"],
-      ["Vrijgezellenfeest", "Kies een uitje voor de aanstaande bruid of bruidegom en jullie gezelschap.", "https://www.twentetoer.nl/vrijgezellenfeest/"],
+      ["Gezinsuitje in Ootmarsum", "Een dag op pad met het gezin in Ootmarsum en omgeving.", "gezin"],
+      ["Vrijgezellenfeest", "Kies een uitje voor de aanstaande bruid of bruidegom en jullie gezelschap.", "vrijgezel"],
     ]],
     ["Kortingsacties", [
-      ["Fatmax 10-uurtje", "Een Fatmax-actie voor wie ’s ochtends op pad wil.", "https://www.twentetoer.nl/voertuigen/fatmax-10-uurtje/"],
-      ["Social Deal E-Chopper", "Bekijk de actie en de voorwaarden voor een rit op de E-Chopper.", "https://www.twentetoer.nl/socialdeal/"],
-      ["Social Deal Fatbike", "Bekijk de actie en de voorwaarden voor een Fatbike-rit.", "https://www.twentetoer.nl/socialdeal-fatbike/"],
-      ["Social Deal Fatmax", "Bekijk de actie en de voorwaarden voor een rit op de Fatmax.", "https://www.twentetoer.nl/socialdeal_fatmax/"],
+      ["Fatmax 10-uurtje", "Een Fatmax-actie voor wie ’s ochtends op pad wil.", "fatmax10"],
+      ["Social Deal E-Chopper", "Bekijk de actie en de voorwaarden voor een rit op de E-Chopper.", "dealechopper"],
+      ["Social Deal Fatbike", "Bekijk de actie en de voorwaarden voor een Fatbike-rit.", "dealfatbike"],
+      ["Social Deal Fatmax", "Bekijk de actie en de voorwaarden voor een rit op de Fatmax.", "dealfatmax"],
     ]],
     ["Winteruitjes", [
-      ["Verborgen Sleutel – Winter", "Los onderweg opdrachten op en ontdek het historische centrum.", "https://www.twentetoer.nl/activiteiten/sleutel-speurtocht-ootmarsum/"],
+      ["Verborgen Sleutel – Winter", "Los onderweg opdrachten op en ontdek het historische centrum.", "sleutelwinter"],
       ["Escapebox", "Los met jullie team het raadsel van de kist op in het café-restaurant.", 25],
       ["Stadswandeling Ootmarsum", "Verken de stad met een plaatselijke gids.", 45],
-      ["Winterwandeling", "Trek de wandelschoenen aan voor een winteruitje in de omgeving.", "https://www.twentetoer.nl/activiteiten/winterwandeling/"],
+      ["Winterwandeling", "Trek de wandelschoenen aan voor een winteruitje in de omgeving.", "winterwandeling"],
       ["Smokkel Dropping", "Vind met kaart en kompas de weg terug naar Ootmarsum.", 28],
     ]],
   ];
@@ -697,15 +831,15 @@ function arrangementOverview() {
       ${entries.map(([title, description, destination]) => `<details>
         <summary>${esc(title)}</summary>
         <p>${esc(description)}</p>
-        ${typeof destination === 'number'
-          ? `<button class="textlink" data-detail="${destination}">Bekijk details</button>`
-          : `<a href="${esc(destination)}" hreflang="nl">Bekijk op TwenteToer</a>`}
+        <button class="textlink" ${typeof destination === 'number'
+          ? `data-detail="${destination}"`
+          : `data-arrangement="${destination}" data-title="${esc(title)}"`}>Bekijk details</button>
       </details>`).join('')}
     </section>`).join('')}
   </div>`;
 }
 
-function arrangements(){const combos=[['Dolce Vita & Gezellig tafelen','topolino','lunch'],['Avontuur & Barbecue','buggy','barbecue incl'],['Toeren & Pizza bakken','e-chopper','top your pizza'],['Actief & Borrelen','fatmax','borrel bbq']];$('#main').innerHTML=`<div class="wrap"><div class="page-head"><div class="eyebrow">Samen op pad</div><h1>JULLIE DAG. JULLIE COMBINATIE.</h1><p>Inspiratie voor een complete dag. Dit zijn voorbeeldcombinaties van bestaand aanbod; samenstelling, planning en prijs worden op aanvraag bevestigd.</p></div>${arrangementOverview()}<section class="section"><h2>Zelf combineren</h2><div class="grid">${combos.map((combo, i) => ({combo, audience: i % 2 ? "Vrienden & Collega’s" : "Familie & Vrienden"})).sort((a,b) => compareTitle(a.combo[0], b.combo[0])).map(({combo:[title,v,f],audience})=>`<article class="card"><img class="card-photo" src="${photo(named(v))}" alt="${esc(title)}"><div class="card-body"><span class="tag">Inspiratie · ${audience}</span><h3>${title}</h3><p>${esc(named(v).name)} combineren met ${esc(named(f).name.toLowerCase())}. Bewaar beide onderdelen en stem de dag samen af.</p><button class="cta green" data-combo="${named(v).id},${named(f).id}">Kies deze combinatie</button></div></article>`).join('')}</div></section><div class="hero-small"><h2>LIEVER ZELF MIXEN?</h2><p>Kies uit het volledige aanbod en maak je eigen selectie in Mijn toer.</p><a class="cta" href="/toer/mijn-toer/">Stel mijn dag samen</a></div></div>`;bind();document.querySelectorAll('[data-combo]').forEach(b=>b.onclick=()=>{chosen=[...new Set([...chosen,...b.dataset.combo.split(',').map(Number)])];localStorage.setItem('toer-plan',JSON.stringify(chosen));location.href='/toer/mijn-toer/'})}
+function arrangements(){const combos=[['Dolce Vita & Gezellig tafelen','topolino','lunch'],['Avontuur & Barbecue','buggy','barbecue incl'],['Toeren & Pizza bakken','e-chopper','top your pizza'],['Actief & Borrelen','fatmax','borrel bbq']];$('#main').innerHTML=`<div class="wrap"><div class="page-head"><div class="eyebrow">Samen op pad</div><h1>JULLIE DAG. JULLIE COMBINATIE.</h1><p>Inspiratie voor een complete dag. Dit zijn voorbeeldcombinaties van bestaand aanbod; samenstelling, planning en prijs worden op aanvraag bevestigd.</p></div>${arrangementOverview()}<section class="section"><h2>Zelf combineren</h2><div class="grid">${combos.map((combo, i) => ({combo, audience: i % 2 ? "Vrienden & Collega’s" : "Familie & Vrienden"})).sort((a,b) => compareTitle(a.combo[0], b.combo[0])).map(({combo:[title,v,f],audience})=>`<article class="card"><img class="card-photo" src="${photo(named(v))}" alt="${esc(title)}"><div class="card-body"><span class="tag">Inspiratie · ${audience}</span><h3>${title}</h3><p>${esc(named(v).name)} combineren met ${esc(named(f).name.toLowerCase())}. Bewaar beide onderdelen en stem de dag samen af.</p><button class="cta green" data-combo="${named(v).id},${named(f).id}">Kies deze combinatie</button></div></article>`).join('')}</div></section><div class="hero-small"><h2>LIEVER ZELF MIXEN?</h2><p>Kies uit het volledige aanbod en maak je eigen selectie in Mijn toer.</p><a class="cta" href="/toer/mijn-toer/">Stel mijn dag samen</a></div></div>`;bind();document.querySelectorAll('[data-arrangement]').forEach(button => button.addEventListener('click', () => openArrangement(button)));document.querySelectorAll('[data-combo]').forEach(b=>b.onclick=()=>{chosen=[...new Set([...chosen,...b.dataset.combo.split(',').map(Number)])];localStorage.setItem('toer-plan',JSON.stringify(chosen));location.href='/toer/mijn-toer/'})}
 let refreshPlanner;
 function plan(){refreshPlanner=initPlanner({items:[...items].sort(byName),chosen,onChange:ids=>{chosen=[...ids];updateCount()}})}
 function renderSelection(){refreshPlanner?.()}
