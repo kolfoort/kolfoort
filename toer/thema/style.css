@@ -144,3 +144,23 @@ body{background:#fffefa}header{border-bottom:3px solid #edf1d9}nav{font-size:13p
   height: auto;
   aspect-ratio: 4 / 3;
 }
+
+.home-reviews { padding-block: 24px 8px; }
+.home-review-controls { display: flex; gap: 8px; }
+.home-review-controls button { min-width: 44px; min-height: 44px; border: 1px solid #dce8d3; border-radius: 12px; background: white; color: #264b2a; font-size: 1.25rem; cursor: pointer; }
+.home-review-controls button:hover:not(:disabled) { background: #f69a20; }
+.home-review-controls button:disabled { opacity: .45; cursor: default; }
+.home-review-track { display: grid; grid-auto-flow: column; grid-auto-columns: min(84%, 360px); gap: 16px; overflow-x: auto; scroll-snap-type: x mandatory; padding: 4px 0 16px; }
+.home-review { margin: 0; padding: 20px; border: 1px solid #e2e8d9; border-radius: 10px 24px 10px 24px; background: white; scroll-snap-align: start; }
+.home-review-stars { color: #966000; font-size: 1.2rem; letter-spacing: .08em; }
+.home-review blockquote { margin: 8px 0 14px; }
+.home-review figcaption { font-weight: 700; }
+.home-reviews > h2 { margin-top: 36px; }
+.home-experiences { display: grid; grid-template-columns: repeat(3, minmax(0, 1fr)); gap: 16px; }
+.home-experiences article { padding: 24px; border-radius: 12px 28px 12px 28px; background: #edf3e1; }
+.home-experiences img { border-radius: 50%; object-fit: cover; margin-bottom: 12px; }
+.home-trustpilot { margin-top: 20px; padding: 20px; background: #fbe7bc; border-radius: 12px; text-align: center; }
+.home-trustpilot a { color: #243d25; font-weight: 700; text-decoration: underline; }
+@media (max-width: 660px) {
+  .home-experiences { grid-template-columns: 1fr; }
+}
