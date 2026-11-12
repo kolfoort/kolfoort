@@ -159,8 +159,9 @@ body{background:#fffefa}header{border-bottom:3px solid #edf1d9}nav{font-size:13p
 .home-experiences { display: grid; grid-template-columns: repeat(3, minmax(0, 1fr)); gap: 16px; }
 .home-experiences article { padding: 24px; border-radius: 12px 28px 12px 28px; background: #edf3e1; }
 .home-experiences img { border-radius: 50%; object-fit: cover; margin-bottom: 12px; }
-.home-trustpilot { margin-top: 20px; padding: 20px; background: #fbe7bc; border-radius: 12px; text-align: center; }
-.home-trustpilot a { color: #243d25; font-weight: 700; text-decoration: underline; }
+.home-trustpilot { margin-top: 12px; }
+.home-trustpilot a { display: inline-flex; align-items: center; min-height: 44px; padding: 10px 18px; background: #fbe7bc; border-radius: 12px; color: #243d25; font-weight: 700; }
+.home-trustpilot a:is(:hover, :focus-visible) { background: #ffda9d; }
 @media (max-width: 660px) {
   .home-experiences { grid-template-columns: 1fr; }
 }
