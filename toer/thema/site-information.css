@@ -806,3 +806,55 @@ footer .tt-footer-bottom .tt-footer-information a {
 }
 
 main .tt-rental-terms :is(h1, h2, h3, strong, b, .tt-concept) { color: #245538; }
+
+footer .footer-inner .tt-footer-social {
+  display: flex;
+  gap: 8px;
+  align-items: center;
+  justify-content: center;
+  max-width: 220px;
+  margin-top: 14px;
+}
+footer .footer-inner .tt-footer-social a {
+  display: grid;
+  place-items: center;
+  width: 44px;
+  height: 44px;
+  margin: 0;
+  border: 1px solid currentColor;
+  border-radius: 50%;
+  color: #285438;
+  text-decoration: none;
+}
+footer .footer-inner .tt-footer-social a:is(:hover, :focus-visible) {
+  background: #285438;
+  color: white;
+}
+.tt-social-facebook { font: bold 27px/1 Arial, sans-serif; }
+.tt-social-instagram {
+  display: grid;
+  place-items: center;
+  position: relative;
+  box-sizing: border-box;
+  width: 20px;
+  height: 20px;
+  border: 2px solid currentColor;
+  border-radius: 6px;
+}
+.tt-social-instagram::before {
+  content: "";
+  width: 7px;
+  height: 7px;
+  border: 2px solid currentColor;
+  border-radius: 50%;
+}
+.tt-social-instagram::after {
+  content: "";
+  position: absolute;
+  top: 2px;
+  right: 2px;
+  width: 3px;
+  height: 3px;
+  border-radius: 50%;
+  background: currentColor;
+}
