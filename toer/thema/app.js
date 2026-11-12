@@ -24,21 +24,49 @@ function eChopperDetails(id) {
     <p>Stap op de elektrische E-Chopper en ontdek Ootmarsum en het Twentse landschap. De E-Chopper is makkelijk te besturen. Rijd samen over kronkelende landweggetjes en geniet van de rust en het uitzicht.</p>
   </section>
   <section>
-    <h3>Routes in de app</h3>
-    <p>Download vóór vertrek de gratis TwenteToer-app. Kies een route die past bij je huurtijd, door de bossen en weilanden van Twente of net over de grens in Duitsland. Je kunt ook zelf een route uitstippelen.</p>
-    ${routeAppLinks}
+    <h3>In het kort</h3>
+    <p>Of je nu met z’n tweeën rijdt of met vrienden op pad gaat, op de elektrische E-Chopper neem je de tijd voor kleine landwegen en weidse uitzichten. Een helm en haarnetje zijn inbegrepen. Je hebt een geldig rijbewijs voor het voertuig nodig.</p>
   </section>
   <section>
     <h3>E-Chopper met kinderen</h3>
     <p>Kinderen van 5 tot en met 10 jaar mogen gratis achterop. Met een passagier is de huurtijd maximaal 2 uur, omdat de actieradius afneemt. Bestuurder en passagier mogen samen maximaal 120 kg wegen.</p>
     <p>We hebben helmen met haarnetjes voor jong en oud. De kleinste helmmaat is S.</p>
     <p>Met een kind op pad? Bekijk ook de <a class="textlink" href="https://www.twentetoer.nl/voertuigen/goccia/">E-Puch</a>.</p>
+  </section>
+  <section>
+    <h3>Routes in de app</h3>
+    <p>Download vóór vertrek de gratis TwenteToer-app. Kies een route die past bij je huurtijd, door de bossen en weilanden van Twente of net over de grens in Duitsland. Je kunt ook zelf een route uitstippelen.</p>
+    ${routeAppLinks}
+  </section>
+  <section>
+    <h3>Kosten en praktische informatie</h3>
+    <p>Per E-Chopper: 2 uur € 30, 3 uur € 35, 4 uur € 40 en 5 uur € 45. Daghuur kost € 50.</p>
+    <ul>
+      <li>Met een volle accu rijd je maximaal 40 km. Met een passagier neemt de actieradius af.</li>
+      <li>Je haalt de E-Chopper op in Ootmarsum. TwenteToer helpt je onderweg en bij slecht weer kun je gratis verplaatsen.</li>
+      <li>Een kinderzitje is op de E-Chopper niet mogelijk. TwenteToer verwijst hiervoor naar de E-Puch.</li>
+    </ul>
+  </section>
+  <section>
+    <h3>Combineer de E-Chopper met een uitje</h3>
+    <p>Ga met een gids op pad, volg een route met foto-opdrachten of combineer de rit met lunch, pizza, barbecue of een borrelplank. Op de TwenteToer-site vind je ook combinaties met F1-simracing en schieten met kermisbuksen.</p>
   </section>`;
 }
+
 function topolinoDetails(id) {
   if (id !== 3) return '';
   return `<section>
+    <h3>Topolino Dolce Vita in Ootmarsum</h3>
+    <p>In de volledig elektrische Fiat Topolino beleef je Twente met de wind in je haren. De compacte tweezitter heeft een retro-uitstraling en past bij de smalle straten van Ootmarsum en de kronkelwegen langs weilanden en oude boerderijen.</p>
+    <p>Klap het cabriodak open, geniet van de zon en stop onderweg voor koffie op een terras. Dankzij de stille elektrische aandrijving ontdek je de omgeving op je eigen tempo.</p>
+  </section>
+  <section>
+    <h3>In het kort</h3>
+    <p>Een open cabrio met volledig elektrische aandrijving en uitgestippelde routes door Twente. In elke Topolino is plaats voor twee personen.</p>
+  </section>
+  <section>
     <h3>Dolce Vita in Twente</h3>
+    <p>Met vrienden kun je in meerdere Topolino’s samen op pad. In de dorpjes valt de kleine Fiat meteen op, dus reken op een zwaai onderweg.</p>
     <p>Verken Ootmarsum met z’n tweeën in de volledig elektrische Fiat Topolino. Dit open cabriootje heeft instapkoorden en een dak dat je zelf opent en sluit. Via een bluetoothspeaker kun je onderweg je eigen muziek afspelen.</p>
   </section>
   <section>
@@ -55,7 +83,12 @@ function topolinoDetails(id) {
       <li>Maximaal 75 km actieradius. Je rijdt uitsluitend de aangegeven routes. De auto heeft gps om misbruik te voorkomen.</li>
       <li>Geen borg. Btw en WA-verzekering zijn inbegrepen.</li>
     </ul>
-    <p>Combineer de rit bijvoorbeeld met een barbecue, lunch of QR-speurtocht. <a class="textlink" href="/toer/arrangementen/">Bekijk arrangementen</a></p>
+  </section>
+  <section>
+    <h3>Combineer de Topolino met een uitje</h3>
+    <p>Schuif na de rit aan voor barbecue met drankjes en softijs, warme en koude tapas of een lunch. Bij het pizza-arrangement beleg je je eigen pizza.</p>
+    <p>Voor groepen is er een rally met roadbook, een QR-speurtocht of de escapebox ‘Het Verloren Goud’. Wie onderweg iets wil proeven kan de rit combineren met Proef de Boer of een high tea bij Dennenoord in Vasse.</p>
+    <p><a class="textlink" href="/toer/arrangementen/">Bekijk arrangementen</a></p>
   </section>`;
 }
 

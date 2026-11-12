@@ -24,21 +24,49 @@ function eChopperDetails(id) {
     <p>Steig auf den elektrischen E-Chopper und entdecke Ootmarsum und die Landschaft von Twente. Der E-Chopper ist leicht zu fahren. Fahrt gemeinsam über kurvige Landstraßen und genießt die Ruhe und die Aussicht.</p>
   </section>
   <section>
-    <h3>Routen in der App</h3>
-    <p>Lade vor der Abfahrt die kostenlose TwenteToer-App herunter. Wähle eine Route passend zur Mietdauer, durch Wälder und Wiesen in Twente oder direkt hinter der Grenze in Deutschland. Du kannst auch selbst eine Route planen.</p>
-    ${routeAppLinks}
+    <h3>Auf einen Blick</h3>
+    <p>Ob zu zweit oder mit Freunden: Auf dem elektrischen E-Chopper könnt ihr euch Zeit für kleine Landstraßen und weite Ausblicke nehmen. Helm und Haarnetz sind dabei. Zum Fahren braucht ihr einen gültigen Führerschein für das Fahrzeug.</p>
   </section>
   <section>
     <h3>E-Chopper mit Kindern</h3>
     <p>Kinder von 5 bis einschließlich 10 Jahren dürfen kostenlos mitfahren. Mit einem Beifahrer beträgt die Mietdauer höchstens 2 Stunden, weil die Reichweite sinkt. Fahrer und Beifahrer dürfen zusammen höchstens 120 kg wiegen.</p>
     <p>Wir bieten Helme mit Haarnetzen für Kinder und Erwachsene an. Die kleinste Helmgröße ist S.</p>
     <p>Mit einem Kind unterwegs? Schau dir auch den <a class="textlink" href="https://www.twentetoer.nl/voertuigen/goccia/">E-Puch</a> an.</p>
+  </section>
+  <section>
+    <h3>Routen in der App</h3>
+    <p>Lade vor der Abfahrt die kostenlose TwenteToer-App herunter. Wähle eine Route passend zur Mietdauer, durch Wälder und Wiesen in Twente oder direkt hinter der Grenze in Deutschland. Du kannst auch selbst eine Route planen.</p>
+    ${routeAppLinks}
+  </section>
+  <section>
+    <h3>Mietpreise und praktische Informationen</h3>
+    <p>Pro E-Chopper: 2 Stunden 30 €, 3 Stunden 35 €, 4 Stunden 40 €, 5 Stunden 45 €. Die Tagesmiete kostet 50 €.</p>
+    <ul>
+      <li>Mit vollem Akku sind bis zu 40 km möglich. Mit Beifahrer sinkt die Reichweite.</li>
+      <li>Abfahrt in Ootmarsum. TwenteToer bietet Hilfe unterwegs und bei schlechtem Wetter eine kostenlose Umbuchung an.</li>
+      <li>Für den E-Chopper gibt es keinen Kindersitz. Dafür empfiehlt TwenteToer den E-Puch.</li>
+    </ul>
+  </section>
+  <section>
+    <h3>Den E-Chopper mit einem Ausflug kombinieren</h3>
+    <p>Fahrt mit einem Guide durch die Gegend, erkundet die Route mit einer Fotosuche oder kombiniert die Tour mit Mittagessen, Pizza, Grillen oder einer Snackplatte. Auch F1-Simracing und Schießspiele stehen auf der TwenteToer-Seite zur Auswahl.</p>
   </section>`;
 }
+
 function topolinoDetails(id) {
   if (id !== 3) return '';
   return `<section>
+    <h3>Topolino Dolce Vita in Ootmarsum</h3>
+    <p>Im vollelektrischen Fiat Topolino erlebt ihr Twente unter freiem Himmel. Der kleine Zweisitzer im Retro-Stil passt zu den schmalen Straßen von Ootmarsum und den kurvigen Wegen zwischen Wiesen und alten Bauernhöfen.</p>
+    <p>Öffnet das Verdeck, genießt die Sonne und macht unterwegs eine Pause auf einer Terrasse. Der elektrische Antrieb sorgt für eine ruhige Fahrt, bei der ihr die Umgebung in eurem Tempo entdecken könnt.</p>
+  </section>
+  <section>
+    <h3>Auf einen Blick</h3>
+    <p>Offenes Cabrio, vollelektrischer Antrieb und ausgearbeitete Routen durch Twente. In jedem Topolino ist Platz für zwei Personen.</p>
+  </section>
+  <section>
     <h3>Dolce Vita in Twente</h3>
+    <p>Auch mit Freunden könnt ihr gemeinsam losfahren und euch auf mehrere Topolinos verteilen. In den Dörfern fällt der kleine Fiat schnell auf.</p>
     <p>Erkundet Ootmarsum zu zweit im vollelektrischen Fiat Topolino. Das kleine Cabrio hat statt Türen ein Einstiegsseil und ein Verdeck, das ihr selbst öffnen und schließen könnt. Für eure Lieblingsmusik könnt ihr euer Handy mit einem Bluetooth-Lautsprecher verbinden.</p>
   </section>
   <section>
@@ -55,7 +83,12 @@ function topolinoDetails(id) {
       <li>Bis zu 75 km Reichweite. Das Fahrzeug darf nur auf den vorgesehenen Routen genutzt werden und ist mit GPS gegen Missbrauch ausgestattet.</li>
       <li>Keine Kaution. Mehrwertsteuer und Kfz-Haftpflichtversicherung sind im Preis enthalten.</li>
     </ul>
-    <p>Kombiniert die Fahrt zum Beispiel mit einem Grillessen, einem Mittagessen oder einer QR-Schnitzeljagd. <a class="textlink" href="/toer/de/arrangementen/">Arrangements ansehen</a></p>
+  </section>
+  <section>
+    <h3>Den Topolino mit einem Ausflug kombinieren</h3>
+    <p>Nach der Fahrt könnt ihr euch zum Grillen mit Getränken und Softeis, zu warmen und kalten Tapas oder zum Mittagessen treffen. Beim Pizza-Arrangement belegt ihr eure Pizza selbst.</p>
+    <p>Für Gruppen gibt es eine Rallye mit Roadbook, eine QR-Schnitzeljagd oder die Escapebox „Het Verloren Goud“. Wer unterwegs etwas probieren möchte, kann die Fahrt mit „Proef de Boer“ oder einem High Tea bei Dennenoord in Vasse verbinden.</p>
+    <p><a class="textlink" href="/toer/de/arrangementen/">Arrangements ansehen</a></p>
   </section>`;
 }
 
