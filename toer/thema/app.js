@@ -132,7 +132,7 @@ function rentalVehicleDetails(id) {
     <h3>Kosten en informatie</h3>
     <p>Per TukTuk betaal je <strong>€ 50 voor 1 uur</strong> of <strong>€ 75 voor 2 uur</strong>. Btw en WA-verzekering zijn inbegrepen.</p>
     <ul>
-      <li>De bestuurder is minimaal 20 jaar, heeft motorrijbewijs A of A1 en rijdt vooraf een proefronde.</li>
+      <li>De bestuurder is minimaal 24 jaar, heeft motorrijbewijs A of A1 en ervaring op een motorfiets. Voor vertrek rijdt de bestuurder een proefronde.</li>
       <li>Maximaal drie personen. Huisdieren zijn niet toegestaan.</li>
       <li>Ophalen en vertrekken in Ootmarsum. TwenteToer bezorgt het voertuig niet.</li>
     </ul>

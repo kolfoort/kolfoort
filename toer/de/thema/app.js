@@ -132,7 +132,7 @@ function rentalVehicleDetails(id) {
     <h3>Mietpreise und Hinweise</h3>
     <p>Pro TukTuk zahlt ihr <strong>50 € für 1 Stunde</strong> oder <strong>75 € für 2 Stunden</strong>. Mehrwertsteuer und Kfz-Haftpflichtversicherung sind inklusive.</p>
     <ul>
-      <li>Fahrer müssen mindestens 20 Jahre alt sein, einen Motorradführerschein der Klasse A oder A1 besitzen und vorab eine Proberunde fahren.</li>
+      <li>Fahrer müssen mindestens 24 Jahre alt sein, einen Motorradführerschein der Klasse A oder A1 besitzen und Erfahrung auf einem Motorrad haben. Vor der Abfahrt ist eine Proberunde Pflicht.</li>
       <li>Höchstens drei Personen. Haustiere sind nicht erlaubt.</li>
       <li>Abholung und Start in Ootmarsum. TwenteToer liefert das Fahrzeug nicht aus.</li>
     </ul>
