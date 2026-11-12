@@ -668,12 +668,13 @@ main :is(.plan-category, #plan-subcategories) button[aria-pressed]:is(:hover, :f
 
 /* Match the orange selection feedback used in the catalogs. */
 header #nav > a:is(:hover, :focus-visible, [aria-current="page"]),
-header #nav .tt-food-nav:is(:hover, :focus-within, :has(details[open], a[aria-current="page"])) {
+header #nav .tt-food-nav > a:is(:hover, :focus-visible, [aria-current="page"]) {
   background: #f69a20;
   color: #642900;
 }
-header #nav .tt-food-nav > a,
-header #nav .tt-food-nav > a:is(:hover, :focus-visible, [aria-current="page"]),
+header #nav .tt-food-nav:is(:hover, :focus-within, :has(details[open], a[aria-current="page"])) {
+  background: transparent;
+}
 header #nav .tt-food-dropdown summary { color: inherit; }
 header #nav > a:is(:hover, :focus-visible, [aria-current="page"])::after,
 header #nav .tt-food-nav > a:is(:hover, :focus-visible, [aria-current="page"])::after,
