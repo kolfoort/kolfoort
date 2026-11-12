@@ -696,13 +696,15 @@ function homeReviews() {
 function openHomeTeamStory() {
   const dialog = $('#detail');
   dialog.classList.remove('drinks-detail');
-  $('#detail-content').innerHTML = `<img class="detail-img" src="/toer/thema/assets/ervaring-team.jpg" alt="">
+  $('#detail-content').innerHTML = `<img class="team-story-portrait" width="600" height="600" src="/toer/thema/assets/ervaring-team.jpg" alt="">
     <div class="detail-pad">
       <div class="eyebrow">Gastverhaal · TwenteToer</div>
       <h2>Een heerlijke dag met collega’s</h2>
-      <p>De gymdocenten van het TCC aan de Potskampstraat stapten voor hun teamuitje op de E-Chopper. Vanuit Ootmarsum gingen ze samen op pad door Twente. Een dag waarop je je collega’s eens spreekt buiten de gymzaal, met de wind om je oren en alle tijd om om je heen te kijken.</p>
-      <h3>Samen op pad vanuit Ootmarsum</h3><p>Wie Ootmarsum uit rijdt, zit al snel tussen de weilanden en de bomen. Op de E-Chopper volg je de landweggetjes op je eigen tempo. Je hoeft niet te trappen en kunt onderweg even stoppen voor een groepsfoto of om van het uitzicht te genieten.</p>
-      <h3>Na de rit nog even samen zitten</h3><p>Wie er een langer uitje van wil maken, kan de rit combineren met een lunch, borrel of barbecue bij TwenteToer. Dan heb je na het toeren alle tijd om nog even bij te praten over wat jullie onderweg hebben meegemaakt.</p>
+      <p>De gymdocenten van het TCC aan de Potskampstraat stapten voor hun teamuitje op de E-Chopper. Vanuit Ootmarsum gingen ze samen op pad door Twente. Een middag waarop je je collega’s eens spreekt buiten de gymzaal, met de wind om je oren en alle tijd om om je heen te kijken.</p>
+      <h3>Samen op pad vanuit Ootmarsum</h3><p>Wie Ootmarsum uit rijdt, zit al snel tussen de weilanden en de bomen. Op de E-Chopper volg je de landweggetjes op je eigen tempo. Je hoeft niet te trappen en de elektrische motor is stil genoeg om onderweg met elkaar te praten. Dat maakt de rit ook leuk voor collega’s die vooral komen voor de gezelligheid.</p>
+      <p>Het fijne aan zo’n teamuitje is dat de rit zelf al genoeg te doen geeft. Bij de ene bocht kijk je uit over het Twentse landschap, bij de volgende rijdt iemand naast je met een verhaal dat op school steeds bleef liggen. En kom je een mooie plek tegen, dan kun je even stoppen voor een groepsfoto of gewoon om van het uitzicht te genieten.</p>
+      <h3>Na de rit nog even samen zitten</h3><p>Wie er een langer uitje van wil maken, kan de rit combineren met een lunch, borrel of barbecue bij TwenteToer. Dan heb je na het toeren alle tijd om nog even bij te praten. En meestal is er dan al genoeg te vertellen over wat jullie onderweg hebben meegemaakt.</p>
+      <p><strong>Ook met jullie team op pad?</strong> Bekijk de E-Chopper of stel in <strong>Mijn toer</strong> een uitje samen dat bij jullie groep past.</p>
       <div class="actions">
         <a class="cta green" href="/toer/voertuigen/?voertuig=2">Bekijk de E-Chopper</a>
         <a class="cta light" href="/toer/mijn-toer/">Mijn toer</a>

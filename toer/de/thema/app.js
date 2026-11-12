@@ -696,13 +696,15 @@ function homeReviews() {
 function openHomeTeamStory() {
   const dialog = $('#detail');
   dialog.classList.remove('drinks-detail');
-  $('#detail-content').innerHTML = `<img class="detail-img" src="/toer/thema/assets/ervaring-team.jpg" alt="">
+  $('#detail-content').innerHTML = `<img class="team-story-portrait" width="600" height="600" src="/toer/thema/assets/ervaring-team.jpg" alt="">
     <div class="detail-pad">
       <div class="eyebrow">Erfahrung · TwenteToer</div>
       <h2>Ein schöner Tag mit dem Team</h2>
-      <p>Die Sportlehrkräfte des TCC an der Potskampstraat stiegen für ihren Teamausflug auf den E-Chopper. Von Ootmarsum aus ging es gemeinsam durch Twente. Eine Gelegenheit, die Kollegen außerhalb der Sporthalle zu treffen.</p>
-      <h3>Gemeinsam ab Ootmarsum</h3><p>Kurz hinter Ootmarsum führen die Landstraßen zwischen Wiesen und Bäumen entlang. Mit dem elektrischen E-Chopper könnt ihr im eigenen Tempo fahren und unterwegs für ein Gruppenfoto oder eine Pause anhalten.</p>
-      <h3>Nach der Tour zusammensitzen</h3><p>Wer mehr Zeit miteinander verbringen möchte, kann die Fahrt mit einem Mittagessen, einem Getränk oder einem Grillessen bei TwenteToer verbinden.</p>
+      <p>Die Sportlehrkräfte des TCC an der Potskampstraat stiegen für ihren Teamausflug auf den E-Chopper. Von Ootmarsum aus ging es gemeinsam durch Twente. Ein Nachmittag, an dem ihr eure Kollegen auch mal außerhalb der Sporthalle trefft, mit dem Wind um die Ohren und Zeit, euch umzusehen.</p>
+      <h3>Gemeinsam ab Ootmarsum</h3><p>Kurz hinter Ootmarsum führen die Landstraßen zwischen Wiesen und Bäumen entlang. Mit dem E-Chopper folgt ihr den Landstraßen in eurem eigenen Tempo. Ihr müsst nicht treten, und der Elektromotor ist leise genug, um euch unterwegs zu unterhalten. So macht die Fahrt auch Kollegen Spaß, die vor allem wegen der gemeinsamen Zeit dabei sind.</p>
+      <p>Die Fahrt selbst bietet schon genug Abwechslung. Hinter der einen Kurve öffnet sich der Blick auf die Landschaft, hinter der nächsten erzählt jemand eine Geschichte, für die in der Schule nie Zeit war. An einem schönen Platz könnt ihr für ein Gruppenfoto anhalten oder einfach die Aussicht genießen.</p>
+      <h3>Nach der Tour zusammensitzen</h3><p>Wer mehr Zeit miteinander verbringen möchte, kann die Fahrt mit einem Mittagessen, einem Getränk oder einem Grillessen bei TwenteToer verbinden. Nach der Fahrt habt ihr Zeit zum Plaudern. Meist gibt es dann schon genug über das zu erzählen, was ihr unterwegs erlebt habt.</p>
+      <p><strong>Auch mit eurem Team unterwegs?</strong> Schaut euch den E-Chopper an oder stellt in Meine Tour einen Ausflug zusammen, der zu eurer Gruppe passt.</p>
       <div class="actions">
         <a class="cta green" href="/toer/de/voertuigen/?voertuig=2">E-Chopper ansehen</a>
         <a class="cta light" href="/toer/de/mijn-toer/">Meine Tour</a>

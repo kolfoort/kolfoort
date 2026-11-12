@@ -165,3 +165,5 @@ body{background:#fffefa}header{border-bottom:3px solid #edf1d9}nav{font-size:13p
 @media (max-width: 660px) {
   .home-experiences { grid-template-columns: 1fr; }
 }
+
+.team-story-portrait { display: block; width: min(230px, 66%); height: auto; margin: 24px auto 0; border-radius: 16px; }
