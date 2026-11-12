@@ -92,7 +92,101 @@ function topolinoDetails(id) {
   </section>`;
 }
 
-function detail(id){if(id===5){location.href='/toer/buggy-experience/';return}const p=items.find(x=>x.id===id);$('#detail').classList.toggle('drinks-detail',[52,76].includes(id));$('#detail-content').innerHTML=`<img class="detail-img" src="${photo(p)}" alt="${esc(p.name)}"><div class="detail-pad"><div class="eyebrow">${groupLabel[p.group]} · TwenteToer</div><h2>${esc(p.name)}</h2><p>${esc(p.description)}</p>${eChopperDetails(id)}${topolinoDetails(id)}${drinksMenu(id)}${id === 3 ? '' : `<div class="price"><small>${[52,76].includes(id)?'Toeslag op het drankarrangement':'Indicatieve vanafprijs volgens de bestaande site'}</small><b>${p.price===null?'Op aanvraag':money(p.price)}</b></div>`}<div class="notice">De exacte prijs, duur, minimumdeelname, leeftijds- en rijbewijsvoorwaarden worden per activiteit bevestigd. Deze testsite controleert geen beschikbaarheid en maakt geen reservering.</div><div class="actions"><button class="cta green" data-add="${p.id}">${chosen.includes(p.id)?'Staat in Mijn toer':'Toevoegen aan Mijn toer'}</button><a class="cta light" href="/toer/mijn-toer/#aanbod">Mijn toer bekijken & Betalen</a><a class="cta light" href="${p.source}" target="_blank" rel="noopener">Details op huidige website</a></div></div>`;bind();$('#detail').showModal()}
+function rentalVehicleDetails(id) {
+  switch (id) {
+    case 1:
+      return `<section>
+    <h3>Met de TukTuk door Ootmarsum</h3>
+    <p>Start de motor en je hoort meteen waar de TukTuk zijn naam aan dankt. Jullie rijden zelf een uitgezette route door het Twentse landschap. Onderweg kun je de rit combineren met een picknick of teamspel. De TukTuk heeft drie zitplaatsen en is het hele jaar te huur.</p>
+    <p>TwenteToer verhuurt één TukTuk. Ga je met een grotere groep? Bekijk dan de <a class="textlink" href="/toer/voertuigen/?voertuig=3">Topolino</a> of combineer de rit met een <a class="textlink" href="/toer/voertuigen/?voertuig=2">E-Chopper</a>.</p>
+  </section>
+  <section>
+    <h3>Op pad met kinderen</h3>
+    <p>Neem zelf een kinderzitje mee als je dat nodig hebt. De TukTuk heeft geen Isofix. In de gratis TwenteToer-app vind je routes langs bijvoorbeeld een kinderboerderij, sterrenwacht of speeltuin.</p>
+    ${routeAppLinks}
+  </section>
+  <section>
+    <h3>Kosten en informatie</h3>
+    <p>Per TukTuk betaal je <strong>€ 50 voor 1 uur</strong> of <strong>€ 75 voor 2 uur</strong>. Btw en WA-verzekering zijn inbegrepen.</p>
+    <ul>
+      <li>De bestuurder is minimaal 20 jaar, heeft motorrijbewijs A of A1 en rijdt vooraf een proefronde.</li>
+      <li>Maximaal drie personen. Huisdieren zijn niet toegestaan.</li>
+      <li>Ophalen en vertrekken in Ootmarsum. TwenteToer bezorgt het voertuig niet.</li>
+    </ul>
+  </section>`;
+    case 4:
+      return `<section>
+    <h3>Op pad met de Cooper</h3>
+    <p>Verken Ootmarsum en omgeving op een elektrische scooter met brede banden en een opvallend uiterlijk. De stille motor past bij een ontspannen tocht langs bos, glooiende weilanden en het centrum van Ootmarsum.</p>
+    <p>De Cooper is een optie voor een rit met vrienden, een teamuitje of een dagje samen. De voertuigpagina noemt een prijs van <strong>€ 45</strong>.</p>
+  </section>`;
+    case 6:
+      return `<section>
+    <h3>Twente verkennen met de Lambretta</h3>
+    <p>Op deze Italiaanse scooter rijd je met maximaal 45 km/u door Twentse dorpen en landelijk gebied. Met een halve of hele dag huur heb je tijd voor een terrasstop of een rit over de Duitse grens.</p>
+  </section>
+  <section>
+    <h3>De mooiste routes</h3>
+    <p>Volg een route uit de gratis TwenteToer-app, kies een knooppuntenroute of stel zelf een tocht samen. Plan onderweg tijd in voor koffie, een foto of iets lekkers uit de streek.</p>
+    ${routeAppLinks}
+  </section>
+  <section>
+    <h3>Stijlvol en veilig</h3>
+    <p>De scooter biedt plaats aan twee personen. De bestuurder moet rijervaring hebben en maakt vooraf een proefronde. Een helm is verplicht en de passagier moet minimaal 12 jaar zijn.</p>
+  </section>
+  <section>
+    <h3>Kosten en informatie</h3>
+    <p><strong>4 uur € 40 · 8 uur € 75</strong> per Lambretta. De passagier rijdt gratis mee. Btw en WA-verzekering zijn inbegrepen.</p>
+    <p>Je krijgt de scooter met een volle tank en levert hem weer vol in. Tanken kan met E5 of E10.</p>
+  </section>`;
+    case 7:
+      return `<section>
+    <h3>Met de Goccia op pad</h3>
+    <p>Door zijn retro-uitstraling noemen ze deze elektrische brommer in Twente ook wel de E-Puch. Hij rijdt stil en biedt plaats aan een volwassene en een passagier tot ongeveer 14 jaar.</p>
+  </section>
+  <section>
+    <h3>Toer een mooie route</h3>
+    <p>Rijd bijvoorbeeld naar Denekamp, het Lutterzand of het Stift in Weerselo. Download de gratis app, zet je telefoon in de stuurhouder en volg de route. De actieradius is ongeveer 60 km en neemt af met een passagier.</p>
+    ${routeAppLinks}
+  </section>
+  <section>
+    <h3>Goccia met kinderen</h3>
+    <p>De Goccia weegt maximaal 55 kg en is wendbaar. Achterop zitten een zadel met handvat en voetsteunen. Een kind moet zich zelf kunnen vasthouden. De kleinste helmmaat is S.</p>
+    <p>Voor 11- tot 16-jarigen zonder rijbewijs noemt TwenteToer de Beachcruiser, Fatbike en Fatmax als alternatieven.</p>
+  </section>
+  <section>
+    <h3>Kosten en informatie</h3>
+    <p><strong>2 uur € 30 · 3 uur € 35 · 4 uur € 40</strong> per Goccia. Een passagier rijdt gratis mee.</p>
+    <p>Een geldig (bromfiets)rijbewijs en een helm zijn verplicht. Een haarnetje is inbegrepen en TwenteToer biedt hulp onderweg.</p>
+  </section>`;
+    case 8:
+      return `<section>
+    <h3>Scooter huren in Ootmarsum</h3>
+    <p>Met de Euro 5-scooter rijd je 25 km/u over de landwegen rond Ootmarsum. Er is plek voor twee personen. Je passagier rijdt gratis mee en helm en haarnetje zijn inbegrepen.</p>
+  </section>
+  <section>
+    <h3>Scootertoer door Twente</h3>
+    <p>Rijd door het centrum van Ootmarsum of maak een rondje langs Denekamp, Singraven en het Lutterzand. Met een volle tank kun je ongeveer 125 km rijden.</p>
+  </section>
+  <section>
+    <h3>Op pad met kinderen</h3>
+    <p>Stop onderweg bij een speeltuin of boerderij. Voor oudere kinderen langer dan 1,30 meter noemt TwenteToer de Fatbike als alternatief om zelf mee te rijden. Een kinderzitje is op deze scooter niet mogelijk. Bekijk daarvoor de <a class="textlink" href="/toer/voertuigen/?voertuig=7">Goccia E-Puch</a>.</p>
+  </section>
+  <section>
+    <h3>Een hele dag toeren</h3>
+    <p>Daghuur kost € 47,50. Ophalen kan vanaf 10.00 uur, ook later op de dag. Lever de scooter om 17.00 uur weer in met een volle tank Euro 98.</p>
+  </section>
+  <section>
+    <h3>Kosten en informatie</h3>
+    <p><strong>2 uur € 30 · 3 uur € 35 · 4 uur € 40 · daghuur € 47,50</strong> per scooter.</p>
+    <p>Een geldig (bromfiets)rijbewijs is verplicht. Btw en WA-verzekering zijn inbegrepen. Brandstof is inbegrepen bij de huur per uur.</p>
+  </section>`;
+    default:
+      return '';
+  }
+}
+
+function detail(id){if(id===5){location.href='/toer/buggy-experience/';return}const p=items.find(x=>x.id===id);$('#detail').classList.toggle('drinks-detail',[52,76].includes(id));$('#detail-content').innerHTML=`<img class="detail-img" src="${photo(p)}" alt="${esc(p.name)}"><div class="detail-pad"><div class="eyebrow">${groupLabel[p.group]} · TwenteToer</div><h2>${esc(p.name)}</h2><p>${esc(p.description)}</p>${eChopperDetails(id)}${topolinoDetails(id)}${rentalVehicleDetails(id)}${drinksMenu(id)}${id === 3 ? '' : `<div class="price"><small>${[52,76].includes(id)?'Toeslag op het drankarrangement':'Indicatieve vanafprijs volgens de bestaande site'}</small><b>${p.price===null?'Op aanvraag':money(p.price)}</b></div>`}<div class="notice">De exacte prijs, duur, minimumdeelname, leeftijds- en rijbewijsvoorwaarden worden per activiteit bevestigd. Deze testsite controleert geen beschikbaarheid en maakt geen reservering.</div><div class="actions"><button class="cta green" data-add="${p.id}">${chosen.includes(p.id)?'Staat in Mijn toer':'Toevoegen aan Mijn toer'}</button><a class="cta light" href="/toer/mijn-toer/#aanbod">Mijn toer bekijken & Betalen</a><a class="cta light" href="${p.source}" target="_blank" rel="noopener">Details op huidige website</a></div></div>`;bind();$('#detail').showModal()}
 function named(term){return items.find(p=>p.name.toLowerCase().includes(term.toLowerCase()))||items[0]}
 const headerRides=[['Topolino','HET DOLCE VITA GEVOEL!','topolino'],['E-Chopper','ELEKTRISCH EN GENIETEN!','e-chopper'],['Buggy','AVONTUUR IN TWENTE!','buggy'],['E-Bike','BELEEF HET OP DE FIETS!','e-bike'],['Fatmax','ELEKTRISCH OP AVONTUUR!','fatmax']];
 function photoHeader(){return `<section class="original-photo-header" aria-label="Ontdek TwenteToer"><div class="photo-slider" aria-roledescription="carrousel">${headerRides.map(([name,title,term],i)=>`<div class="photo-slide ${i===0?'active':''}" aria-hidden="${i!==0}"><img src="/toer/thema/assets/header-slide-${i+1}.jpg" alt="${name} rijden in Ootmarsum en omgeving" ${i?'loading="lazy"':'fetchpriority="high"'}><div class="photo-caption"><h2>${title}</h2></div></div>`).join('')}<div class="photo-controls"><div class="photo-dots">${headerRides.map(([name],i)=>`<button data-slide="${i}" aria-label="Toon foto ${name}" aria-pressed="${i===0}"><span></span></button>`).join('')}</div><button class="photo-pause" aria-label="Diavoorstelling pauzeren">Pauze</button></div></div><nav class="vehicle-brush-row" aria-label="Kies je voertuig">${headerRides.map(([name,title,term],i)=>`<a href="${term==='buggy'?'/toer/buggy-experience/':'/toer/voertuigen/?voertuig='+named(term).id}"><span class="brush-disc"><img src="/toer/thema/assets/header-icon-${i+1}.png" alt=""></span><strong>${name}</strong></a>`).join('')}</nav></section>`}
