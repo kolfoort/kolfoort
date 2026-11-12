@@ -497,7 +497,7 @@ const activityDetails = {
   30: {
     sections: [
       ["Verover de vlag", "Rijd vanuit Ootmarsum met een voertuig van TwenteToer naar onze partner. Na de uitleg spelen jullie twee rondes van ongeveer 15 tot 20 minuten per deelnemer. Tussen de rondes bekijk je de score en is er tijd voor pauze."],
-      ["Kosten en informatie", "E-Chopper met lasergame kost € 55 per persoon. Het arrangement duurt ongeveer drie uur inclusief heen- en terugrit. Vanaf acht deelnemers. Neem zelf wat te drinken mee voor de pauze."],
+      ["Kosten en informatie", "Kies E-Chopper met lasergame voor € 55 per persoon of Topolino met lasergame voor € 65 per persoon. Het arrangement duurt ongeveer drie uur inclusief heen- en terugrit. Vanaf acht deelnemers. Neem zelf wat te drinken mee voor de pauze."],
     ],
     images: ["item-30.jpg", "lasergame-impressie-1.jpg", "lasergame-impressie-2.jpeg", "lasergame-impressie-3.jpg"],
   },

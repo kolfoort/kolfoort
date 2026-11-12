@@ -497,7 +497,7 @@ const activityDetails = {
   30: {
     sections: [
       ["Erobert die Flagge", "Ihr fahrt mit einem Fahrzeug von TwenteToer zu unserem Partner. Nach der Einführung spielt jede Person zwei Runden von etwa 15 bis 20 Minuten. In der Pause könnt ihr den Punktestand ansehen."],
-      ["Preise und Infos", "E-Chopper und Lasergame kosten 55 € pro Person. Das Paket dauert inklusive Hin- und Rückfahrt rund drei Stunden. Ab acht Teilnehmenden. Bringt euch etwas für die Pause zu trinken mit."],
+      ["Preise und Infos", "Wählt E-Chopper mit Lasergame für 55 € pro Person oder Topolino mit Lasergame für 65 € pro Person. Das Paket dauert inklusive Hin- und Rückfahrt rund drei Stunden. Ab acht Teilnehmenden. Bringt euch etwas für die Pause zu trinken mit."],
     ],
     images: ["item-30.jpg", "lasergame-impressie-1.jpg", "lasergame-impressie-2.jpeg", "lasergame-impressie-3.jpg"],
   },
