@@ -650,8 +650,21 @@ function photoHeader(){return `<section class="original-photo-header" aria-label
 function initPhotoHeader(){let index=0,paused=matchMedia('(prefers-reduced-motion: reduce)').matches;const slides=[...document.querySelectorAll('.photo-slide')],dots=[...document.querySelectorAll('[data-slide]')],pause=document.querySelector('.photo-pause');const show=i=>{index=i;slides.forEach((s,n)=>{s.classList.toggle('active',n===i);s.setAttribute('aria-hidden',String(n!==i))});dots.forEach((d,n)=>d.setAttribute('aria-pressed',String(n===i)))};dots.forEach(d=>d.onclick=()=>show(Number(d.dataset.slide)));const label=()=>{pause.textContent=paused?"Spielen":"Pause";pause.setAttribute('aria-label',paused?"Diashow abspielen":"Diashow anhalten")};pause.onclick=()=>{paused=!paused;label()};label();setInterval(()=>{if(!paused&&!document.hidden&&!document.querySelector('.photo-slider:hover')&&!document.querySelector('.photo-slider:focus-within'))show((index+1)%slides.length)},6000)}
 function homeReviews() {
   const reviews = [
-    ...[["Hidde Norder", "Drei kleine Fiats gemietet. Gut gepflegt und wie vereinbart bereit."], ["Jerry Kaletruckert", "Hat richtig Spaß gemacht! Tipp: Bucht die dreistündige Tour und den E-Chopper für drei Stunden."], ["Joop Leferink", "Zwei Fahrräder für eine Woche gemietet. Bei der Abholung wurden wir freundlich beraten."], ["Li Lit", "Gefällt mir."]].map(review => [...review, "Google"]),
-    ...[["Kyra Schiphorst", "Freundlicher Empfang und klare Einführung. Mit der App entdeckten sie Orte, an denen sie sonst kaum vorbeigekommen wären."], ["J. van Gans", "Eine Fahrt mit dem Fiat Topolino war eine schöne Art, die Landschaft rund um Ootmarsum zu entdecken."], ["Liesbeth", "Zum zweiten Mal mit dem Topolino unterwegs, diesmal ohne Türen und in Richtung Lutterzand."], ["Debbie Heyboer-Vermeij", "Als der Akku unterwegs fast leer war, bekamen sie einen anderen Topolino, um die Route zu Ende zu fahren."], ["Ingrid", "Mit dem Team im Topolino unterwegs und danach gemeinsam Pizza gegessen."], ["Wim Kreulen", "Alles war gut organisiert, vom Kaffee mit Kuchen und dem Proviant bis zu den Routen in der App."]].map(review => [...review, "Trustpilot"]),
+    ...[["Hidde Norder", "Drei kleine Fiats gemietet. Gut gepflegt und wie vereinbart bereit."], ["Jerry Kaletruckert", "Hat richtig Spaß gemacht! Tipp: Bucht die dreistündige Tour und den E-Chopper für drei Stunden."], ["Joop Leferink", "Zwei Fahrräder für eine Woche gemietet. Bei der Abholung wurden wir freundlich beraten."], ["Li Lit", "Gefällt mir."]].map(review => [...review, "Google", 5]),
+    ...[["Kyra Schiphorst", "Freundlicher Empfang und klare Einführung. Mit der App entdeckten sie Orte, an denen sie sonst kaum vorbeigekommen wären."], ["J. van Gans", "Eine Fahrt mit dem Fiat Topolino war eine schöne Art, die Landschaft rund um Ootmarsum zu entdecken."], ["Liesbeth", "Zum zweiten Mal mit dem Topolino unterwegs, diesmal ohne Türen und in Richtung Lutterzand."], ["Debbie Heyboer-Vermeij", "Als der Akku unterwegs fast leer war, bekamen sie einen anderen Topolino, um die Route zu Ende zu fahren."], ["Ingrid", "Mit dem Team im Topolino unterwegs und danach gemeinsam Pizza gegessen."], ["Wim Kreulen", "Alles war gut organisiert, vom Kaffee mit Kuchen und dem Proviant bis zu den Routen in der App."]].map(review => [...review, "Trustpilot", 5]),
+    ["Roy Krol", "Alles war gut organisiert und die Strecke war schön.", "Google", 5],
+    ["Lijnn", "Mit dem Topolino unterwegs und bei der Manderveense Aardbei angehalten.", "Google", 5],
+    ["Samanta Scanu", "Freundlich betreut und viel Spaß mit dem Fiat Topolino gehabt.", "Google", 5],
+    ["Allan Drost", "Zwei Stunden im offenen Topolino unterwegs und beim Bauern Erdbeeren gegessen.", "Google", 5],
+    ["John Van Diepen", "Die ruhige, grüne Umgebung und die Radwege mit ihren Sehenswürdigkeiten gefielen ihm.", "Google", 5],
+    ["Roel Bosman", "Die TukTuk-Fahrt war ein Erlebnis. Der Empfang und die holprige Strecke enttäuschten.", "Trustpilot", 3],
+    ["Miranda Lubberink", "Ein schöner Nachmittag dank der klaren Einführung und der Routen in der App.", "Trustpilot", 5],
+    ["Nicole", "Zwei Stunden mit dem Topolino unterwegs, nach freundlichem Empfang und klarer Einführung.", "Trustpilot", 5],
+    ["Een tevreden klant", "Die E-Bikes gefielen und eigneten sich auch für größere Personen.", "Trustpilot", 5],
+    ["Anton", "Guter Service und klare Einführung für einen Tag mit dem Goccia.", "Trustpilot", 5],
+    ["Akerboom", "Die E-Chopper standen bereit. Nach einer kurzen Einführung folgte eine schöne Tour mit netten Stopps.", "Trustpilot", 5],
+    ["Ans Scherphof", "Das Dropping mit dem Militärlaster machte den Kindergeburtstag zum Abenteuer.", "Trustpilot", 5],
+    ["Anoniem", "Die Giant-Räder gefielen, bei den Sätteln und der Unterstützung der Stella-Räder gab es Verbesserungsbedarf.", "Trustpilot", 3],
   ];
   const experiences = [["Ein schöner Tag mit dem Team", "Die Sportlehrkräfte des TCC an der Potskampstraat waren gemeinsam mit E-Choppern unterwegs.", "ervaring-team.jpg"], ["Ein toller Familientag", "Nach der TukTuk-Tour gab es ein Buffet. Fahrt, Organisation und Restaurant kamen bei der Familie gut an.", "ervaring-familie.jpg"], ["Mit dem Trike unterwegs", "Das Paar lobte den freundlichen Empfang, die schöne Strecke und das Mittagessen bei Erve Bossem.", "ervaring-trike.jpg"]];
   return `<section class="section home-reviews" aria-labelledby="home-reviews-title">
@@ -663,8 +676,8 @@ function homeReviews() {
       </div>
     </div>
     <div class="home-review-track" id="home-review-track">
-      ${reviews.map(([name, quote, source]) => `<figure class="home-review">
-        <span class="home-review-stars" aria-label="5/5">★★★★★</span>
+      ${reviews.map(([name, quote, source, rating]) => `<figure class="home-review">
+        <span class="home-review-stars" aria-label="${rating}/5">${"★".repeat(rating)}${"☆".repeat(5 - rating)}</span>
         <p>${esc(quote)}</p><figcaption>${esc(name)} · ${esc(source)}</figcaption>
       </figure>`).join('')}
     </div>

@@ -650,8 +650,21 @@ function photoHeader(){return `<section class="original-photo-header" aria-label
 function initPhotoHeader(){let index=0,paused=matchMedia('(prefers-reduced-motion: reduce)').matches;const slides=[...document.querySelectorAll('.photo-slide')],dots=[...document.querySelectorAll('[data-slide]')],pause=document.querySelector('.photo-pause');const show=i=>{index=i;slides.forEach((s,n)=>{s.classList.toggle('active',n===i);s.setAttribute('aria-hidden',String(n!==i))});dots.forEach((d,n)=>d.setAttribute('aria-pressed',String(n===i)))};dots.forEach(d=>d.onclick=()=>show(Number(d.dataset.slide)));const label=()=>{pause.textContent=paused?'Afspelen':'Pauze';pause.setAttribute('aria-label',paused?'Diavoorstelling afspelen':'Diavoorstelling pauzeren')};pause.onclick=()=>{paused=!paused;label()};label();setInterval(()=>{if(!paused&&!document.hidden&&!document.querySelector('.photo-slider:hover')&&!document.querySelector('.photo-slider:focus-within'))show((index+1)%slides.length)},6000)}
 function homeReviews() {
   const reviews = [
-    ...[["Hidde Norder", "3 fiatjes gehuurd. Goed onderhouden en stonden klaar volgens afspraak."], ["Jerry Kaletruckert", "Superleuk!!!! Tip: boek de herlichkeit lage (3 uur). En de e-chopper voor 3 uur,…"], ["Joop Leferink", "Eind juli voor een week twee fietsen gehuurd. Netjes geholpen bij afhalen. Vriendelijk geholpen bij…"], ["Li Lit", "I like"]].map(review => [...review, "Google"]),
-    ...[["Kyra Schiphorst", "Fijne ontvangst en duidelijke uitleg. Met de app ontdekten ze plekken waar ze anders niet snel zouden komen."], ["J. van Gans", "Een rit met de Fiat Topolino was een leuke manier om het landschap rond Ootmarsum te ontdekken."], ["Liesbeth", "Voor de tweede keer op pad met een Topolino, ditmaal zonder deurtjes en richting het Lutterzand."], ["Debbie Heyboer-Vermeij", "Toen de accu onderweg bijna leeg was, kregen ze een andere Topolino om de route af te maken."], ["Ingrid", "Met het team op pad in de Topolino en daarna genoten van pizza."], ["Wim Kreulen", "Alles was goed geregeld, van koffie met cake en een smikkeltas tot de routes in de app."]].map(review => [...review, "Trustpilot"]),
+    ...[["Hidde Norder", "3 fiatjes gehuurd. Goed onderhouden en stonden klaar volgens afspraak."], ["Jerry Kaletruckert", "Superleuk!!!! Tip: boek de herlichkeit lage (3 uur). En de e-chopper voor 3 uur,…"], ["Joop Leferink", "Eind juli voor een week twee fietsen gehuurd. Netjes geholpen bij afhalen. Vriendelijk geholpen bij…"], ["Li Lit", "I like"]].map(review => [...review, "Google", 5]),
+    ...[["Kyra Schiphorst", "Fijne ontvangst en duidelijke uitleg. Met de app ontdekten ze plekken waar ze anders niet snel zouden komen."], ["J. van Gans", "Een rit met de Fiat Topolino was een leuke manier om het landschap rond Ootmarsum te ontdekken."], ["Liesbeth", "Voor de tweede keer op pad met een Topolino, ditmaal zonder deurtjes en richting het Lutterzand."], ["Debbie Heyboer-Vermeij", "Toen de accu onderweg bijna leeg was, kregen ze een andere Topolino om de route af te maken."], ["Ingrid", "Met het team op pad in de Topolino en daarna genoten van pizza."], ["Wim Kreulen", "Alles was goed geregeld, van koffie met cake en een smikkeltas tot de routes in de app."]].map(review => [...review, "Trustpilot", 5]),
+    ["Roy Krol", "Alles was goed geregeld en de route was mooi.", "Google", 5],
+    ["Lijnn", "Met de Topolino op pad geweest en onderweg gestopt bij de Manderveense Aardbei.", "Google", 5],
+    ["Samanta Scanu", "Prettig geholpen en veel plezier gehad met de Fiat Topolino.", "Google", 5],
+    ["Allan Drost", "Twee uur in een open Topolino gereden en onderweg aardbeien gegeten bij de boer.", "Google", 5],
+    ["John Van Diepen", "Genoten van de rustige, groene omgeving en de fietsroutes langs bezienswaardigheden.", "Google", 5],
+    ["Roel Bosman", "De TukTuk-rit was een belevenis. De ontvangst en de hobbelige route vielen tegen.", "Trustpilot", 3],
+    ["Miranda Lubberink", "Een fijne middag gehad dankzij de duidelijke uitleg en de routes in de app.", "Trustpilot", 5],
+    ["Nicole", "Twee uur met de Topolino op pad na een vriendelijke ontvangst en duidelijke uitleg.", "Trustpilot", 5],
+    ["Een tevreden klant", "De elektrische fietsen bevielen goed en pasten ook bij langere fietsers.", "Trustpilot", 5],
+    ["Anton", "Goede service en duidelijke uitleg voor een dag op de Goccia.", "Trustpilot", 5],
+    ["Akerboom", "De E-Choppers stonden klaar. Na een korte uitleg volgde een mooie rit met leuke stops.", "Trustpilot", 5],
+    ["Ans Scherphof", "De dropping met de legertruck maakte van het kinderfeest een avontuur.", "Trustpilot", 5],
+    ["Anoniem", "De Giants bevielen, maar de zadels en de ondersteuning van de Stella-fietsen konden beter.", "Trustpilot", 3],
   ];
   const experiences = [["Een heerlijke dag met collega’s", "De gymdocenten van het TCC aan de Potskampstraat gingen samen op pad met de E-Chopper.", "ervaring-team.jpg"], ["Een geweldige familiedag", "Na de TukTuk-rit schoof het gezin aan voor een buffet. De rit, organisatie en het restaurant vielen in de smaak.", "ervaring-familie.jpg"], ["Genoten op de Trike", "De gasten waren enthousiast over de ontvangst, de route en de lunch bij Erve Bossem.", "ervaring-trike.jpg"]];
   return `<section class="section home-reviews" aria-labelledby="home-reviews-title">
@@ -663,8 +676,8 @@ function homeReviews() {
       </div>
     </div>
     <div class="home-review-track" id="home-review-track">
-      ${reviews.map(([name, quote, source]) => `<figure class="home-review">
-        <span class="home-review-stars" aria-label="5/5">★★★★★</span>
+      ${reviews.map(([name, quote, source, rating]) => `<figure class="home-review">
+        <span class="home-review-stars" aria-label="${rating}/5">${"★".repeat(rating)}${"☆".repeat(5 - rating)}</span>
         <p>${esc(quote)}</p><figcaption>${esc(name)} · ${esc(source)}</figcaption>
       </figure>`).join('')}
     </div>
