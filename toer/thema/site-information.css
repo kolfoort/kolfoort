@@ -974,12 +974,16 @@ body .food-nav { background: #ecf8c0; }
 .detail-page h1 { color: var(--tt-deep-green); overflow-wrap: anywhere; }
 .detail-page .detail-pad > section { margin-top: 24px; }
 
-footer .tt-outdoor-logo {
+header .tt-outdoor-logo {
   display: block;
-  width: 110px;
+  width: 62px;
   height: auto;
-  margin: 14px 0;
-  padding: 5px;
-  border-radius: 10px;
-  background: white;
+  flex: 0 0 auto;
+}
+@media (max-width: 530px) {
+  body > header { column-gap: 6px; }
+  header > a:first-child .logo { width: min(28vw, 122px); height: auto; }
+  header .tt-outdoor-logo { width: 42px; }
+  header .header-plan { padding-inline: 8px; }
+  header .nav-toggle { padding-inline: 7px; }
 }

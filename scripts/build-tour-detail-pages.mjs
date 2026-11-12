@@ -62,7 +62,7 @@ for (const locale of localeFolders) {
       .replace(/(<body )data-page="[^"]+"/, (_, start) => start + 'data-page="detail" data-detail-category="' + ({voertuigen:'vehicles',activiteiten:'activities',arrangementen:'arrangements'}[category] ?? 'home') + '"')
       .replace(/<main id="main">.*?<\/main>/s, () => main)
       .replace(/(app\.js\?v=)[^"]+/, '$1' + assetsVersion)
-      .replace(/(site-information\.css\?ver=)[\d.]+/, '$1' + '4.16');
+      .replace(/(site-information\.css\?ver=)[\d.]+/, '$1' + '4.17');
 
     const destination = join(folder, path, 'index.html');
     mkdirSync(dirname(destination), {recursive: true});
